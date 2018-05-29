@@ -20,7 +20,7 @@
         <!--Register View Controller-->
         <scene sceneID="Vvg-p2-A4l">
             <objects>
-                <viewController id="QCJ-Rl-Y72" customClass="RegisterViewController" customModule="swift_project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterView" id="QCJ-Rl-Y72" customClass="RegisterViewController" customModule="swift_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mlM-wI-I7b" customClass="Re">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,8 +111,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="redirectToLogin:" destination="QCJ-Rl-Y72" eventType="touchUpInside" id="kwR-3f-UB7"/>
-                                            <action selector="redirectToRegister:" destination="QCJ-Rl-Y72" eventType="touchUpInside" id="W4E-LN-jGG"/>
+                                            <segue destination="wDF-Bw-1pI" kind="show" id="qk9-Mc-mq9"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -170,17 +169,19 @@
                         <outlet property="firstnameField" destination="KQs-Im-l33" id="bug-EC-fAX"/>
                         <outlet property="nameFIeld" destination="oHr-87-Gdn" id="0Zz-gp-jhx"/>
                         <outlet property="passwordField" destination="Ybu-XJ-8Pq" id="eyS-jg-uAZ"/>
-                        <outlet property="redirectToLogin" destination="21y-ar-Uka" id="3uQ-ko-oDl"/>
-                        <outlet property="register" destination="SOe-AH-Jew" id="3Iy-Yh-SMg"/>
-                        <outlet property="registerEmail" destination="U0o-rW-XPd" id="1db-UV-zZo"/>
-                        <outlet property="registerFirstname" destination="KQs-Im-l33" id="Vgc-tA-mQu"/>
-                        <outlet property="registerName" destination="oHr-87-Gdn" id="pjN-X8-OWd"/>
-                        <outlet property="registerPassword" destination="Ybu-XJ-8Pq" id="O8e-6n-7Db"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jv7-NY-eb9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1558" y="-199"/>
+        </scene>
+        <!--LoginView-->
+        <scene sceneID="PhT-3W-agL">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="LoginView" id="wDF-Bw-1pI" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="omD-Pw-GUr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2142" y="-130"/>
         </scene>
     </scenes>
 </document>

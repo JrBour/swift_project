@@ -20,7 +20,7 @@
         <!--View Controller-->
         <scene sceneID="qQ2-wW-LAV">
             <objects>
-                <viewController id="iV5-74-CuR" customClass="ViewController" customModule="swift_project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginView" id="iV5-74-CuR" customClass="ViewController" customModule="swift_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DQF-EQ-EWE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,7 +87,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="redirectToRegister:" destination="iV5-74-CuR" eventType="touchUpInside" id="6XX-WR-yWT"/>
+                                            <segue destination="VY6-Wl-hDI" kind="show" id="UD1-ge-9aQ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -125,6 +125,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X91-9i-w20" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1879" y="112"/>
+        </scene>
+        <!--RegisterView-->
+        <scene sceneID="KoA-Tu-aw7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Register" referencedIdentifier="RegisterView" id="VY6-Wl-hDI" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qul-qV-LXo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2643" y="125"/>
         </scene>
     </scenes>
 </document>

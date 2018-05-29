@@ -11,6 +11,7 @@ import Firebase
 
 class ViewController: UIViewController {
 
+    var ref: DatabaseReference!
     var currentUser: Firebase.User?
     let firebaseAuth = Auth.auth()
     
@@ -19,7 +20,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        ref = Database.database().reference()
     }
 
     /**
@@ -33,15 +34,5 @@ class ViewController: UIViewController {
             firebaseAuth.signIn(withEmail: email, password: password)
         }
     }
-    
-    @IBAction func redirectToRegister(_ sender: Any) {
-        if let registerUser = self.storyboard?.instantiateViewController(withIdentifier: "userRegister"){
-            //movieViewController.modalTransitionStyle = .partialCurl
-            self.present(registerUser, animated: true) {
-                print("Move to other page")
-            }
-        }
-    }
-    
 }
 
