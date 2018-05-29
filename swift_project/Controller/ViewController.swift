@@ -21,6 +21,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
+        firebaseAuth.addStateDidChangeListener({ (firebaseAuth, user) in
+            if user != nil && user != self.currentUser {
+                self.currentUser = user
+                print(self.currentUser?.value(forKey: "email"))
+            }
+        })
     }
 
     /**
