@@ -1,4 +1,4 @@
-#Installation du projet
+# Installation du projet
 
 ## Cocoapods
 
@@ -16,12 +16,12 @@ Chacun se mettra sur sa propre branche, nous nous organiserons au mieux en ce qu
 
 N'oubliez pas d'utilisez le système de MVC (Model View Controller), petit rappel : [Utilisez le modèle MVC](https://openclassrooms.com/courses/developpez-une-app-pour-ios/utilisez-le-modele-mvc)
 
-##Raccourci pratique
+## Raccourci pratique
 * **cmd+r** = Build et lance le projet sur le simulateur
 * **cmd+b** = Build le projet afin de voir les erreurs qui se produiront lors de l'exécution de l'application
 * **cmd+shift+k** = Clean le projet (permet de résoudre certaines erreurs)
 * **shift+cmd+o** = Ouvre le "spotlight" de Xcode, et permet de faire une recherche rapide
 
-##Liens utile
+## Liens utile
 * [**Documentation Swift**](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/)
 * [**Format Ibooks**](https://www.apple.com/fr/swift/)
