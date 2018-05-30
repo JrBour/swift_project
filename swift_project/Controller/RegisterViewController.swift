@@ -27,7 +27,7 @@ class RegisterViewController: UIViewController {
         firebaseAuth.addStateDidChangeListener({ (firebaseAuth, user) in
             if user != nil && user != self.currentUser {
                 self.currentUser = user
-                print(self.currentUser?.value(forKey: "email"))
+                print("f")
             }
         })
         ref.child("users").observe(DataEventType.value, with: { (snapshot) in

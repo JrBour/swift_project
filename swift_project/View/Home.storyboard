@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YCW-gk-pPC">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,16 +10,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
-        <scene sceneID="OJa-1A-peX">
+        <!--Item-->
+        <scene sceneID="LOZ-lD-y6E">
             <objects>
-                <viewController storyboardIdentifier="HomeView" id="62D-9f-4Aq" customClass="HomeViewController" customModule="swift_project" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="s0c-7b-pHU">
+                <viewController storyboardIdentifier="HomeView" id="YCW-gk-pPC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eur-tA-o9p">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOMEPAGE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJT-GU-ebn">
-                                <rect key="frame" x="141.5" y="72" width="92" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Homepage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgA-fG-kwD">
+                                <rect key="frame" x="146" y="69" width="84" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -27,15 +27,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="xJT-GU-ebn" firstAttribute="centerX" secondItem="k9N-3b-3Od" secondAttribute="centerX" id="9iD-rl-nfD"/>
-                            <constraint firstItem="xJT-GU-ebn" firstAttribute="top" secondItem="k9N-3b-3Od" secondAttribute="top" constant="52" id="wTX-wc-Q4b"/>
+                            <constraint firstItem="rgA-fG-kwD" firstAttribute="top" secondItem="mZO-kk-Wzg" secondAttribute="top" constant="49" id="k95-4U-KSP"/>
+                            <constraint firstItem="rgA-fG-kwD" firstAttribute="centerX" secondItem="mZO-kk-Wzg" secondAttribute="centerX" id="pgt-J9-K1o"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="k9N-3b-3Od"/>
+                        <viewLayoutGuide key="safeArea" id="mZO-kk-Wzg"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="q6u-Sj-mqL"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mCT-0Q-NOX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A8p-XJ-eDF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="808" y="79"/>
+            <point key="canvasLocation" x="801" y="822"/>
         </scene>
     </scenes>
 </document>

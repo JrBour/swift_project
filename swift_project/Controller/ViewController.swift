@@ -6,7 +6,7 @@ class ViewController: UIViewController {
     var ref: DatabaseReference!
     var currentUser: Firebase.User?
     let firebaseAuth = Auth.auth()
-    let homeStoryboard = UIStoryboard(name: "Home", bundle: nil)
+    let homeStoryboard = UIStoryboard(name: "Tabbar", bundle: nil)
     
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -18,11 +18,10 @@ class ViewController: UIViewController {
         firebaseAuth.addStateDidChangeListener({ (firebaseAuth, user) in
             if user != nil && user != self.currentUser {
                 self.currentUser = user
-                let homeController = self.homeStoryboard.instantiateViewController(withIdentifier: "HomeView")
-                self.present(homeController, animated: true) {
-                    self.emailField.text = ""
-                    self.passwordField.text = ""
-                }
+                
+                
+                let homeController = self.homeStoryboard.instantiateViewController(withIdentifier: "TabBarView")
+                self.present(homeController, animated: true, completion: nil)
             }
         })
     }
