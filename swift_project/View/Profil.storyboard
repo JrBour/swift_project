@@ -13,7 +13,7 @@
         <!--Item-->
         <scene sceneID="ndV-Vr-rdv">
             <objects>
-                <viewController storyboardIdentifier="ProfilView" id="dRA-f5-v2d" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfilView" id="dRA-f5-v2d" customClass="ProfilViewController" customModule="swift_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xjp-c0-eh8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,6 +24,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJY-de-ojS">
+                                <rect key="frame" x="139" y="387" width="109" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Se déconnecter"/>
+                                <connections>
+                                    <action selector="logout:" destination="dRA-f5-v2d" eventType="touchUpInside" id="JAD-wv-TMu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
