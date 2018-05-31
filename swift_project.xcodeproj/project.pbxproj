@@ -22,6 +22,7 @@
 		3EF7400620BDED55000A9509 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EF7400520BDED55000A9509 /* Register.storyboard */; };
 		3EF7400820BDEDA5000A9509 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF7400720BDEDA5000A9509 /* RegisterViewController.swift */; };
 		3EF7400B20BDF812000A9509 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3EF7400A20BDF811000A9509 /* GoogleService-Info.plist */; };
+		9D466BF320C0A0D900C517CA /* swift_project in Resources */ = {isa = PBXBuildFile; fileRef = 9D466BF220C0A0D900C517CA /* swift_project */; };
 		E3105FDD1E3CD0164D02EB5A /* libPods-swift_project.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E03C75EBC1262261EB23C6C1 /* libPods-swift_project.a */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		3EF7400520BDED55000A9509 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		3EF7400720BDEDA5000A9509 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3EF7400A20BDF811000A9509 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9D466BF220C0A0D900C517CA /* swift_project */ = {isa = PBXFileReference; lastKnownFileType = folder; name = swift_project; sourceTree = "<group>"; };
 		E03C75EBC1262261EB23C6C1 /* libPods-swift_project.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-swift_project.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -81,6 +83,7 @@
 		3E45D27C20BD1DF000E7943E /* swift_project */ = {
 			isa = PBXGroup;
 			children = (
+				9D466BF220C0A0D900C517CA /* swift_project */,
 				3EF7400A20BDF811000A9509 /* GoogleService-Info.plist */,
 				3E5D709420BDDC63006896F3 /* Model */,
 				3E5D709120BDDC14006896F3 /* AppDelegate.swift */,
@@ -204,6 +207,7 @@
 			files = (
 				3E45D28820BD1DF000E7943E /* LaunchScreen.storyboard in Resources */,
 				3E45D28520BD1DF000E7943E /* Assets.xcassets in Resources */,
+				9D466BF320C0A0D900C517CA /* swift_project in Resources */,
 				3EF7400B20BDF812000A9509 /* GoogleService-Info.plist in Resources */,
 				3EBD253F20BF582A000DEFEA /* Profil.storyboard in Resources */,
 				3EBD254920BF5BF8000DEFEA /* Classification.storyboard in Resources */,
