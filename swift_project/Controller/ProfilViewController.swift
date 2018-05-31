@@ -6,6 +6,8 @@ class ProfilViewController: UIViewController {
     let firebaseAuth = Auth.auth()
     var ref: DatabaseReference!
     
+    @IBOutlet weak var achievementCollection: UICollectionView!
+    
     @IBOutlet weak var editProfil: UIButton!
     @IBOutlet weak var navbarProfil: UISegmentedControl!
     @IBOutlet weak var titleUsernameLabel: UILabel!
@@ -18,6 +20,7 @@ class ProfilViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
+        navbarProfil.selectedSegmentIndex = 0
         ref.child("users").child(firebaseAuth.currentUser!.uid).observeSingleEvent(of: .value, with: { (snapshot) in
             
             let value = snapshot.value as? NSDictionary
@@ -38,14 +41,17 @@ class ProfilViewController: UIViewController {
             for  label in labels {
                 label.isHidden = false
             }
+            achievementCollection.isHidden = true
         } else if navbarProfil.selectedSegmentIndex == 1 {
             for  label in labels {
                 label.isHidden = true
             }
+            achievementCollection.isHidden = false
         } else if navbarProfil.selectedSegmentIndex == 2 {
             for  label in labels {
                 label.isHidden = true
             }
+            achievementCollection.isHidden = true
         }
     }
     /**

@@ -105,6 +105,57 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5ON-L2-JTm">
+                                <rect key="frame" x="17" y="387" width="341" height="260"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MgB-zO-8ca">
+                                    <size key="itemSize" width="157" height="124"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="29w-ZZ-UmP">
+                                        <rect key="frame" x="0.0" y="0.0" width="157" height="124"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="157" height="124"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                        <color key="backgroundColor" red="0.32941176470588235" green="0.32941176470588235" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="YIT-Ha-U6g">
+                                        <rect key="frame" x="184" y="0.0" width="157" height="124"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="157" height="124"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                        <color key="backgroundColor" red="0.96078431372549022" green="0.50980392156862742" blue="0.396078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="roun" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="xJj-Xb-289">
+                                        <rect key="frame" x="0.0" y="134" width="157" height="124"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="157" height="124"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                        <color key="backgroundColor" red="0.17254901960784313" green="0.52941176470588236" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="p1S-Ma-I2p">
+                                        <rect key="frame" x="184" y="134" width="157" height="124"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="157" height="124"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                        <color key="backgroundColor" red="0.89803921568627454" green="0.71372549019607845" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -114,6 +165,7 @@
                             <constraint firstItem="UJY-de-ojS" firstAttribute="leading" secondItem="CEN-Qu-58h" secondAttribute="leading" constant="223" id="7ZH-rm-awW"/>
                             <constraint firstItem="Y2T-Hg-zGH" firstAttribute="top" secondItem="TKf-Fw-gW4" secondAttribute="bottom" constant="94" id="7be-93-qJH"/>
                             <constraint firstItem="TKf-Fw-gW4" firstAttribute="top" secondItem="Xjp-c0-eh8" secondAttribute="top" constant="213" id="8H5-xc-nOv"/>
+                            <constraint firstItem="5ON-L2-JTm" firstAttribute="centerX" secondItem="CEN-Qu-58h" secondAttribute="centerX" id="9Db-vH-NqJ"/>
                             <constraint firstItem="mBv-Ik-u36" firstAttribute="leading" secondItem="gCL-30-pGS" secondAttribute="leading" id="Atf-3c-iho"/>
                             <constraint firstItem="Y2T-Hg-zGH" firstAttribute="width" secondItem="Xjp-c0-eh8" secondAttribute="width" id="Enj-Rk-vTM"/>
                             <constraint firstItem="mBv-Ik-u36" firstAttribute="trailing" secondItem="diG-g4-hq8" secondAttribute="trailing" id="F0T-Ae-6vm"/>
@@ -123,13 +175,16 @@
                             <constraint firstItem="UJY-de-ojS" firstAttribute="top" secondItem="CEN-Qu-58h" secondAttribute="top" constant="19" id="JAD-lo-XI3"/>
                             <constraint firstItem="mBv-Ik-u36" firstAttribute="trailing" secondItem="zDf-Rp-aWZ" secondAttribute="trailing" id="MN9-LB-IqF"/>
                             <constraint firstItem="aTR-hB-LZE" firstAttribute="top" secondItem="dCo-jK-kHX" secondAttribute="bottom" constant="18" id="Nx5-6n-Zxb"/>
+                            <constraint firstAttribute="bottom" secondItem="5ON-L2-JTm" secondAttribute="bottom" constant="20" symbolic="YES" id="Qd5-5A-MxK"/>
                             <constraint firstItem="mBv-Ik-u36" firstAttribute="leading" secondItem="ehn-RQ-b4f" secondAttribute="leading" id="UpW-as-ljY"/>
                             <constraint firstItem="mBv-Ik-u36" firstAttribute="trailing" secondItem="gCL-30-pGS" secondAttribute="trailing" id="Wm6-oq-a5b"/>
                             <constraint firstItem="mBv-Ik-u36" firstAttribute="leading" secondItem="zDf-Rp-aWZ" secondAttribute="leading" id="bam-GG-xbu"/>
                             <constraint firstItem="mBv-Ik-u36" firstAttribute="leading" secondItem="CEN-Qu-58h" secondAttribute="leading" constant="29" id="eEH-yd-Jby"/>
                             <constraint firstItem="dCo-jK-kHX" firstAttribute="top" secondItem="CEN-Qu-58h" secondAttribute="top" constant="110" id="gFH-LI-qdj"/>
                             <constraint firstItem="Y2T-Hg-zGH" firstAttribute="centerX" secondItem="CEN-Qu-58h" secondAttribute="centerX" id="iB0-Yo-nV4"/>
+                            <constraint firstItem="5ON-L2-JTm" firstAttribute="width" secondItem="Xjp-c0-eh8" secondAttribute="width" multiplier="1:1.1" id="knd-uf-Tjn"/>
                             <constraint firstItem="CEN-Qu-58h" firstAttribute="trailing" secondItem="mBv-Ik-u36" secondAttribute="trailing" id="laW-qi-i70"/>
+                            <constraint firstItem="5ON-L2-JTm" firstAttribute="top" secondItem="Y2T-Hg-zGH" secondAttribute="bottom" constant="23" id="mhZ-lz-kLU"/>
                             <constraint firstItem="dCo-jK-kHX" firstAttribute="centerX" secondItem="CEN-Qu-58h" secondAttribute="centerX" id="sI8-Ro-EPT"/>
                             <constraint firstItem="TKf-Fw-gW4" firstAttribute="centerX" secondItem="CEN-Qu-58h" secondAttribute="centerX" id="tOE-lM-yvi"/>
                             <constraint firstItem="diG-g4-hq8" firstAttribute="top" secondItem="mBv-Ik-u36" secondAttribute="bottom" constant="17" id="wT9-lO-dwb"/>
@@ -139,6 +194,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="a8R-vQ-Zrn"/>
                     <connections>
+                        <outlet property="achievementCollection" destination="5ON-L2-JTm" id="7mu-4n-wMC"/>
                         <outlet property="countryLabel" destination="mBv-Ik-u36" id="YcX-FZ-CFd"/>
                         <outlet property="editProfil" destination="TKf-Fw-gW4" id="9QX-QC-tQa"/>
                         <outlet property="firstnameLabel" destination="zDf-Rp-aWZ" id="Wh3-1f-Qem"/>
