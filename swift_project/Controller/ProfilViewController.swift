@@ -1,7 +1,7 @@
 import Firebase
 import UIKit
 
-class ProfilViewController: UIViewController {
+class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     let firebaseAuth = Auth.auth()
     var ref: DatabaseReference!
@@ -17,10 +17,19 @@ class ProfilViewController: UIViewController {
     @IBOutlet weak var firstnameLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
     
+    let titleLabel = ["Ligue des champions", "Coupe du monde", "Liga", "Ballons d'or"]
+    let numberLabel = ["03", "01", "08", "02"]
+    let colorCell: [UInt] = [0x545454, 0xF58278, 0x2C88EC, 0xE5B673]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        achievementCollection.delegate = self
+        achievementCollection.dataSource = self
+        
         ref = Database.database().reference()
         navbarProfil.selectedSegmentIndex = 0
+        achievementCollection.isHidden = true
         ref.child("users").child(firebaseAuth.currentUser!.uid).observeSingleEvent(of: .value, with: { (snapshot) in
             
             let value = snapshot.value as? NSDictionary
@@ -33,6 +42,27 @@ class ProfilViewController: UIViewController {
             self.levelLabel.text = "Niveau " + String(describing: level!)
             
         })
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return titleLabel.count
+    }
+    
+    func UIColorFromRGB(rgbValue: UInt) -> UIColor {
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customCell", for: indexPath) as! CustomCollectionViewCell
+        cell.achievementLabel.text = titleLabel[indexPath.row]
+        cell.numberLabel.text = numberLabel[indexPath.row]
+        cell.backgroundColor = self.UIColorFromRGB(rgbValue: colorCell[indexPath.row])
+        return cell
     }
     
     @IBAction func changeInformations(_ sender: Any) {
