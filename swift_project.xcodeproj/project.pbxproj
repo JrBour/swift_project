@@ -14,10 +14,11 @@
 		3E5D709220BDDC14006896F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5D709120BDDC14006896F3 /* AppDelegate.swift */; };
 		3E85FEC120BF2A8500D88CAB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E85FEC020BF2A8500D88CAB /* HomeViewController.swift */; };
 		3E85FEC320BF2B0000D88CAB /* Tabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E85FEC220BF2B0000D88CAB /* Tabbar.storyboard */; };
+		3EB34CCC20C078BC00448D49 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB34CCB20C078BC00448D49 /* RoundedButton.swift */; };
+		3EBB846420C08210007B4C37 /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBB846320C08210007B4C37 /* ProfilViewController.swift */; };
 		3EBD253B20BF4C55000DEFEA /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBD253A20BF4C55000DEFEA /* TabBarViewController.swift */; };
 		3EBD253F20BF582A000DEFEA /* Profil.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EBD253E20BF582A000DEFEA /* Profil.storyboard */; };
 		3EBD254120BF5951000DEFEA /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EBD254020BF5951000DEFEA /* Home.storyboard */; };
-		3EBD254320BF596F000DEFEA /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBD254220BF596F000DEFEA /* ProfilViewController.swift */; };
 		3EBD254920BF5BF8000DEFEA /* Classification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EBD254820BF5BF8000DEFEA /* Classification.storyboard */; };
 		3EF7400620BDED55000A9509 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EF7400520BDED55000A9509 /* Register.storyboard */; };
 		3EF7400820BDEDA5000A9509 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF7400720BDEDA5000A9509 /* RegisterViewController.swift */; };
@@ -38,10 +39,11 @@
 		3E5D709120BDDC14006896F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = /Users/Major/Desktop/Cours/HETIC/Swift/swift_project/swift_project/AppDelegate.swift; sourceTree = "<absolute>"; };
 		3E85FEC020BF2A8500D88CAB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3E85FEC220BF2B0000D88CAB /* Tabbar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tabbar.storyboard; sourceTree = "<group>"; };
+		3EB34CCB20C078BC00448D49 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		3EBB846320C08210007B4C37 /* ProfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilViewController.swift; sourceTree = "<group>"; };
 		3EBD253A20BF4C55000DEFEA /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		3EBD253E20BF582A000DEFEA /* Profil.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profil.storyboard; sourceTree = "<group>"; };
 		3EBD254020BF5951000DEFEA /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		3EBD254220BF596F000DEFEA /* ProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilViewController.swift; sourceTree = "<group>"; };
 		3EBD254820BF5BF8000DEFEA /* Classification.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Classification.storyboard; sourceTree = "<group>"; };
 		3EF7400520BDED55000A9509 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		3EF7400720BDEDA5000A9509 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				3E45D28420BD1DF000E7943E /* Assets.xcassets */,
 				3E45D28620BD1DF000E7943E /* LaunchScreen.storyboard */,
 				3E45D28920BD1DF000E7943E /* Info.plist */,
+				3EB34CCB20C078BC00448D49 /* RoundedButton.swift */,
 			);
 			path = swift_project;
 			sourceTree = "<group>";
@@ -100,11 +103,11 @@
 		3E5D708F20BDDB72006896F3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3EBB846320C08210007B4C37 /* ProfilViewController.swift */,
 				3E45D27F20BD1DF000E7943E /* ViewController.swift */,
 				3EF7400720BDEDA5000A9509 /* RegisterViewController.swift */,
 				3E85FEC020BF2A8500D88CAB /* HomeViewController.swift */,
 				3EBD253A20BF4C55000DEFEA /* TabBarViewController.swift */,
-				3EBD254220BF596F000DEFEA /* ProfilViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -246,10 +249,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EBD254320BF596F000DEFEA /* ProfilViewController.swift in Sources */,
 				3EF7400820BDEDA5000A9509 /* RegisterViewController.swift in Sources */,
 				3E5D709220BDDC14006896F3 /* AppDelegate.swift in Sources */,
+				3EBB846420C08210007B4C37 /* ProfilViewController.swift in Sources */,
 				3E45D28020BD1DF000E7943E /* ViewController.swift in Sources */,
+				3EB34CCC20C078BC00448D49 /* RoundedButton.swift in Sources */,
 				3EBD253B20BF4C55000DEFEA /* TabBarViewController.swift in Sources */,
 				3E85FEC120BF2A8500D88CAB /* HomeViewController.swift in Sources */,
 			);

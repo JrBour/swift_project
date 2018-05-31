@@ -18,21 +18,9 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
-        do {
-            try firebaseAuth.signOut()
-            
-        }catch {
-            print(error)
-        }
         firebaseAuth.addStateDidChangeListener({ (firebaseAuth, user) in
             if user != nil && user != self.currentUser {
                 self.currentUser = user
-                print("f")
-            }
-        })
-        ref.child("users").observe(DataEventType.value, with: { (snapshot) in
-            for child in snapshot.children.allObjects as! [DataSnapshot] {
-                self.lastUserId = Int(child.key)! + 1
             }
         })
     }
@@ -48,17 +36,20 @@ class RegisterViewController: UIViewController {
             let pseudo = self.pseudoField.text,
             let country = self.countryField.text,
             let password = self.passwordField.text {
-            self.ref.child("users").child(String(self.lastUserId)).setValue([
-                "firstname" : firstname,
-                "name" : name,
-                "username" : pseudo,
-                "email" : email,
-                "country" : country
-            ])
-            firebaseAuth.createUser(withEmail: email, password: password) { user, error in
+                firebaseAuth.createUser(withEmail: email, password: password) { user, error in
                 if error != nil {
                     print(error!)
                 }else {
+                    self.ref.child("users").child(Auth.auth().currentUser!.uid).setValue([
+                        "firstname" : firstname,
+                        "name" : name,
+                        "username" : pseudo,
+                        "email" : email,
+                        "country" : country,
+                        "level" : 0,
+                        "experience" : 0
+                    ])
+                    
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let vc = storyboard.instantiateViewController(withIdentifier: "LoginView") as UIViewController
                     self.present(vc, animated: true, completion: nil)
@@ -66,6 +57,4 @@ class RegisterViewController: UIViewController {
             }
         }
     }
-    
-    
 }
