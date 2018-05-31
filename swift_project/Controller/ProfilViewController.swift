@@ -8,28 +8,44 @@ class ProfilViewController: UIViewController {
     
     @IBOutlet weak var editProfil: UIButton!
     @IBOutlet weak var navbarProfil: UISegmentedControl!
+    @IBOutlet weak var titleUsernameLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var countryLabel: UILabel!
+    @IBOutlet weak var firstnameLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
-    @IBOutlet weak var informations: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
         ref.child("users").child(firebaseAuth.currentUser!.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+            
             let value = snapshot.value as? NSDictionary
-            self.usernameLabel.text = value?["username"] as? String ?? ""
+            self.usernameLabel.text     = value?["username"] as? String ?? ""
+            self.titleUsernameLabel.text = value?["username"] as? String ?? ""
+            self.nameLabel.text         = value?["name"] as? String ?? ""
+            self.firstnameLabel.text    = value?["firstname"] as? String ?? ""
+            self.countryLabel.text      = value?["country"] as? String ?? ""
             let level = value?["level"] as? Int
             self.levelLabel.text = "Niveau " + String(describing: level!)
+            
         })
     }
     
     @IBAction func changeInformations(_ sender: Any) {
+        let labels: [UIView] = [usernameLabel, nameLabel, countryLabel, firstnameLabel]
         if navbarProfil.selectedSegmentIndex == 0 {
-            informations.text = "Général"
+            for  label in labels {
+                label.isHidden = false
+            }
         } else if navbarProfil.selectedSegmentIndex == 1 {
-            informations.text = "Trophée"
+            for  label in labels {
+                label.isHidden = true
+            }
         } else if navbarProfil.selectedSegmentIndex == 2 {
-            informations.text = "Stats"
+            for  label in labels {
+                label.isHidden = true
+            }
         }
     }
     /**
