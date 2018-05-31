@@ -6,9 +6,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Item-->
         <scene sceneID="ndV-Vr-rdv">
@@ -18,33 +24,95 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROFIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCo-jK-kHX">
-                                <rect key="frame" x="159" y="92" width="57" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJY-de-ojS">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJY-de-ojS">
                                 <rect key="frame" x="139" y="387" width="109" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Se déconnecter"/>
                                 <connections>
                                     <action selector="logout:" destination="dRA-f5-v2d" eventType="touchUpInside" id="JAD-wv-TMu"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKf-Fw-gW4" customClass="RoundButton" customModule="swift_project" customModuleProvider="target">
+                                <rect key="frame" x="108" y="213" width="160" height="30"/>
+                                <color key="backgroundColor" red="0.92549019607843142" green="0.50196078431372548" blue="0.396078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Modifier le profil">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Niveau" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTR-hB-LZE">
+                                <rect key="frame" x="165" y="168" width="46" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Rpz-E4-bSD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Y2T-Hg-zGH">
+                                <rect key="frame" x="0.0" y="281" width="375" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="6B0-XE-IQ7"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Général"/>
+                                    <segment title="Trophée"/>
+                                    <segment title="Stats"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeInformations:" destination="dRA-f5-v2d" eventType="valueChanged" id="emi-fq-5Cb"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prénom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCo-jK-kHX">
+                                <rect key="frame" x="156" y="130" width="64" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Informations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icj-45-aFW">
+                                <rect key="frame" x="139" y="456" width="96" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="dCo-jK-kHX" firstAttribute="top" secondItem="CEN-Qu-58h" secondAttribute="top" constant="72" id="49M-aO-h3e"/>
+                            <constraint firstItem="TKf-Fw-gW4" firstAttribute="width" secondItem="Xjp-c0-eh8" secondAttribute="width" multiplier="1:2.35" id="1ep-U0-qlG"/>
+                            <constraint firstItem="TKf-Fw-gW4" firstAttribute="top" secondItem="Xjp-c0-eh8" secondAttribute="top" constant="213" id="8H5-xc-nOv"/>
+                            <constraint firstItem="icj-45-aFW" firstAttribute="leading" secondItem="UJY-de-ojS" secondAttribute="leading" id="Bdn-iW-zpW"/>
+                            <constraint firstItem="Y2T-Hg-zGH" firstAttribute="width" secondItem="Xjp-c0-eh8" secondAttribute="width" id="Enj-Rk-vTM"/>
+                            <constraint firstItem="UJY-de-ojS" firstAttribute="top" secondItem="Y2T-Hg-zGH" secondAttribute="bottom" constant="79" id="JVE-gR-hH2"/>
+                            <constraint firstItem="aTR-hB-LZE" firstAttribute="top" secondItem="dCo-jK-kHX" secondAttribute="bottom" constant="18" id="Nx5-6n-Zxb"/>
+                            <constraint firstItem="icj-45-aFW" firstAttribute="centerX" secondItem="Y2T-Hg-zGH" secondAttribute="centerX" id="W3c-Ox-Kxr"/>
+                            <constraint firstItem="Y2T-Hg-zGH" firstAttribute="top" secondItem="TKf-Fw-gW4" secondAttribute="bottom" constant="38" id="g33-UC-fkF"/>
+                            <constraint firstItem="dCo-jK-kHX" firstAttribute="top" secondItem="CEN-Qu-58h" secondAttribute="top" constant="110" id="gFH-LI-qdj"/>
+                            <constraint firstItem="Y2T-Hg-zGH" firstAttribute="centerX" secondItem="CEN-Qu-58h" secondAttribute="centerX" id="iB0-Yo-nV4"/>
+                            <constraint firstItem="icj-45-aFW" firstAttribute="top" secondItem="UJY-de-ojS" secondAttribute="bottom" constant="39" id="mgq-Rz-Ks2"/>
                             <constraint firstItem="dCo-jK-kHX" firstAttribute="centerX" secondItem="CEN-Qu-58h" secondAttribute="centerX" id="sI8-Ro-EPT"/>
+                            <constraint firstItem="TKf-Fw-gW4" firstAttribute="centerX" secondItem="CEN-Qu-58h" secondAttribute="centerX" id="tOE-lM-yvi"/>
+                            <constraint firstItem="aTR-hB-LZE" firstAttribute="centerX" secondItem="CEN-Qu-58h" secondAttribute="centerX" id="weH-Od-Hwf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CEN-Qu-58h"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="a8R-vQ-Zrn"/>
+                    <connections>
+                        <outlet property="editProfil" destination="TKf-Fw-gW4" id="9QX-QC-tQa"/>
+                        <outlet property="informations" destination="icj-45-aFW" id="AQb-Vg-MYq"/>
+                        <outlet property="levelLabel" destination="aTR-hB-LZE" id="3Wf-y9-XM2"/>
+                        <outlet property="navbarProfil" destination="Y2T-Hg-zGH" id="gjr-o2-dBm"/>
+                        <outlet property="usernameLabel" destination="dCo-jK-kHX" id="Wab-si-drk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FPw-38-jhK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="806" y="64"/>
+            <point key="canvasLocation" x="805.60000000000002" y="63.418290854572717"/>
         </scene>
     </scenes>
 </document>
