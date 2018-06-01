@@ -17,9 +17,13 @@ class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var firstnameLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
     
-    let titleLabel = ["Ligue des champions", "Coupe du monde", "Liga", "Ballons d'or"]
-    let numberLabel = ["03", "01", "08", "02"]
-    let colorCell: [UInt] = [0x545454, 0xF58278, 0x2C88EC, 0xE5B673]
+    let secondTitleLabel = ["Ligue des champions", "Coupe du monde", "Liga", "Ballons d'or"]
+    let secondNumberLabel = ["03", "01", "08", "02"]
+    let secondColorCell: [UInt] = [0x545454, 0xF58278, 0x2C88EC, 0xE5B673]
+    
+    let thirdTitleLabel = ["Défaites", "Victoires", "Points d'expérience", "Quiz"]
+    let thirdNumberLabel = ["02", "58", "9000", "03"]
+    let thirdColorCell: [UInt] = [0x4A7E7A, 0x47D35B, 0xFC5759, 0x3AD3D6]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +49,7 @@ class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return titleLabel.count
+        return secondTitleLabel.count
     }
     
     func UIColorFromRGB(rgbValue: UInt) -> UIColor {
@@ -58,11 +62,23 @@ class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customCell", for: indexPath) as! CustomCollectionViewCell
-        cell.achievementLabel.text = titleLabel[indexPath.row]
-        cell.numberLabel.text = numberLabel[indexPath.row]
-        cell.backgroundColor = self.UIColorFromRGB(rgbValue: colorCell[indexPath.row])
-        return cell
+        if navbarProfil.selectedSegmentIndex == 1 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customCell", for: indexPath) as! CustomCollectionViewCell
+            cell.achievementLabel.text = secondTitleLabel[indexPath.row]
+            cell.numberLabel.text = secondNumberLabel[indexPath.row]
+            cell.backgroundColor = self.UIColorFromRGB(rgbValue: secondColorCell[indexPath.row])
+            cell.layer.cornerRadius = 8
+            
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customCell", for: indexPath) as! CustomCollectionViewCell
+            cell.achievementLabel.text = thirdTitleLabel[indexPath.row]
+            cell.numberLabel.text = thirdNumberLabel[indexPath.row]
+            cell.backgroundColor = self.UIColorFromRGB(rgbValue: thirdColorCell[indexPath.row])
+            cell.layer.cornerRadius = 8
+            
+            return cell
+        }
     }
     
     @IBAction func changeInformations(_ sender: Any) {
@@ -76,12 +92,14 @@ class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollec
             for  label in labels {
                 label.isHidden = true
             }
+            self.achievementCollection.reloadData()
             achievementCollection.isHidden = false
         } else if navbarProfil.selectedSegmentIndex == 2 {
             for  label in labels {
                 label.isHidden = true
             }
-            achievementCollection.isHidden = true
+            self.achievementCollection.reloadData()
+            achievementCollection.isHidden = false
         }
     }
     /**
