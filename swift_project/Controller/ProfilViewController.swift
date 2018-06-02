@@ -27,6 +27,8 @@ class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setUpView()
+        navbarProfil.addUnderlineForSelectedSegment()
         
         achievementCollection.delegate = self
         achievementCollection.dataSource = self
@@ -83,6 +85,7 @@ class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     @IBAction func changeInformations(_ sender: Any) {
         let labels: [UIView] = [usernameLabel, nameLabel, countryLabel, firstnameLabel]
+        self.navbarProfil.changeUnderlinePosition()
         if navbarProfil.selectedSegmentIndex == 0 {
             for  label in labels {
                 label.isHidden = false
@@ -124,5 +127,20 @@ class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollec
     func setUpView() {
         self.editProfil.layer.cornerRadius = 10
         self.editProfil.clipsToBounds = true
+        
+//        let view = UIView(frame: CGRect(x: 0, y: 0, width: 400, height: 100))
+//        self.navbarProfil.backgroundColor = .clear
+//        self.navbarProfil.tintColor = .clear
+//        self.navbarProfil.setTitleTextAttributes([
+//            NSAttributedStringKey.font : UIFont(name: "DINCondensed-Bold", size: 18),
+//            NSAttributedStringKey.foregroundColor: UIColor.black
+//        ], for: .normal)
+//
+//        self.navbarProfil.setTitleTextAttributes([
+//            NSAttributedStringKey.font : UIFont(name: "DINCondensed-Bold", size: 18),
+//            NSAttributedStringKey.foregroundColor: UIColor.orange
+//        ], for: .selected)
+
+        
     }
 }
