@@ -18,11 +18,11 @@ class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var levelLabel: UILabel!
     
     let secondTitleLabel = ["Ligue des champions", "Coupe du monde", "Liga", "Ballons d'or"]
-    let secondNumberLabel = ["03", "01", "08", "02"]
+    var secondNumberLabel = ["03", "01", "08", "02"]
     let secondColorCell: [UInt] = [0x545454, 0xF58278, 0x2C88EC, 0xE5B673]
     
     let thirdTitleLabel = ["Défaites", "Victoires", "Points d'expérience", "Quiz"]
-    let thirdNumberLabel = ["02", "58", "9000", "03"]
+    var thirdNumberLabel = ["02", "58", "", "03"]
     let thirdColorCell: [UInt] = [0x4A7E7A, 0x47D35B, 0xFC5759, 0x3AD3D6]
     
     override func viewDidLoad() {
@@ -36,16 +36,32 @@ class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollec
         ref = Database.database().reference()
         navbarProfil.selectedSegmentIndex = 0
         achievementCollection.isHidden = true
+        ref.child("quiz-user").queryOrdered(byChild: "win").queryEqual(toValue: 0).observeSingleEvent(of: .value, with: { snapshot in
+            self.thirdNumberLabel[0] = String(snapshot.childrenCount)
+        })
+        
+        ref.child("quiz-user").queryOrdered(byChild: "win").queryEqual(toValue: 1).observeSingleEvent(of: .value, with: { snapshot in
+            self.thirdNumberLabel[1] = String(snapshot.childrenCount)
+        })
+
         ref.child("users").child(firebaseAuth.currentUser!.uid).observeSingleEvent(of: .value, with: { (snapshot) in
             
             let value = snapshot.value as? NSDictionary
-            self.usernameLabel.text     = value?["username"] as? String ?? ""
-            self.titleUsernameLabel.text = value?["username"] as? String ?? ""
-            self.nameLabel.text         = value?["name"] as? String ?? ""
-            self.firstnameLabel.text    = value?["firstname"] as? String ?? ""
-            self.countryLabel.text      = value?["country"] as? String ?? ""
             let level = value?["level"] as? Int
+            let experience = value?["experience"] as? Int
+            let username = value?["username"] as? String ?? ""
+            let name = value?["name"] as? String ?? ""
+            let firstname = value?["firstname"] as? String ?? ""
+            let country = value?["country"] as? String ?? ""
+            
+            self.usernameLabel.text = "Pseudo : " + String(username)
+            self.nameLabel.text = "Nom : " + String(name)
+            self.firstnameLabel.text = "Prénom : " + String(firstname)
+            self.countryLabel.text = "Pays : " + String(country)
             self.levelLabel.text = "Niveau " + String(describing: level!)
+            self.thirdNumberLabel[2] = String(describing: experience!)
+            
+            self.titleUsernameLabel.text = value?["username"] as? String ?? ""
             
         })
     }
