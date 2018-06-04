@@ -28,6 +28,7 @@ class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.setUpView()
         navbarProfil.addUnderlineForSelectedSegment()
         
