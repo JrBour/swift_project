@@ -7,6 +7,7 @@ class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollec
     var ref: DatabaseReference!
     
     @IBOutlet weak var achievementCollection: UICollectionView!
+    @IBOutlet weak var navigationBar: UINavigationItem!
     
     @IBOutlet weak var editProfil: UIButton!
     @IBOutlet weak var navbarProfil: UISegmentedControl!
@@ -66,10 +67,20 @@ class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollec
         })
     }
     
+    /**
+    * @param    collectionView              The collection view display in the storyboard
+    * @param    numberOfItemsInSection      The number of items in the collection view
+    * @return Int   The number of cells to display
+    */
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return secondTitleLabel.count
     }
     
+    /**
+    * Transform the UIColor in RGB
+    * @param    rgbValue        The rgb value to change
+    * @return UIColor       The RGB Color transform in UIColor
+    */
     func UIColorFromRGB(rgbValue: UInt) -> UIColor {
         return UIColor(
             red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
@@ -79,6 +90,12 @@ class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollec
         )
     }
     
+    /**
+    * Edit the style of cells in collection view when the user change the segment select
+    * @param    collectionView         The collectoin view insert in the storyboard
+    * @param    indexPath              The index of the current cell
+    * @return   collectionView      Return the collectionView to display
+    */
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if navbarProfil.selectedSegmentIndex == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customCell", for: indexPath) as! CustomCollectionViewCell
@@ -99,9 +116,16 @@ class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
     }
     
+    
+    /**
+    * Change the informations display
+    * @param    Sender      The informations send by the segment controller
+    * @return  void
+    */
     @IBAction func changeInformations(_ sender: Any) {
         let labels: [UIView] = [usernameLabel, nameLabel, countryLabel, firstnameLabel]
         self.navbarProfil.changeUnderlinePosition()
+        
         if navbarProfil.selectedSegmentIndex == 0 {
             for  label in labels {
                 label.isHidden = false
@@ -121,9 +145,10 @@ class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollec
             achievementCollection.isHidden = false
         }
     }
+    
     /**
     * Sign out the current user
-    *
+    * @param    Sender      Contain the action send by the logout button
     */
     @IBAction func logout(_ sender: Any) {
         do {
@@ -137,26 +162,23 @@ class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     /**
+    * Segue to the edit profil storyboard
+    * @param    Sender      Contain the action send by the EditProfil button
+    */
+    @IBAction func editUserProfil(_ sender: Any) {
+        let editStoryboard = UIStoryboard(name: "EditProfil", bundle: nil)
+        let editController = editStoryboard.instantiateViewController(withIdentifier: "EditProfil")
+        
+        self.tabBarController?.present(editController, animated: true)
+    }
+    
+    /**
     * Set up the corener radius of bouton
-    *
+    * @return void
     */
     func setUpView() {
         self.editProfil.layer.cornerRadius = 10
         self.editProfil.clipsToBounds = true
-        
-//        let view = UIView(frame: CGRect(x: 0, y: 0, width: 400, height: 100))
-//        self.navbarProfil.backgroundColor = .clear
-//        self.navbarProfil.tintColor = .clear
-//        self.navbarProfil.setTitleTextAttributes([
-//            NSAttributedStringKey.font : UIFont(name: "DINCondensed-Bold", size: 18),
-//            NSAttributedStringKey.foregroundColor: UIColor.black
-//        ], for: .normal)
-//
-//        self.navbarProfil.setTitleTextAttributes([
-//            NSAttributedStringKey.font : UIFont(name: "DINCondensed-Bold", size: 18),
-//            NSAttributedStringKey.foregroundColor: UIColor.orange
-//        ], for: .selected)
-
-        
+        self.navigationBar.title = "Profil"
     }
 }

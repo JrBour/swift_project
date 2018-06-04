@@ -20,7 +20,7 @@ class TabBarViewController: UITabBarController {
         let secondViewController:UIViewController = secondStoryboard.instantiateViewController(withIdentifier :"HomeView")
         
         let thirdStoryboard:UIStoryboard = UIStoryboard(name: "Profil", bundle: nil)
-        let thirdViewController:UIViewController = thirdStoryboard.instantiateViewController(withIdentifier:"ProfilView")
+        let thirdViewController:UIViewController = thirdStoryboard.instantiateViewController(withIdentifier:"navBarProfil")
         
         self.viewControllers = [firstViewController, secondViewController, thirdViewController]
         self.selectedIndex = 1

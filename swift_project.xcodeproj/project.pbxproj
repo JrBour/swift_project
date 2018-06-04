@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E002CC020C51EFC006C26EC /* EditProfil.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E002CBF20C51EFC006C26EC /* EditProfil.storyboard */; };
+		3E002CC220C523E5006C26EC /* EditProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E002CC120C523E5006C26EC /* EditProfilViewController.swift */; };
+		3E002CC420C53D69006C26EC /* NavigationBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E002CC320C53D69006C26EC /* NavigationBarController.swift */; };
 		3E45D28020BD1DF000E7943E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E45D27F20BD1DF000E7943E /* ViewController.swift */; };
 		3E45D28320BD1DF000E7943E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E45D28120BD1DF000E7943E /* Main.storyboard */; };
 		3E45D28520BD1DF000E7943E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E45D28420BD1DF000E7943E /* Assets.xcassets */; };
@@ -31,6 +34,9 @@
 /* Begin PBXFileReference section */
 		2527345DC87E0679D6299317 /* Pods-swift_project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift_project.release.xcconfig"; path = "Pods/Target Support Files/Pods-swift_project/Pods-swift_project.release.xcconfig"; sourceTree = "<group>"; };
 		384CC7E644E962CEEF7986B1 /* Pods-swift_project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift_project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swift_project/Pods-swift_project.debug.xcconfig"; sourceTree = "<group>"; };
+		3E002CBF20C51EFC006C26EC /* EditProfil.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfil.storyboard; sourceTree = "<group>"; };
+		3E002CC120C523E5006C26EC /* EditProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilViewController.swift; sourceTree = "<group>"; };
+		3E002CC320C53D69006C26EC /* NavigationBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarController.swift; sourceTree = "<group>"; };
 		3E45D27A20BD1DF000E7943E /* swift_project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swift_project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E45D27F20BD1DF000E7943E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3E45D28220BD1DF000E7943E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -111,6 +117,8 @@
 				3EF7400720BDEDA5000A9509 /* RegisterViewController.swift */,
 				3E85FEC020BF2A8500D88CAB /* HomeViewController.swift */,
 				3EBD253A20BF4C55000DEFEA /* TabBarViewController.swift */,
+				3E002CC120C523E5006C26EC /* EditProfilViewController.swift */,
+				3E002CC320C53D69006C26EC /* NavigationBarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -123,6 +131,7 @@
 				3EBD254820BF5BF8000DEFEA /* Classification.storyboard */,
 				3EBD254020BF5951000DEFEA /* Home.storyboard */,
 				3EBD253E20BF582A000DEFEA /* Profil.storyboard */,
+				3E002CBF20C51EFC006C26EC /* EditProfil.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -211,6 +220,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E002CC020C51EFC006C26EC /* EditProfil.storyboard in Resources */,
 				3E45D28820BD1DF000E7943E /* LaunchScreen.storyboard in Resources */,
 				3E45D28520BD1DF000E7943E /* Assets.xcassets in Resources */,
 				3EF7400B20BDF812000A9509 /* GoogleService-Info.plist in Resources */,
@@ -257,7 +267,9 @@
 				3EBB846420C08210007B4C37 /* ProfilViewController.swift in Sources */,
 				3EBB846820C0ACA6007B4C37 /* CustomCollectionViewCell.swift in Sources */,
 				3E45D28020BD1DF000E7943E /* ViewController.swift in Sources */,
+				3E002CC220C523E5006C26EC /* EditProfilViewController.swift in Sources */,
 				3EB34CCC20C078BC00448D49 /* RoundedButton.swift in Sources */,
+				3E002CC420C53D69006C26EC /* NavigationBarController.swift in Sources */,
 				3EBD253B20BF4C55000DEFEA /* TabBarViewController.swift in Sources */,
 				3E85FEC120BF2A8500D88CAB /* HomeViewController.swift in Sources */,
 			);
