@@ -155,7 +155,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="editUserProfil:" destination="dRA-f5-v2d" eventType="touchUpInside" id="Cav-ha-4Qi"/>
+                                    <segue destination="6QG-7q-min" kind="show" identifier="" id="2fL-2g-kRW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -211,6 +211,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FPw-38-jhK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1144.8" y="63.418290854572717"/>
+        </scene>
+        <!--NavBarEditProfilView-->
+        <scene sceneID="1Wp-gW-bWN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EditProfil" referencedIdentifier="NavBarEditProfilView" id="6QG-7q-min" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="APA-e2-m8z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1974" y="-19"/>
         </scene>
         <!--Item-->
         <scene sceneID="YQG-rB-nMa">

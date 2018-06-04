@@ -6,7 +6,6 @@ class RegisterViewController: UIViewController {
     var ref: DatabaseReference!
     var currentUser: Firebase.User?
     let firebaseAuth = Auth.auth()
-    var lastUserId: Int = 0
     
     @IBOutlet weak var nameFIeld: UITextField!
     @IBOutlet weak var firstnameField: UITextField!

@@ -13,7 +13,7 @@
         <!--Item-->
         <scene sceneID="LOZ-lD-y6E">
             <objects>
-                <viewController storyboardIdentifier="HomeView" id="YCW-gk-pPC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeView" id="YCW-gk-pPC" customClass="HomeViewController" customModule="swift_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eur-tA-o9p">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

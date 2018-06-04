@@ -162,17 +162,6 @@ class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     /**
-    * Segue to the edit profil storyboard
-    * @param    Sender      Contain the action send by the EditProfil button
-    */
-    @IBAction func editUserProfil(_ sender: Any) {
-        let editStoryboard = UIStoryboard(name: "EditProfil", bundle: nil)
-        let editController = editStoryboard.instantiateViewController(withIdentifier: "EditProfil")
-        
-        self.tabBarController?.present(editController, animated: true)
-    }
-    
-    /**
     * Set up the corener radius of bouton
     * @return void
     */

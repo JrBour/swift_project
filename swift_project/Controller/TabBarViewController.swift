@@ -1,18 +1,17 @@
-//
-//  TabBarViewController.swift
-//  swift_project
-//
-//  Created by Eswolf on 30/05/2018.
-//  Copyright © 2018 CDJ. All rights reserved.
-//
-
 import UIKit
 
 class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.setUpTabBar()
+    }
+    
+    /**
+    * Set up the tab bar for the separate storyboard
+    * @return void
+    **/
+    func setUpTabBar(){
         let firstStoryboard:UIStoryboard = UIStoryboard(name: "Classification", bundle: nil)
         let firstViewController:UIViewController = firstStoryboard.instantiateViewController(withIdentifier:"ClassificationView")
         
