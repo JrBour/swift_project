@@ -2,9 +2,14 @@ import UIKit
 
 class TabBarViewController: UITabBarController {
 
+    @IBOutlet weak var overallTabBar: UITabBar!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpTabBar()
+        
+        self.overallTabBar.items?[0].title = "Classement"
+        self.overallTabBar.items?[1].title = "Quiz"
+        self.overallTabBar.items?[2].title = "Profil"
     }
     
     /**

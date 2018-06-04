@@ -19,6 +19,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <outlet property="overallTabBar" destination="tNC-8Y-JIU" id="GHo-jz-Wdm"/>
                         <segue destination="IAJ-Gd-r2z" kind="relationship" relationship="viewControllers" id="dRL-gP-29D"/>
                         <segue destination="Ws3-TA-Pgb" kind="relationship" relationship="viewControllers" id="abE-jx-5r4"/>
                         <segue destination="U5p-Ww-q3P" kind="relationship" relationship="viewControllers" id="1W0-wB-IuE"/>
@@ -32,7 +33,7 @@
         <scene sceneID="9Q4-lu-T3B">
             <objects>
                 <viewControllerPlaceholder storyboardIdentifier="navBarProfil" storyboardName="Profil" referencedIdentifier="navBarProfil" id="IAJ-Gd-r2z" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="downloads" id="Bnb-f3-P4J"/>
+                    <tabBarItem key="tabBarItem" title="Classement" id="Bnb-f3-P4J"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4C6-QH-NJ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -42,7 +43,7 @@
         <scene sceneID="iPK-Eu-1dZ">
             <objects>
                 <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="HomeView" id="Ws3-TA-Pgb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="history" id="CfZ-9b-2NC"/>
+                    <tabBarItem key="tabBarItem" title="Quiz" badgeValue="Quiz" id="CfZ-9b-2NC"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V5t-KR-zDu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -68,7 +69,7 @@
         <scene sceneID="SB2-qU-02H">
             <objects>
                 <viewControllerPlaceholder storyboardName="Classification" referencedIdentifier="ClassificationView" id="U5p-Ww-q3P" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="xBf-VU-NG1"/>
+                    <tabBarItem key="tabBarItem" title="Profil" id="xBf-VU-NG1"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NDY-GV-B8w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -1,13 +1,15 @@
-import Firebase
 import UIKit
+import Firebase
+import FirebaseStorage
 
-class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     let firebaseAuth = Auth.auth()
     var ref: DatabaseReference!
     
     @IBOutlet weak var achievementCollection: UICollectionView!
     @IBOutlet weak var navigationBar: UINavigationItem!
+    
     
     @IBOutlet weak var editProfil: UIButton!
     @IBOutlet weak var navbarProfil: UISegmentedControl!
@@ -116,7 +118,6 @@ class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollec
             return cell
         }
     }
-    
     
     /**
     * Change the informations display

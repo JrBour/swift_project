@@ -24,6 +24,7 @@ class EditProfilViewController: UIViewController {
             let value = snapshot.value as? NSDictionary
             self.usernameField.text = value?["username"] as? String ?? ""
             self.nameField.text = value?["name"] as? String ?? ""
+            self.mailField.text = value?["email"] as? String ?? ""
             self.firstNameField.text = value?["firstname"] as? String ?? ""
             self.countryField.text = value?["country"] as? String ?? ""
             

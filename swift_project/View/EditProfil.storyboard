@@ -123,8 +123,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Ancien mot de passe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d67-za-D83">
-                                <rect key="frame" x="59" y="532" width="114" height="14"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ancien mot de passe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d67-za-D83">
+                                <rect key="frame" x="58" y="532" width="114" height="14"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" red="0.97227032229999999" green="0.97920274169999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -182,6 +182,7 @@
                             <constraint firstItem="xR8-fp-ZCb" firstAttribute="width" secondItem="8Da-yn-AIW" secondAttribute="width" multiplier="1:1.45" id="pgH-OC-IiJ"/>
                             <constraint firstItem="hJa-bU-CXE" firstAttribute="top" secondItem="xR8-fp-ZCb" secondAttribute="bottom" constant="18" id="qC9-GU-wED"/>
                             <constraint firstItem="f38-Yb-uLl" firstAttribute="top" secondItem="TRi-ca-RbU" secondAttribute="bottom" constant="12" id="qPG-5U-UlD"/>
+                            <constraint firstItem="d67-za-D83" firstAttribute="leading" secondItem="GFv-SC-rEf" secondAttribute="leading" id="v2z-1e-zSs"/>
                             <constraint firstItem="Hmb-v3-Mp9" firstAttribute="width" secondItem="8Da-yn-AIW" secondAttribute="width" multiplier="1:1.45" id="woF-Lv-mJl"/>
                             <constraint firstItem="u3T-Cf-vuz" firstAttribute="leading" secondItem="kZK-D3-guE" secondAttribute="leading" id="yuS-sP-Cf4"/>
                             <constraint firstItem="Ifx-Ne-QRX" firstAttribute="centerX" secondItem="Opb-ao-TzY" secondAttribute="centerX" id="zZS-bm-4NO"/>

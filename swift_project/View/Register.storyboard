@@ -159,6 +159,19 @@
                                     <action selector="register:" destination="QCJ-Rl-Y72" eventType="touchUpInside" id="ins-bP-3WQ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eoA-bf-XTA">
+                                <rect key="frame" x="47" y="40" width="60" height="30"/>
+                                <state key="normal" title="UPLOAD"/>
+                                <connections>
+                                    <action selector="pickColor:" destination="QCJ-Rl-Y72" eventType="touchUpInside" id="BVS-HK-76B"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JyN-ww-Lhc">
+                                <rect key="frame" x="169" y="26" width="38" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.1215686275" green="0.72549019609999998" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -167,6 +180,7 @@
                             <constraint firstItem="heX-SA-i8P" firstAttribute="bottom" secondItem="E6i-JF-BW0" secondAttribute="bottom" constant="30" id="70q-Ql-l4V"/>
                             <constraint firstItem="U0o-rW-XPd" firstAttribute="top" secondItem="p0J-zb-L3p" secondAttribute="bottom" constant="10" id="9s4-kz-pEr"/>
                             <constraint firstItem="fd2-UF-nx8" firstAttribute="top" secondItem="heX-SA-i8P" secondAttribute="top" constant="70" id="BfV-mc-B8M"/>
+                            <constraint firstItem="JyN-ww-Lhc" firstAttribute="top" secondItem="heX-SA-i8P" secondAttribute="top" constant="6" id="D6f-fq-fq5"/>
                             <constraint firstItem="heX-SA-i8P" firstAttribute="trailing" secondItem="SId-kq-5iG" secondAttribute="trailing" constant="185" id="DbI-I5-HJV"/>
                             <constraint firstItem="U0o-rW-XPd" firstAttribute="centerX" secondItem="heX-SA-i8P" secondAttribute="centerX" id="GIy-sM-fU3"/>
                             <constraint firstItem="SId-kq-5iG" firstAttribute="top" secondItem="fd2-UF-nx8" secondAttribute="bottom" constant="20" id="H9Z-aH-trX"/>
@@ -174,9 +188,11 @@
                             <constraint firstItem="oHr-87-Gdn" firstAttribute="top" secondItem="SId-kq-5iG" secondAttribute="bottom" constant="12" id="LIe-Lu-OeR"/>
                             <constraint firstItem="oHr-87-Gdn" firstAttribute="width" secondItem="mlM-wI-I7b" secondAttribute="width" multiplier="1:1.45" id="MFf-YQ-Tw2"/>
                             <constraint firstItem="Qqe-9d-kng" firstAttribute="leading" secondItem="SId-kq-5iG" secondAttribute="leading" id="Maw-Be-evM"/>
+                            <constraint firstItem="eoA-bf-XTA" firstAttribute="centerX" secondItem="MUc-0Z-NGm" secondAttribute="centerX" id="Mbu-5a-C53"/>
                             <constraint firstItem="3O7-UB-c7q" firstAttribute="leading" secondItem="hub-z6-7KL" secondAttribute="leading" id="Nx0-b8-7vF"/>
                             <constraint firstItem="MUc-0Z-NGm" firstAttribute="leading" secondItem="p0J-zb-L3p" secondAttribute="leading" id="Sjy-4d-e1b"/>
                             <constraint firstItem="p0J-zb-L3p" firstAttribute="top" secondItem="KQs-Im-l33" secondAttribute="bottom" constant="18" id="Sy3-is-cgI"/>
+                            <constraint firstItem="eoA-bf-XTA" firstAttribute="top" secondItem="heX-SA-i8P" secondAttribute="top" constant="20" id="X4Y-Ok-mb6"/>
                             <constraint firstItem="hub-z6-7KL" firstAttribute="leading" secondItem="MUc-0Z-NGm" secondAttribute="leading" id="XI3-qu-eX9"/>
                             <constraint firstItem="Tez-nd-ZzE" firstAttribute="top" secondItem="hub-z6-7KL" secondAttribute="bottom" constant="10" id="XRz-gb-gbJ"/>
                             <constraint firstItem="jkB-Z6-8lF" firstAttribute="top" secondItem="3O7-UB-c7q" secondAttribute="bottom" constant="10" id="XXT-q1-1SI"/>
@@ -184,6 +200,7 @@
                             <constraint firstItem="E6i-JF-BW0" firstAttribute="centerX" secondItem="heX-SA-i8P" secondAttribute="centerX" id="cTA-1X-fZq"/>
                             <constraint firstItem="U0o-rW-XPd" firstAttribute="width" secondItem="mlM-wI-I7b" secondAttribute="width" multiplier="1:1.45" id="gGl-sq-Pf9"/>
                             <constraint firstItem="fd2-UF-nx8" firstAttribute="centerX" secondItem="heX-SA-i8P" secondAttribute="centerX" id="kTS-cj-4Es"/>
+                            <constraint firstItem="JyN-ww-Lhc" firstAttribute="centerX" secondItem="heX-SA-i8P" secondAttribute="centerX" id="lN9-WO-rGe"/>
                             <constraint firstItem="E6i-JF-BW0" firstAttribute="top" secondItem="SOe-AH-Jew" secondAttribute="bottom" constant="8" symbolic="YES" id="mnw-mc-E2b"/>
                             <constraint firstItem="KQs-Im-l33" firstAttribute="centerX" secondItem="heX-SA-i8P" secondAttribute="centerX" id="qQi-CT-THO"/>
                             <constraint firstItem="3O7-UB-c7q" firstAttribute="top" secondItem="Tez-nd-ZzE" secondAttribute="bottom" constant="18" id="qtW-lK-Qo1"/>
@@ -207,6 +224,7 @@
                     <connections>
                         <outlet property="countryField" destination="Tez-nd-ZzE" id="ezX-dL-u71"/>
                         <outlet property="emailField" destination="U0o-rW-XPd" id="PBc-r1-5q2"/>
+                        <outlet property="errorLabel" destination="JyN-ww-Lhc" id="EA3-Dc-e30"/>
                         <outlet property="firstnameField" destination="KQs-Im-l33" id="bug-EC-fAX"/>
                         <outlet property="nameFIeld" destination="oHr-87-Gdn" id="0Zz-gp-jhx"/>
                         <outlet property="passwordField" destination="jkB-Z6-8lF" id="Hnm-Ai-YtY"/>

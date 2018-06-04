@@ -1,11 +1,13 @@
 import UIKit
 import Firebase
+import FirebaseStorage
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     var ref: DatabaseReference!
     var currentUser: Firebase.User?
     let firebaseAuth = Auth.auth()
+    let filename = "earth.jpg"
     
     @IBOutlet weak var nameFIeld: UITextField!
     @IBOutlet weak var firstnameField: UITextField!
@@ -13,15 +15,50 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var pseudoField: UITextField!
     @IBOutlet weak var countryField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var errorLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
+        self.errorLabel.text = ""
         firebaseAuth.addStateDidChangeListener({ (firebaseAuth, user) in
             if user != nil && user != self.currentUser {
                 self.currentUser = user
             }
         })
+    }
+    
+    var imageReference: StorageReference {
+        return Storage.storage().reference().child("images")
+    }
+    
+    @IBAction func pickColor(_ sender: Any) {
+        let myPickerController = UIImagePickerController()
+        myPickerController.delegate = self
+        myPickerController.sourceType =  UIImagePickerControllerSourceType.photoLibrary
+        self.present(myPickerController, animated: true, completion: nil)
+    }
+    
+    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
+        let image_data = info[UIImagePickerControllerOriginalImage] as? UIImage
+        let imageData:Data = UIImagePNGRepresentation(image_data!)!
+        
+        let uploadImageRef = imageReference.child(UUID().uuidString + ".jpg")
+        let uploadTask = uploadImageRef.putData(imageData, metadata: nil) { (metadata, error) in
+            print ("Upload finished")
+            print (metadata ?? "No metadata")
+            print (error ?? "No error")
+        }
+        
+        uploadTask.observe(.progress) { (snapshot) in
+            if ((snapshot.progress) != nil) {
+                self.errorLabel.text = "Upload de l'image en cour, veuillez patienter"
+            } else {
+                print("NO MORE PROGRESS")
+            }
+        }
+        
+        uploadTask.resume()
     }
     
     /**
