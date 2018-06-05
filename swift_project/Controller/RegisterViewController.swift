@@ -15,7 +15,6 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     @IBOutlet weak var pseudoField: UITextField!
     @IBOutlet weak var countryField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var errorLabel: UILabel!
     
     var imageReference: StorageReference {
         return Storage.storage().reference().child("images")
@@ -24,7 +23,6 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
-        self.errorLabel.text = ""
         
         firebaseAuth.addStateDidChangeListener({ (firebaseAuth, user) in
             if user != nil && user != self.currentUser {
