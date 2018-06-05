@@ -7,7 +7,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     var ref: DatabaseReference!
     var currentUser: Firebase.User?
     let firebaseAuth = Auth.auth()
-    let filename = "earth.jpg"
+    var filename = ""
     
     @IBOutlet weak var nameFIeld: UITextField!
     @IBOutlet weak var firstnameField: UITextField!
@@ -17,10 +17,15 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     
+    var imageReference: StorageReference {
+        return Storage.storage().reference().child("images")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
         self.errorLabel.text = ""
+        
         firebaseAuth.addStateDidChangeListener({ (firebaseAuth, user) in
             if user != nil && user != self.currentUser {
                 self.currentUser = user
@@ -28,9 +33,6 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         })
     }
     
-    var imageReference: StorageReference {
-        return Storage.storage().reference().child("images")
-    }
     
     @IBAction func pickColor(_ sender: Any) {
         let myPickerController = UIImagePickerController()
@@ -42,8 +44,9 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
         let image_data = info[UIImagePickerControllerOriginalImage] as? UIImage
         let imageData:Data = UIImagePNGRepresentation(image_data!)!
+        filename = UUID().uuidString + ".jpg"
         
-        let uploadImageRef = imageReference.child(UUID().uuidString + ".jpg")
+        let uploadImageRef = imageReference.child(self.filename)
         let uploadTask = uploadImageRef.putData(imageData, metadata: nil) { (metadata, error) in
             print ("Upload finished")
             print (metadata ?? "No metadata")
@@ -51,11 +54,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         }
         
         uploadTask.observe(.progress) { (snapshot) in
-            if ((snapshot.progress) != nil) {
-                self.errorLabel.text = "Upload de l'image en cour, veuillez patienter"
-            } else {
-                print("NO MORE PROGRESS")
-            }
+            print(snapshot.progress ?? "NO MORE PROGRESS")
         }
         
         uploadTask.resume()
@@ -82,6 +81,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
                         "username" : pseudo,
                         "email" : email,
                         "country" : country,
+                        "picture" : "images/"+self.filename,
                         "level" : 0,
                         "experience" : 0
                     ])

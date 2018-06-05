@@ -55,13 +55,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJY-de-ojS">
-                                <rect key="frame" x="223" y="83" width="109" height="30"/>
-                                <state key="normal" title="Se déconnecter"/>
-                                <connections>
-                                    <action selector="logout:" destination="dRA-f5-v2d" eventType="touchUpInside" id="JAD-wv-TMu"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Biographie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehn-RQ-b4f">
                                 <rect key="frame" x="29" y="405" width="83" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -158,13 +151,24 @@
                                     <segue destination="6QG-7q-min" kind="show" identifier="" id="2fL-2g-kRW"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NnH-MP-q2x">
+                                <rect key="frame" x="92" y="85" width="192" height="81"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJY-de-ojS">
+                                <rect key="frame" x="17" y="291" width="109" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Se déconnecter"/>
+                                <connections>
+                                    <action selector="logout:" destination="dRA-f5-v2d" eventType="touchUpInside" id="JAD-wv-TMu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ehn-RQ-b4f" firstAttribute="top" secondItem="Y2T-Hg-zGH" secondAttribute="bottom" constant="41" id="047-Pr-AgO"/>
+                            <constraint firstItem="dCo-jK-kHX" firstAttribute="top" secondItem="NnH-MP-q2x" secondAttribute="bottom" constant="8" symbolic="YES" id="0Kv-xT-leQ"/>
                             <constraint firstItem="gCL-30-pGS" firstAttribute="top" secondItem="zDf-Rp-aWZ" secondAttribute="bottom" constant="19" id="0mW-Yz-KkN"/>
                             <constraint firstItem="TKf-Fw-gW4" firstAttribute="width" secondItem="Xjp-c0-eh8" secondAttribute="width" multiplier="1:2.35" id="1ep-U0-qlG"/>
-                            <constraint firstItem="UJY-de-ojS" firstAttribute="leading" secondItem="CEN-Qu-58h" secondAttribute="leading" constant="223" id="7ZH-rm-awW"/>
                             <constraint firstItem="Y2T-Hg-zGH" firstAttribute="top" secondItem="TKf-Fw-gW4" secondAttribute="bottom" constant="47" id="7be-93-qJH"/>
                             <constraint firstItem="TKf-Fw-gW4" firstAttribute="top" secondItem="Xjp-c0-eh8" secondAttribute="top" constant="260" id="8H5-xc-nOv"/>
                             <constraint firstItem="5ON-L2-JTm" firstAttribute="centerX" secondItem="CEN-Qu-58h" secondAttribute="centerX" id="9Db-vH-NqJ"/>
@@ -174,11 +178,12 @@
                             <constraint firstAttribute="bottom" secondItem="mBv-Ik-u36" secondAttribute="bottom" constant="105" id="GM2-yw-MhT"/>
                             <constraint firstItem="mBv-Ik-u36" firstAttribute="leading" secondItem="diG-g4-hq8" secondAttribute="leading" id="HYG-ad-vvk"/>
                             <constraint firstItem="mBv-Ik-u36" firstAttribute="top" secondItem="gCL-30-pGS" secondAttribute="bottom" constant="26" id="HcX-AH-FAX"/>
-                            <constraint firstItem="UJY-de-ojS" firstAttribute="top" secondItem="CEN-Qu-58h" secondAttribute="top" constant="19" id="JAD-lo-XI3"/>
                             <constraint firstItem="mBv-Ik-u36" firstAttribute="trailing" secondItem="zDf-Rp-aWZ" secondAttribute="trailing" id="MN9-LB-IqF"/>
                             <constraint firstItem="aTR-hB-LZE" firstAttribute="top" secondItem="dCo-jK-kHX" secondAttribute="bottom" constant="18" id="Nx5-6n-Zxb"/>
+                            <constraint firstItem="NnH-MP-q2x" firstAttribute="centerX" secondItem="CEN-Qu-58h" secondAttribute="centerX" id="QFT-eT-iaS"/>
                             <constraint firstAttribute="bottom" secondItem="5ON-L2-JTm" secondAttribute="bottom" constant="42" id="Qd5-5A-MxK"/>
                             <constraint firstItem="mBv-Ik-u36" firstAttribute="leading" secondItem="ehn-RQ-b4f" secondAttribute="leading" id="UpW-as-ljY"/>
+                            <constraint firstItem="NnH-MP-q2x" firstAttribute="width" secondItem="Xjp-c0-eh8" secondAttribute="width" multiplier="1:1.95" id="VoD-BJ-t79"/>
                             <constraint firstItem="mBv-Ik-u36" firstAttribute="trailing" secondItem="gCL-30-pGS" secondAttribute="trailing" id="Wm6-oq-a5b"/>
                             <constraint firstItem="mBv-Ik-u36" firstAttribute="leading" secondItem="zDf-Rp-aWZ" secondAttribute="leading" id="bam-GG-xbu"/>
                             <constraint firstItem="mBv-Ik-u36" firstAttribute="leading" secondItem="CEN-Qu-58h" secondAttribute="leading" constant="29" id="eEH-yd-Jby"/>
@@ -188,6 +193,7 @@
                             <constraint firstItem="CEN-Qu-58h" firstAttribute="trailing" secondItem="mBv-Ik-u36" secondAttribute="trailing" id="laW-qi-i70"/>
                             <constraint firstItem="5ON-L2-JTm" firstAttribute="top" secondItem="Y2T-Hg-zGH" secondAttribute="bottom" constant="23" id="mhZ-lz-kLU"/>
                             <constraint firstItem="dCo-jK-kHX" firstAttribute="centerX" secondItem="CEN-Qu-58h" secondAttribute="centerX" id="sI8-Ro-EPT"/>
+                            <constraint firstItem="NnH-MP-q2x" firstAttribute="top" secondItem="CEN-Qu-58h" secondAttribute="top" constant="21" id="tHv-ad-9We"/>
                             <constraint firstItem="TKf-Fw-gW4" firstAttribute="centerX" secondItem="CEN-Qu-58h" secondAttribute="centerX" id="tOE-lM-yvi"/>
                             <constraint firstItem="diG-g4-hq8" firstAttribute="top" secondItem="mBv-Ik-u36" secondAttribute="bottom" constant="17" id="wT9-lO-dwb"/>
                             <constraint firstItem="aTR-hB-LZE" firstAttribute="centerX" secondItem="CEN-Qu-58h" secondAttribute="centerX" id="weH-Od-Hwf"/>
@@ -204,6 +210,7 @@
                         <outlet property="nameLabel" destination="gCL-30-pGS" id="kRH-7r-HsU"/>
                         <outlet property="navbarProfil" destination="Y2T-Hg-zGH" id="gjr-o2-dBm"/>
                         <outlet property="navigationBar" destination="eiL-ux-Deq" id="XwH-Wh-CFY"/>
+                        <outlet property="profilPicture" destination="NnH-MP-q2x" id="MbK-0j-cpO"/>
                         <outlet property="titleUsernameLabel" destination="dCo-jK-kHX" id="sAy-6g-Oo6"/>
                         <outlet property="usernameLabel" destination="diG-g4-hq8" id="e4G-9f-xnA"/>
                     </connections>

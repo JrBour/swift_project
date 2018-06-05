@@ -6,10 +6,13 @@ class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollec
 
     let firebaseAuth = Auth.auth()
     var ref: DatabaseReference!
+    var imageReference: StorageReference {
+        return Storage.storage().reference()
+    }
     
     @IBOutlet weak var achievementCollection: UICollectionView!
     @IBOutlet weak var navigationBar: UINavigationItem!
-    
+    @IBOutlet weak var profilPicture: UIImageView!
     
     @IBOutlet weak var editProfil: UIButton!
     @IBOutlet weak var navbarProfil: UISegmentedControl!
@@ -50,6 +53,7 @@ class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollec
 
         ref.child("users").child(firebaseAuth.currentUser!.uid).observeSingleEvent(of: .value, with: { (snapshot) in
             
+            
             let value = snapshot.value as? NSDictionary
             let level = value?["level"] as? Int
             let experience = value?["experience"] as? Int
@@ -57,7 +61,19 @@ class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollec
             let name = value?["name"] as? String ?? ""
             let firstname = value?["firstname"] as? String ?? ""
             let country = value?["country"] as? String ?? ""
+            let picture = value?["picture"] as? String ?? ""
             
+            let pp = self.imageReference.child(picture)
+            pp.getData(maxSize: 15 * 1024 * 1024) { data, error in
+                if let error = error {
+                    print(error)
+                } else {
+                    self.profilPicture.image = UIImage(data: data!)
+                }
+            }
+//            let imageView: UIImageView = self.profilPicture
+//            print(reference)
+
             self.usernameLabel.text = "Pseudo : " + String(username)
             self.nameLabel.text = "Nom : " + String(name)
             self.firstnameLabel.text = "Prénom : " + String(firstname)
