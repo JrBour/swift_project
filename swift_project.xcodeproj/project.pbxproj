@@ -24,6 +24,7 @@
 		3EBD253F20BF582A000DEFEA /* Profil.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EBD253E20BF582A000DEFEA /* Profil.storyboard */; };
 		3EBD254120BF5951000DEFEA /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EBD254020BF5951000DEFEA /* Home.storyboard */; };
 		3EBD254920BF5BF8000DEFEA /* Classification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EBD254820BF5BF8000DEFEA /* Classification.storyboard */; };
+		3EE25A0620C68D6A0026C5C1 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE25A0520C68D6A0026C5C1 /* UIImageExtension.swift */; };
 		3EE2D09420C2B11C009A2FE7 /* segmentedExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2D09320C2B11C009A2FE7 /* segmentedExtension.swift */; };
 		3EF7400620BDED55000A9509 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EF7400520BDED55000A9509 /* Register.storyboard */; };
 		3EF7400820BDEDA5000A9509 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF7400720BDEDA5000A9509 /* RegisterViewController.swift */; };
@@ -53,6 +54,7 @@
 		3EBD253E20BF582A000DEFEA /* Profil.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profil.storyboard; sourceTree = "<group>"; };
 		3EBD254020BF5951000DEFEA /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		3EBD254820BF5BF8000DEFEA /* Classification.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Classification.storyboard; sourceTree = "<group>"; };
+		3EE25A0520C68D6A0026C5C1 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		3EE2D09320C2B11C009A2FE7 /* segmentedExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = segmentedExtension.swift; sourceTree = "<group>"; };
 		3EF7400520BDED55000A9509 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		3EF7400720BDEDA5000A9509 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				3E45D28620BD1DF000E7943E /* LaunchScreen.storyboard */,
 				3E45D28920BD1DF000E7943E /* Info.plist */,
 				3EB34CCB20C078BC00448D49 /* RoundedButton.swift */,
+				3EE25A0520C68D6A0026C5C1 /* UIImageExtension.swift */,
 				3EE2D09320C2B11C009A2FE7 /* segmentedExtension.swift */,
 			);
 			path = swift_project;
@@ -269,6 +272,7 @@
 				3E45D28020BD1DF000E7943E /* ViewController.swift in Sources */,
 				3E002CC220C523E5006C26EC /* EditProfilViewController.swift in Sources */,
 				3EB34CCC20C078BC00448D49 /* RoundedButton.swift in Sources */,
+				3EE25A0620C68D6A0026C5C1 /* UIImageExtension.swift in Sources */,
 				3E002CC420C53D69006C26EC /* NavigationBarController.swift in Sources */,
 				3EBD253B20BF4C55000DEFEA /* TabBarViewController.swift in Sources */,
 				3E85FEC120BF2A8500D88CAB /* HomeViewController.swift in Sources */,

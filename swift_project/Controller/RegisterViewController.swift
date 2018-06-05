@@ -8,6 +8,9 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     var currentUser: Firebase.User?
     let firebaseAuth = Auth.auth()
     var filename = ""
+    var imageReference: StorageReference {
+        return Storage.storage().reference().child("images")
+    }
     
     @IBOutlet weak var nameFIeld: UITextField!
     @IBOutlet weak var firstnameField: UITextField!
@@ -15,10 +18,6 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     @IBOutlet weak var pseudoField: UITextField!
     @IBOutlet weak var countryField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    
-    var imageReference: StorageReference {
-        return Storage.storage().reference().child("images")
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +30,11 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         })
     }
     
-    
+    /**
+    * Select an image for the profil picture
+    * @param    sender      The informations send by the button
+    * @return void
+    */
     @IBAction func pickColor(_ sender: Any) {
         let myPickerController = UIImagePickerController()
         myPickerController.delegate = self
@@ -39,6 +42,12 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         self.present(myPickerController, animated: true, completion: nil)
     }
     
+    /**
+    * This function allow to store the profil picture
+    * @param    picker      The image picker controller
+    * @param    info        The informations on the picture
+    * @return   void
+    */
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
         let image_data = info[UIImagePickerControllerOriginalImage] as? UIImage
         let imageData:Data = UIImagePNGRepresentation(image_data!)!
@@ -60,7 +69,8 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     
     /**
     * Register a new user
-    *
+    * @param       sender       The informations send by the save button
+    * @return       void
     */
     @IBAction func register(_ sender: Any) {
         if let email = self.emailField.text,

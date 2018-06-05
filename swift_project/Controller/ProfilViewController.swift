@@ -2,7 +2,7 @@ import UIKit
 import Firebase
 import FirebaseStorage
 
-class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
 
     let firebaseAuth = Auth.auth()
     var ref: DatabaseReference!
@@ -63,17 +63,15 @@ class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollec
             let country = value?["country"] as? String ?? ""
             let picture = value?["picture"] as? String ?? ""
             
-            let pp = self.imageReference.child(picture)
-            pp.getData(maxSize: 15 * 1024 * 1024) { data, error in
+            let profilPicture = self.imageReference.child(picture)
+            profilPicture.getData(maxSize: 15 * 1024 * 1024) { data, error in
                 if let error = error {
                     print(error)
                 } else {
                     self.profilPicture.image = UIImage(data: data!)
+                    self.profilPicture.maskCircle(anyImage : self.profilPicture.image!)
                 }
             }
-//            let imageView: UIImageView = self.profilPicture
-//            print(reference)
-
             self.usernameLabel.text = "Pseudo : " + String(username)
             self.nameLabel.text = "Nom : " + String(name)
             self.firstnameLabel.text = "Prénom : " + String(firstname)
@@ -184,6 +182,7 @@ class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollec
     * @return void
     */
     func setUpView() {
+        
         self.editProfil.layer.cornerRadius = 10
         self.editProfil.clipsToBounds = true
         self.navigationBar.title = "Profil"
