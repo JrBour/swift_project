@@ -66,6 +66,7 @@ class EditProfilViewController: UIViewController, UIImagePickerControllerDelegat
     * @return   void
     */
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
+        self.dismiss(animated: true, completion: nil)
         let image_data = info[UIImagePickerControllerOriginalImage] as? UIImage
         let imageData:Data = UIImagePNGRepresentation(image_data!)!
         filename = UUID().uuidString + ".jpg"

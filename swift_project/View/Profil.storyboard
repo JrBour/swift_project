@@ -151,17 +151,19 @@
                                     <segue destination="6QG-7q-min" kind="show" identifier="" id="2fL-2g-kRW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJY-de-ojS">
-                                <rect key="frame" x="17" y="291" width="109" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Se déconnecter"/>
-                                <connections>
-                                    <action selector="logout:" destination="dRA-f5-v2d" eventType="touchUpInside" id="JAD-wv-TMu"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NnH-MP-q2x">
                                 <rect key="frame" x="148" y="85" width="81" height="81"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKY-hr-WTr">
+                                <rect key="frame" x="326" y="85" width="27" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="puS-4A-eeE"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="SignOut"/>
+                                <connections>
+                                    <action selector="logout:" destination="dRA-f5-v2d" eventType="touchUpInside" id="OUY-4H-InE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -181,6 +183,7 @@
                             <constraint firstAttribute="bottom" secondItem="mBv-Ik-u36" secondAttribute="bottom" constant="105" id="GM2-yw-MhT"/>
                             <constraint firstItem="mBv-Ik-u36" firstAttribute="leading" secondItem="diG-g4-hq8" secondAttribute="leading" id="HYG-ad-vvk"/>
                             <constraint firstItem="mBv-Ik-u36" firstAttribute="top" secondItem="gCL-30-pGS" secondAttribute="bottom" constant="26" id="HcX-AH-FAX"/>
+                            <constraint firstItem="TKY-hr-WTr" firstAttribute="top" secondItem="NnH-MP-q2x" secondAttribute="top" id="JE7-qP-m5C"/>
                             <constraint firstItem="mBv-Ik-u36" firstAttribute="trailing" secondItem="zDf-Rp-aWZ" secondAttribute="trailing" id="MN9-LB-IqF"/>
                             <constraint firstItem="aTR-hB-LZE" firstAttribute="top" secondItem="dCo-jK-kHX" secondAttribute="bottom" constant="18" id="Nx5-6n-Zxb"/>
                             <constraint firstAttribute="bottom" secondItem="5ON-L2-JTm" secondAttribute="bottom" constant="42" id="Qd5-5A-MxK"/>
@@ -192,7 +195,9 @@
                             <constraint firstItem="Y2T-Hg-zGH" firstAttribute="centerX" secondItem="CEN-Qu-58h" secondAttribute="centerX" id="iB0-Yo-nV4"/>
                             <constraint firstItem="5ON-L2-JTm" firstAttribute="width" secondItem="Xjp-c0-eh8" secondAttribute="width" multiplier="1:1.1" id="knd-uf-Tjn"/>
                             <constraint firstItem="CEN-Qu-58h" firstAttribute="trailing" secondItem="mBv-Ik-u36" secondAttribute="trailing" id="laW-qi-i70"/>
+                            <constraint firstItem="TKY-hr-WTr" firstAttribute="leading" secondItem="NnH-MP-q2x" secondAttribute="trailing" constant="97" id="lnh-mF-npB"/>
                             <constraint firstItem="5ON-L2-JTm" firstAttribute="top" secondItem="Y2T-Hg-zGH" secondAttribute="bottom" constant="23" id="mhZ-lz-kLU"/>
+                            <constraint firstItem="CEN-Qu-58h" firstAttribute="trailing" secondItem="TKY-hr-WTr" secondAttribute="trailing" constant="22" id="nID-qY-hc5"/>
                             <constraint firstItem="dCo-jK-kHX" firstAttribute="centerX" secondItem="CEN-Qu-58h" secondAttribute="centerX" id="sI8-Ro-EPT"/>
                             <constraint firstItem="TKf-Fw-gW4" firstAttribute="centerX" secondItem="CEN-Qu-58h" secondAttribute="centerX" id="tOE-lM-yvi"/>
                             <constraint firstItem="diG-g4-hq8" firstAttribute="top" secondItem="mBv-Ik-u36" secondAttribute="bottom" constant="17" id="wT9-lO-dwb"/>
@@ -247,4 +252,7 @@
             <point key="canvasLocation" x="289" y="63"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="SignOut" width="170" height="167"/>
+    </resources>
 </document>

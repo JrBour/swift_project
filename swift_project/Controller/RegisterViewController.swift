@@ -12,6 +12,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         return Storage.storage().reference().child("images")
     }
     
+    @IBOutlet weak var profilPictureButton: UIButton!
     @IBOutlet weak var nameFIeld: UITextField!
     @IBOutlet weak var firstnameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
@@ -22,6 +23,9 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
+        
+        self.profilPictureButton.layer.cornerRadius = 0.5 * self.profilPictureButton.bounds.size.width
+        self.profilPictureButton.backgroundColor = UIColor(red: 125/255, green: 125/255, blue: 125/255, alpha: 0.3)
         
         firebaseAuth.addStateDidChangeListener({ (firebaseAuth, user) in
             if user != nil && user != self.currentUser {
@@ -35,7 +39,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     * @param    sender      The informations send by the button
     * @return void
     */
-    @IBAction func pickColor(_ sender: Any) {
+    @IBAction func pickPicture(_ sender: Any) {
         let myPickerController = UIImagePickerController()
         myPickerController.delegate = self
         myPickerController.sourceType =  UIImagePickerControllerSourceType.photoLibrary
@@ -49,6 +53,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     * @return   void
     */
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
+        self.dismiss(animated: true, completion: nil)
         let image_data = info[UIImagePickerControllerOriginalImage] as? UIImage
         let imageData:Data = UIImagePNGRepresentation(image_data!)!
         filename = UUID().uuidString + ".jpg"
