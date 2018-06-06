@@ -52,18 +52,10 @@ class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollec
         })
 
         ref.child("users").child(firebaseAuth.currentUser!.uid).observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            
             let value = snapshot.value as? NSDictionary
-            let level = value?["level"] as? Int
-            let experience = value?["experience"] as? Int
-            let username = value?["username"] as? String ?? ""
-            let name = value?["name"] as? String ?? ""
-            let firstname = value?["firstname"] as? String ?? ""
-            let country = value?["country"] as? String ?? ""
-            let picture = value?["picture"] as? String ?? ""
+            let user = User(snapshot : value!)
             
-            let profilPicture = self.imageReference.child(picture)
+            let profilPicture = self.imageReference.child((user?.picture)!)
             profilPicture.getData(maxSize: 15 * 1024 * 1024) { data, error in
                 if let error = error {
                     print(error)
@@ -72,14 +64,13 @@ class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollec
                     self.profilPicture.maskCircle(anyImage : self.profilPicture.image!)
                 }
             }
-            self.usernameLabel.text = "Pseudo : " + String(username)
-            self.nameLabel.text = "Nom : " + String(name)
-            self.firstnameLabel.text = "Prénom : " + String(firstname)
-            self.countryLabel.text = "Pays : " + String(country)
-            self.levelLabel.text = "Niveau " + String(describing: level!)
-            self.thirdNumberLabel[2] = String(describing: experience!)
+            self.usernameLabel.text = "Pseudo : " + (user?.username)!
+            self.nameLabel.text = "Nom : " + (user?.name)!
+            self.firstnameLabel.text = "Prénom : " + (user?.firstname)!
+            self.countryLabel.text = "Pays : " + (user?.country)!
+            self.levelLabel.text = "Niveau " + String((user?.level)!)
             
-            self.titleUsernameLabel.text = value?["username"] as? String ?? ""
+            self.titleUsernameLabel.text = (user?.username)!
             
         })
     }
@@ -182,7 +173,6 @@ class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollec
     * @return void
     */
     func setUpView() {
-        
         self.editProfil.layer.cornerRadius = 10
         self.editProfil.clipsToBounds = true
         self.navigationBar.title = "Profil"

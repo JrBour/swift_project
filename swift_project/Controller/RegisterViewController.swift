@@ -25,7 +25,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         ref = Database.database().reference()
         
         self.profilPictureButton.layer.cornerRadius = 0.5 * self.profilPictureButton.bounds.size.width
-        self.profilPictureButton.backgroundColor = UIColor(red: 125/255, green: 125/255, blue: 125/255, alpha: 0.3)
+        self.profilPictureButton.backgroundColor = UIColor(red: 125/255, green: 125/255, blue: 125/255, alpha: 0.4)
         
         firebaseAuth.addStateDidChangeListener({ (firebaseAuth, user) in
             if user != nil && user != self.currentUser {
