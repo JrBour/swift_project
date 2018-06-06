@@ -47,7 +47,9 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
 
     /**
     * Get the picture by url
-    *
+    * @param URL        The url of picture
+    * @param closure
+    * @return Void
     */
     func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> Data) {
         URLSession.shared.dataTask(with: url) { data, response, error in
