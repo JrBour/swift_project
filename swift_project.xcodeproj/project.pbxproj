@@ -350,7 +350,6 @@
 				3E3BAA7D20C73C1E003659BF /* CustomCollectionViewCell.swift in Sources */,
 				3EBB846420C08210007B4C37 /* ProfilViewController.swift in Sources */,
 				3E28F34B20C867700042E833 /* SearchTableViewController.swift in Sources */,
-				3EE2D09420C2B11C009A2FE7 /* segmentedExtension.swift in Sources */,
 				9D39CEAD20C7C46B000274AF /* QuizViewController.swift in Sources */,
 				9D39CEA920C7C260000274AF /* QuestionBank.swift in Sources */,
 				9D7CA2D320C82BF0007561A5 /* Answer.swift in Sources */,
