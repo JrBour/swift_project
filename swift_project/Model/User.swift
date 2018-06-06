@@ -28,6 +28,5 @@ class User {
             self.experience = experience as? Int ?? 0
             self.level = level as? Int ?? 0
         }
-        
     }
 }

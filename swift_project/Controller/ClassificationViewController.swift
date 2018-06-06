@@ -20,35 +20,8 @@ class ClassificationViewController: UIViewController, UITableViewDelegate, UITab
         super.viewDidLoad()
         
         ref = Database.database().reference()
-        let urlString = "https://private-7af05-jrbour.apiary-mock.com/classification"
-        guard let url = URL(string: urlString) else { return }
         
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            
-            if error != nil {
-                print(error!.localizedDescription)
-            }
-            
-            struct Classification: Decodable {
-                let name : String
-                let points : String
-            }
-            
-            guard let datas = data else { return }
-            do {
-                let array = try JSONDecoder().decode([Classification].self, from: datas)
-                for arr in array {
-                    self.username.append(arr.name)
-                    self.level.append(Int(arr.points)!)
-                }
-                DispatchQueue.main.async {
-                    self.classificationTable?.reloadData()
-                }
-            } catch {
-                debugPrint("Error occurred")
-            }
-            
-        }.resume()
+        self.setDataClassifications()
         
         classificationTable.delegate = self
         classificationTable.dataSource = self
@@ -66,6 +39,18 @@ class ClassificationViewController: UIViewController, UITableViewDelegate, UITab
         ref.child("quiz-user").queryOrdered(byChild: "win").queryEqual(toValue: 1).observeSingleEvent(of: .value, with: { snapshot in
             self.winUserLabel.text = String(snapshot.childrenCount) + " victoires"
         })
+    }
+    
+    /**
+    * Set the data of classifications by retrieve informations in json files
+    * @return Void
+    */
+    func setDataClassifications() -> Void {
+        let classifications = DataMapper.instance.classifications
+        for data in classifications {
+            self.username.append(data.name!)
+            self.level.append(Int(data.points!)!)
+        }
     }
     
     /**
