@@ -59,7 +59,6 @@ class ClassificationViewController: UIViewController, UITableViewDelegate, UITab
     * @return int
     */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(username.count)
         return(username.count)
     }
     

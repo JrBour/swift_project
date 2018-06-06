@@ -25,11 +25,11 @@ class DataMapper {
         }
     }
 
-    var friends: [Classification] {
+    var friends: [Friend] {
         get {
             guard let filePath = Bundle.main.url(forResource: "friend", withExtension: "json") else { return [] }
             let data = try! Data(contentsOf: filePath)
-            return try! JSONDecoder().decode([Classification].self, from: data)
+            return try! JSONDecoder().decode([Friend].self, from: data)
         }
     }
 }

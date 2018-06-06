@@ -7,11 +7,13 @@ class TabBarViewController: UITabBarController {
         super.viewDidLoad()
         self.setUpTabBar()
         
+        // Set the title for each items
         self.overallTabBar.items?[0].title = "Quiz"
         self.overallTabBar.items?[1].title = "Classement"
         self.overallTabBar.items?[2].title = "Profil"
         self.overallTabBar.items?[3].title = "Recherche"
         
+        // Set the icons for each items when they are select/unselect
         self.overallTabBar.items?[0].image = UIImage(named: "Quiz")?.withRenderingMode(.alwaysOriginal)
         self.overallTabBar.items?[0].selectedImage = UIImage(named: "QuizActive")?.withRenderingMode(.alwaysOriginal)
         
@@ -24,17 +26,24 @@ class TabBarViewController: UITabBarController {
         self.overallTabBar.items?[3].image = UIImage(named: "Search")?.withRenderingMode(.alwaysOriginal)
         self.overallTabBar.items?[3].selectedImage = UIImage(named: "SearchActive")?.withRenderingMode(.alwaysOriginal)
         
+        // Set the color for each items when they are select/unselect
         let selectedColor = UIColor(red: 40/255.0, green: 177/255.0, blue: 109/255.0, alpha: 1.0)
+        let unselectedColor = UIColor(red: 71/255.0, green: 71/255.0, blue: 71/255.0, alpha: 1.0)
         
         self.overallTabBar.items?[0].setTitleTextAttributes([NSAttributedStringKey.foregroundColor: selectedColor], for: .selected)
         self.overallTabBar.items?[1].setTitleTextAttributes([NSAttributedStringKey.foregroundColor: selectedColor], for: .selected)
         self.overallTabBar.items?[2].setTitleTextAttributes([NSAttributedStringKey.foregroundColor: selectedColor], for: .selected)
         self.overallTabBar.items?[3].setTitleTextAttributes([NSAttributedStringKey.foregroundColor: selectedColor], for: .selected)
+        
+        self.overallTabBar.items?[0].setTitleTextAttributes([NSAttributedStringKey.foregroundColor: unselectedColor], for: .normal)
+        self.overallTabBar.items?[1].setTitleTextAttributes([NSAttributedStringKey.foregroundColor: unselectedColor], for: .normal)
+        self.overallTabBar.items?[2].setTitleTextAttributes([NSAttributedStringKey.foregroundColor: unselectedColor], for: .normal)
+        self.overallTabBar.items?[3].setTitleTextAttributes([NSAttributedStringKey.foregroundColor: unselectedColor], for: .normal)
     }
     
     /**
     * Set up the tab bar for the separate storyboard
-    * @return void
+    * @return Void
     **/
     func setUpTabBar() -> Void {
         let firstStoryboard:UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
