@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  swift_project
-//
-//  Created by Eswolf on 29/05/2018.
-//  Copyright © 2018 CDJ. All rights reserved.
-//
-
 import UIKit
 import Firebase
 

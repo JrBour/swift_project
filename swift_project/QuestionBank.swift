@@ -3,13 +3,15 @@ import Firebase
 import FirebaseStorage
 
 class QuestionBank {
-    
     var name : String?
     
-    init?(data: Any){
-        let value = data as? NSDictionary
+    init?(data: AnyObject){
+        let snap = data as! DataSnapshot
+        let value = snap.value as! [String: Any]
         
-        if let name = value?["name"] {
+        print(value)
+        if let name = value["question_name"] {
+            print("insertion")
             self.name = name as? String ?? ""
         }
     }

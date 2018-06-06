@@ -15,20 +15,21 @@ class QuizViewController: UIViewController {
     var ref: DatabaseReference!
     var allQuestion: [QuestionBank] = []
     var allAnswer: [Answer] = []
-    var currentQuestionId = Answer.init(data: <#T##Any#>)
+    var question: QuestionBank!
+    //var currentQuestionId = Answer.init(data)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let firstQuestion = allQuestion[0]
-        questionLabel.text = firstQuestion.name
-        
         ref = Database.database().reference()
         
-        ref.child("questions").queryOrdered(byChild: "quiz_id").queryEqual(toValue: 1).observe(.value){ (snapshot) in
+        ref.child("question").queryOrdered(byChild: "quiz_id").queryEqual(toValue: 1).observe(.value){ (snapshot) in
             for data in snapshot.children {
-                self.allQuestion.append(QuestionBank(data: data)!)
+                self.allQuestion.append(QuestionBank(data: data as AnyObject)!)
             }
+            self.question = self.allQuestion[0]
+            self.questionLabel.text = self.question.name
+            print(self.question)
         }
         
         ref.child("answer").queryOrdered(byChild: "question_id").queryEqual(toValue: 1).observe(.value) { (snapshot) in
@@ -90,7 +91,7 @@ class QuizViewController: UIViewController {
         
         // Comparer
        //  CurrentQuestionId and result == true
-        Answer.init(data: <#T##Any#>)
+//        Answer.init(data: <#T##Any#>)
         
     }
     
