@@ -14,7 +14,6 @@
 		3E45D28320BD1DF000E7943E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E45D28120BD1DF000E7943E /* Main.storyboard */; };
 		3E45D28520BD1DF000E7943E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E45D28420BD1DF000E7943E /* Assets.xcassets */; };
 		3E45D28820BD1DF000E7943E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E45D28620BD1DF000E7943E /* LaunchScreen.storyboard */; };
-		3E5D709220BDDC14006896F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5D709120BDDC14006896F3 /* AppDelegate.swift */; };
 		3E85FEC120BF2A8500D88CAB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E85FEC020BF2A8500D88CAB /* HomeViewController.swift */; };
 		3E85FEC320BF2B0000D88CAB /* Tabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E85FEC220BF2B0000D88CAB /* Tabbar.storyboard */; };
 		3EB34CCC20C078BC00448D49 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB34CCB20C078BC00448D49 /* RoundedButton.swift */; };
@@ -28,6 +27,14 @@
 		3EF7400620BDED55000A9509 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EF7400520BDED55000A9509 /* Register.storyboard */; };
 		3EF7400820BDEDA5000A9509 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF7400720BDEDA5000A9509 /* RegisterViewController.swift */; };
 		3EF7400B20BDF812000A9509 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3EF7400A20BDF811000A9509 /* GoogleService-Info.plist */; };
+		9D39CEA520C68B7A000274AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D39CEA420C68B79000274AF /* AppDelegate.swift */; };
+		9D39CEA720C7C240000274AF /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D39CEA620C7C240000274AF /* Question.swift */; };
+		9D39CEA920C7C260000274AF /* QuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D39CEA820C7C260000274AF /* QuestionBank.swift */; };
+		9D39CEAB20C7C414000274AF /* Quiz.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D39CEAA20C7C414000274AF /* Quiz.storyboard */; };
+		9D39CEAD20C7C46B000274AF /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D39CEAC20C7C46B000274AF /* QuizViewController.swift */; };
+		9D7CA2D320C82BF0007561A5 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7CA2D220C82BF0007561A5 /* Answer.swift */; };
+		9D85321620C7DFD900438210 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D85321320C7DFD600438210 /* ProgressHUD.m */; };
+		9D85321720C7DFD900438210 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9D85321520C7DFD800438210 /* ProgressHUD.bundle */; };
 		E3105FDD1E3CD0164D02EB5A /* libPods-swift_project.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E03C75EBC1262261EB23C6C1 /* libPods-swift_project.a */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +50,6 @@
 		3E45D28420BD1DF000E7943E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E45D28720BD1DF000E7943E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E45D28920BD1DF000E7943E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3E5D709120BDDC14006896F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = /Users/Major/Desktop/Cours/HETIC/Swift/swift_project/swift_project/AppDelegate.swift; sourceTree = "<absolute>"; };
 		3E85FEC020BF2A8500D88CAB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3E85FEC220BF2B0000D88CAB /* Tabbar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tabbar.storyboard; sourceTree = "<group>"; };
 		3EB34CCB20C078BC00448D49 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
@@ -57,6 +63,16 @@
 		3EF7400520BDED55000A9509 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		3EF7400720BDEDA5000A9509 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3EF7400A20BDF811000A9509 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9D39CEA420C68B79000274AF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9D39CEA620C7C240000274AF /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Question.swift; path = swift_project/Question.swift; sourceTree = SOURCE_ROOT; };
+		9D39CEA820C7C260000274AF /* QuestionBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuestionBank.swift; path = swift_project/QuestionBank.swift; sourceTree = SOURCE_ROOT; };
+		9D39CEAA20C7C414000274AF /* Quiz.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quiz.storyboard; sourceTree = "<group>"; };
+		9D39CEAC20C7C46B000274AF /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		9D7CA2D220C82BF0007561A5 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Answer.swift; path = swift_project/Controller/Answer.swift; sourceTree = SOURCE_ROOT; };
+		9D85321220C7DFD400438210 /* swift_project-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "swift_project-Bridging-Header.h"; sourceTree = "<group>"; };
+		9D85321320C7DFD600438210 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
+		9D85321420C7DFD700438210 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		9D85321520C7DFD800438210 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
 		E03C75EBC1262261EB23C6C1 /* libPods-swift_project.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-swift_project.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -93,9 +109,9 @@
 		3E45D27C20BD1DF000E7943E /* swift_project */ = {
 			isa = PBXGroup;
 			children = (
+				9D39CEA420C68B79000274AF /* AppDelegate.swift */,
 				3EF7400A20BDF811000A9509 /* GoogleService-Info.plist */,
 				3E5D709420BDDC63006896F3 /* Model */,
-				3E5D709120BDDC14006896F3 /* AppDelegate.swift */,
 				3E45D28120BD1DF000E7943E /* Main.storyboard */,
 				3E5D708F20BDDB72006896F3 /* Controller */,
 				3E5D709320BDDC55006896F3 /* View */,
@@ -104,6 +120,10 @@
 				3E45D28920BD1DF000E7943E /* Info.plist */,
 				3EB34CCB20C078BC00448D49 /* RoundedButton.swift */,
 				3EE2D09320C2B11C009A2FE7 /* segmentedExtension.swift */,
+				9D85321520C7DFD800438210 /* ProgressHUD.bundle */,
+				9D85321420C7DFD700438210 /* ProgressHUD.h */,
+				9D85321320C7DFD600438210 /* ProgressHUD.m */,
+				9D85321220C7DFD400438210 /* swift_project-Bridging-Header.h */,
 			);
 			path = swift_project;
 			sourceTree = "<group>";
@@ -112,13 +132,14 @@
 			isa = PBXGroup;
 			children = (
 				3EBB846720C0ACA6007B4C37 /* CustomCollectionViewCell.swift */,
-				3EBB846320C08210007B4C37 /* ProfilViewController.swift */,
-				3E45D27F20BD1DF000E7943E /* ViewController.swift */,
-				3EF7400720BDEDA5000A9509 /* RegisterViewController.swift */,
-				3E85FEC020BF2A8500D88CAB /* HomeViewController.swift */,
-				3EBD253A20BF4C55000DEFEA /* TabBarViewController.swift */,
 				3E002CC120C523E5006C26EC /* EditProfilViewController.swift */,
+				3E85FEC020BF2A8500D88CAB /* HomeViewController.swift */,
 				3E002CC320C53D69006C26EC /* NavigationBarController.swift */,
+				3EBB846320C08210007B4C37 /* ProfilViewController.swift */,
+				9D39CEAC20C7C46B000274AF /* QuizViewController.swift */,
+				3EF7400720BDEDA5000A9509 /* RegisterViewController.swift */,
+				3EBD253A20BF4C55000DEFEA /* TabBarViewController.swift */,
+				3E45D27F20BD1DF000E7943E /* ViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -132,6 +153,7 @@
 				3EBD254020BF5951000DEFEA /* Home.storyboard */,
 				3EBD253E20BF582A000DEFEA /* Profil.storyboard */,
 				3E002CBF20C51EFC006C26EC /* EditProfil.storyboard */,
+				9D39CEAA20C7C414000274AF /* Quiz.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -139,6 +161,9 @@
 		3E5D709420BDDC63006896F3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9D39CEA620C7C240000274AF /* Question.swift */,
+				9D39CEA820C7C260000274AF /* QuestionBank.swift */,
+				9D7CA2D220C82BF0007561A5 /* Answer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -193,6 +218,7 @@
 				TargetAttributes = {
 					3E45D27920BD1DF000E7943E = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -226,7 +252,9 @@
 				3EF7400B20BDF812000A9509 /* GoogleService-Info.plist in Resources */,
 				3EBD253F20BF582A000DEFEA /* Profil.storyboard in Resources */,
 				3EBD254920BF5BF8000DEFEA /* Classification.storyboard in Resources */,
+				9D39CEAB20C7C414000274AF /* Quiz.storyboard in Resources */,
 				3E85FEC320BF2B0000D88CAB /* Tabbar.storyboard in Resources */,
+				9D85321720C7DFD900438210 /* ProgressHUD.bundle in Resources */,
 				3E45D28320BD1DF000E7943E /* Main.storyboard in Resources */,
 				3EF7400620BDED55000A9509 /* Register.storyboard in Resources */,
 				3EBD254120BF5951000DEFEA /* Home.storyboard in Resources */,
@@ -261,15 +289,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D39CEA520C68B7A000274AF /* AppDelegate.swift in Sources */,
+				9D39CEAD20C7C46B000274AF /* QuizViewController.swift in Sources */,
+				9D39CEA920C7C260000274AF /* QuestionBank.swift in Sources */,
 				3EE2D09420C2B11C009A2FE7 /* segmentedExtension.swift in Sources */,
 				3EF7400820BDEDA5000A9509 /* RegisterViewController.swift in Sources */,
-				3E5D709220BDDC14006896F3 /* AppDelegate.swift in Sources */,
 				3EBB846420C08210007B4C37 /* ProfilViewController.swift in Sources */,
 				3EBB846820C0ACA6007B4C37 /* CustomCollectionViewCell.swift in Sources */,
+				9D7CA2D320C82BF0007561A5 /* Answer.swift in Sources */,
 				3E45D28020BD1DF000E7943E /* ViewController.swift in Sources */,
 				3E002CC220C523E5006C26EC /* EditProfilViewController.swift in Sources */,
 				3EB34CCC20C078BC00448D49 /* RoundedButton.swift in Sources */,
 				3E002CC420C53D69006C26EC /* NavigationBarController.swift in Sources */,
+				9D39CEA720C7C240000274AF /* Question.swift in Sources */,
+				9D85321620C7DFD900438210 /* ProgressHUD.m in Sources */,
 				3EBD253B20BF4C55000DEFEA /* TabBarViewController.swift in Sources */,
 				3E85FEC120BF2A8500D88CAB /* HomeViewController.swift in Sources */,
 			);
@@ -409,11 +442,14 @@
 			baseConfigurationReference = 384CC7E644E962CEEF7986B1 /* Pods-swift_project.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = swift_project/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hetic.dev.swift-project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "swift_project/swift_project-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -424,11 +460,13 @@
 			baseConfigurationReference = 2527345DC87E0679D6299317 /* Pods-swift_project.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = swift_project/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hetic.dev.swift-project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "swift_project/swift_project-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
