@@ -17,6 +17,10 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Rechercher..."
         
+        if let url = URL(string: "http://www.apple.com/euro/ios/ios8/a/generic/images/og.png") {
+            downloadImage(url: url)
+        }
+        
         if let textField = searchController.searchBar.value(forKey: "searchField") as? UITextField {
             if let backgroundview = textField.subviews.first {
                 backgroundview.backgroundColor = UIColor.white
@@ -33,12 +37,27 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
      */
     func setDataClassifications() -> Void {
         let friends = DataMapper.instance.friends
-        print(friends)
         for data in friends {
             self.name.append(data.name!)
             self.firstname.append(data.firstname!)
             self.lose.append(data.lose!)
             self.win.append(data.win!)
+        }
+    }
+
+    /**
+    * Get the picture by url
+    *
+    */
+    func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> Data) {
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            completion(data, response, error)
+            }.resume()
+    }
+    
+    func downloadImage(url: URL) {
+        getDataFromUrl(url: url) { data, response, error in
+            return data!
         }
     }
     
