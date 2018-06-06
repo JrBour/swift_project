@@ -7,26 +7,48 @@ class TabBarViewController: UITabBarController {
         super.viewDidLoad()
         self.setUpTabBar()
         
-        self.overallTabBar.items?[0].title = "Classement"
-        self.overallTabBar.items?[1].title = "Quiz"
+        self.overallTabBar.items?[0].title = "Quiz"
+        self.overallTabBar.items?[1].title = "Classement"
         self.overallTabBar.items?[2].title = "Profil"
+        self.overallTabBar.items?[3].title = "Recherche"
+        
+        self.overallTabBar.items?[0].image = UIImage(named: "Quiz")?.withRenderingMode(.alwaysOriginal)
+        self.overallTabBar.items?[0].selectedImage = UIImage(named: "QuizActive")?.withRenderingMode(.alwaysOriginal)
+        
+        self.overallTabBar.items?[1].image = UIImage(named: "Classification")?.withRenderingMode(.alwaysOriginal)
+        self.overallTabBar.items?[1].selectedImage = UIImage(named: "ClassificationActive")?.withRenderingMode(.alwaysOriginal)
+        
+        self.overallTabBar.items?[2].image = UIImage(named: "Profil")?.withRenderingMode(.alwaysOriginal)
+        self.overallTabBar.items?[2].selectedImage = UIImage(named: "ProfilActive")?.withRenderingMode(.alwaysOriginal)
+        
+        self.overallTabBar.items?[3].image = UIImage(named: "Search")?.withRenderingMode(.alwaysOriginal)
+        self.overallTabBar.items?[3].selectedImage = UIImage(named: "SearchActive")?.withRenderingMode(.alwaysOriginal)
+        
+        let selectedColor = UIColor(red: 40/255.0, green: 177/255.0, blue: 109/255.0, alpha: 1.0)
+        
+        self.overallTabBar.items?[0].setTitleTextAttributes([NSAttributedStringKey.foregroundColor: selectedColor], for: .selected)
+        self.overallTabBar.items?[1].setTitleTextAttributes([NSAttributedStringKey.foregroundColor: selectedColor], for: .selected)
+        self.overallTabBar.items?[2].setTitleTextAttributes([NSAttributedStringKey.foregroundColor: selectedColor], for: .selected)
+        self.overallTabBar.items?[3].setTitleTextAttributes([NSAttributedStringKey.foregroundColor: selectedColor], for: .selected)
     }
     
     /**
     * Set up the tab bar for the separate storyboard
     * @return void
     **/
-    func setUpTabBar(){
-        let firstStoryboard:UIStoryboard = UIStoryboard(name: "Classification", bundle: nil)
-        let firstViewController:UIViewController = firstStoryboard.instantiateViewController(withIdentifier:"ClassificationView")
+    func setUpTabBar() -> Void {
+        let firstStoryboard:UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
+        let firstViewController:UIViewController = firstStoryboard.instantiateViewController(withIdentifier:"HomeView")
         
-        let secondStoryboard:UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
-        let secondViewController:UIViewController = secondStoryboard.instantiateViewController(withIdentifier :"HomeView")
+        let secondStoryboard:UIStoryboard = UIStoryboard(name: "Classification", bundle: nil)
+        let secondViewController:UIViewController = secondStoryboard.instantiateViewController(withIdentifier :"ClassificationView")
         
         let thirdStoryboard:UIStoryboard = UIStoryboard(name: "Profil", bundle: nil)
-        let thirdViewController:UIViewController = thirdStoryboard.instantiateViewController(withIdentifier:"navBarProfil")
+        let thirdViewController:UIViewController = thirdStoryboard.instantiateViewController(withIdentifier:"NavBarProfilView")
         
-        self.viewControllers = [firstViewController, secondViewController, thirdViewController]
-        self.selectedIndex = 1
+        let fourthStoryboard:UIStoryboard = UIStoryboard(name: "Search", bundle: nil)
+        let fourthViewController:UIViewController = fourthStoryboard.instantiateViewController(withIdentifier:"NavBarSearchView")
+        
+        self.viewControllers = [firstViewController, secondViewController, thirdViewController, fourthViewController]
     }
 }

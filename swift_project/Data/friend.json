@@ -1,0 +1,65 @@
+[
+    {
+        "name" : "Chris",
+        "firstname" : "Grady",
+        "win" : 0,
+        "lose" : 12,
+        "picture" : "https://www.fakepersongenerator.com/Face/male/male1084764526123.jpg"
+    },
+    {
+        "name" : "Jason",
+        "firstname" : "Wolfgang",
+        "win" : 20,
+        "lose" : 45,
+        "picture" : "https://www.fakepersongenerator.com/Face/male/male1084764526123.jpg"
+    },
+    {
+        "name" : "Cecelia",
+        "firstname" : "Helms",
+        "win" : 30,
+        "lose" : 50,
+        "picture" : "https://www.fakepersongenerator.com/Face/female/female20161025120266205.jpg"
+    },
+    {
+        "name" : "Connie",
+        "firstname" : "Brock",
+        "win" : 50,
+        "lose" : 20,
+        "picture" : "https://www.fakepersongenerator.com/Face/female/female20151024171913269.jpg"
+    },
+    {
+        "name" : "Emma",
+        "firstname" : "Merlo",
+        "win" : 18,
+        "lose" : 24,
+        "picture" : "https://www.fakepersongenerator.com/Face/female/female201610246152747.jpg"
+    },
+    {
+        "name" : "Deena",
+        "firstname" : "Blackburn",
+        "win" : 7,
+        "lose" : 9,
+        "picture" : "https://www.fakepersongenerator.com/Face/female/female20161024993521973.jpg"
+    },
+    {
+        "name" : "William",
+        "firstname" : "Morse",
+        "win" : 9,
+        "lose" : 2,
+        "picture" : "https://www.fakepersongenerator.com/Face/male/male1084128668091.jpg"
+    },
+    {
+        "name" : "Evelyn",
+        "firstname" : "Moore",
+        "win" :12,
+        "lose" : 5,
+        "picture" : "https://www.fakepersongenerator.com/Face/female/female20131023595277374.jpg"
+    },
+    {
+        "name" : "Michelle",
+        "firstname" : "Olsen",
+        "win" :2,
+        "lose" : 3,
+        "picture" : "https://www.fakepersongenerator.com/Face/female/female1026415164246.jpg"
+    }
+]

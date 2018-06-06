@@ -50,7 +50,7 @@ class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollec
         ref.child("quiz-user").queryOrdered(byChild: "win").queryEqual(toValue: 1).observeSingleEvent(of: .value, with: { snapshot in
             self.thirdNumberLabel[1] = String(snapshot.childrenCount)
         })
-
+            
         ref.child("users").child(firebaseAuth.currentUser!.uid).observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             let user = User(snapshot : value!)

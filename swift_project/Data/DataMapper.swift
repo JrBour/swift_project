@@ -24,24 +24,12 @@ class DataMapper {
             return try! JSONDecoder().decode([Classification].self, from: data)
         }
     }
-    
-//    var categories: [Category] {
-//        get {
-//            guard let filePath = Bundle.main.url(forResource: "categories", withExtension: "json") else {
-//                return []
-//            }
-//            let data = try! Data(contentsOf: filePath)
-//            return try! JSONDecoder().decode([Category].self, from: data)
-//        }
-//    }
-//
-//    var places: [Place] {
-//        get {
-//            guard let filePath = Bundle.main.url(forResource: "places", withExtension: "json") else {
-//                return []
-//            }
-//            let data = try! Data(contentsOf: filePath)
-//            return try! JSONDecoder().decode([Place].self, from: data)
-//        }
-//    }
+
+    var friends: [Classification] {
+        get {
+            guard let filePath = Bundle.main.url(forResource: "friend", withExtension: "json") else { return [] }
+            let data = try! Data(contentsOf: filePath)
+            return try! JSONDecoder().decode([Classification].self, from: data)
+        }
+    }
 }

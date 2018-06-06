@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7zn-dm-DNN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -222,7 +222,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FPw-38-jhK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1144.8" y="63.418290854572717"/>
+            <point key="canvasLocation" x="1484" y="63.418290854572717"/>
         </scene>
         <!--NavBarEditProfilView-->
         <scene sceneID="1Wp-gW-bWN">
@@ -230,13 +230,13 @@
                 <viewControllerPlaceholder storyboardName="EditProfil" referencedIdentifier="NavBarEditProfilView" id="6QG-7q-min" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="APA-e2-m8z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1974" y="-19"/>
+            <point key="canvasLocation" x="2312" y="-19.790104947526238"/>
         </scene>
         <!--Item-->
         <scene sceneID="YQG-rB-nMa">
             <objects>
-                <navigationController storyboardIdentifier="navBarProfil" automaticallyAdjustsScrollViewInsets="NO" id="7zn-dm-DNN" customClass="NavigationBarController" customModule="swift_project" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="a8R-vQ-Zrn"/>
+                <navigationController storyboardIdentifier="NavBarProfilView" automaticallyAdjustsScrollViewInsets="NO" id="7zn-dm-DNN" customClass="NavigationBarController" customModule="swift_project" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="Profil" landscapeImage="Profil" largeContentSizeImage="Profil" selectedImage="ProfilActive" id="a8R-vQ-Zrn"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" restorationIdentifier="navBarProfil" insetsLayoutMarginsFromSafeArea="NO" id="BnI-ZX-BYv">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -249,10 +249,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qG0-Ie-ewR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="289" y="63"/>
+            <point key="canvasLocation" x="740" y="62"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Profil" width="26" height="27"/>
+        <image name="ProfilActive" width="26" height="27"/>
         <image name="SignOut" width="170" height="167"/>
     </resources>
 </document>
