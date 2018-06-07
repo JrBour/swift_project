@@ -5,10 +5,12 @@ import FirebaseStorage
 class SearchTableViewController: UITableViewController, UISearchBarDelegate {
     
     var allUsers: [User] = []
+    var allFriends: [Friend] = []
     var allUsersId: [String] = []
     var win = [2, 5, 9, 0, 3, 5, 9]
     var lose = [10, 4, 8, 4, 2, 9, 1]
     var ref = Database.database().reference()
+    var id: Int = 0
     var imageReference: StorageReference {
         return Storage.storage().reference()
     }
@@ -28,7 +30,31 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
                 let snap = data as! DataSnapshot
                 self.allUsersId.append(snap.key)
             }
-            self.tableView.reloadData()
+            self.ref.child("friends").queryOrdered(byChild: "friendsOne").queryEqual(toValue: Auth.auth().currentUser?.uid).observe(.value) { (snapshot) in
+                
+                for data in snapshot.children {
+                    self.allFriends.append(Friend(data: data as AnyObject)!)
+                }
+                
+                self.allUsersId.filter({(value: String) in
+                    for friend in self.allFriends {
+                        if value == friend.friendTwo{
+                            self.allUsers.remove(at: self.id)
+                            self.id = self.id + 1
+                            return false
+                        }
+                    }
+                    if value == Auth.auth().currentUser?.uid{
+                        self.allUsers.remove(at: self.id)
+                        self.id = self.id + 1
+                        return false
+                    }
+                    self.id = self.id + 1
+                    return true
+                })
+                self.tableView.reloadData()
+            }
+            
         }
     }
     

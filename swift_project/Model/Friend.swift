@@ -1,26 +1,22 @@
 import Foundation
+import Firebase
 
 class Friend: Decodable {
-    var name : String?
-    var firstname : String?
-    var win : Int?
-    var lose : Int?
-    var picture : String?
+    var friendOne: String?
+    var friendTwo: String?
     
     init?(data: AnyObject) {
-        let value = data as? NSDictionary
+        var value = data as? NSDictionary
+        if value == nil {
+            let snap = data as! DataSnapshot
+            value = snap.value as! [String: Any] as NSDictionary
+        }
         
-        if let name = value?["name"],
-            let firstname = value?["firstname"],
-            let win = value?["win"],
-            let lose = value?["lose"],
-            let picture = value?["picture"] {
+        if let friendOne = value?["friendsOne"],
+            let friendTwo = value?["friendsTwo"] {
             
-            self.name = name as? String ?? ""
-            self.firstname = firstname as? String ?? ""
-            self.win = win as? Int ?? 0
-            self.lose = lose as? Int ?? 0
-            self.picture = picture as? String ?? ""
+            self.friendOne = friendOne as? String ?? ""
+            self.friendTwo = friendTwo as? String ?? ""
         }
     }
 }
