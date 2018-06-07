@@ -1,4 +1,5 @@
 import UIKit
+import Firebase
 
 class User {
     var name: String?
@@ -10,7 +11,11 @@ class User {
     var level: Int?
     
     init?(snapshot: AnyObject) {
-        let value = snapshot as? NSDictionary
+        var value = snapshot as? NSDictionary
+        if value == nil {
+            let snap = snapshot as! DataSnapshot
+            value = snap.value as! [String: Any] as NSDictionary
+        }
         
         if let name = value?["name"],
             let firstname = value?["firstname"],
@@ -19,7 +24,7 @@ class User {
             let picture = value?["picture"],
             let experience = value?["experience"],
             let level = value?["level"] {
-            
+
             self.name = name as? String ?? ""
             self.firstname = firstname as? String ?? ""
             self.username = username as? String ?? ""
