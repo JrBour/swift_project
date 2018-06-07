@@ -1,10 +1,23 @@
 import UIKit
 import Firebase
+import FirebaseStorage
 
 class UserFindViewController: UIViewController {
 
     var ref: DatabaseReference!
     var allUsers: [User] = []
+    var user: User!
+    var imageReference: StorageReference {
+        return Storage.storage().reference()
+    }
+    
+    @IBOutlet weak var bottomUsernameLabel: UILabel!
+    @IBOutlet weak var loseLabel: UILabel!
+    @IBOutlet weak var winLabel: UILabel!
+    @IBOutlet weak var levelLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var profilPicture: UIImageView!
+    @IBOutlet weak var beginMatch: RoundButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -14,7 +27,31 @@ class UserFindViewController: UIViewController {
             for data in snapshot.children {
                 self.allUsers.append(User(snapshot: data as AnyObject)!)
             }
-            print(self.allUsers[0].name)
+            
+            let randomUser = arc4random_uniform(UInt32(self.allUsers.count))
+            self.user = self.allUsers[Int(randomUser)]
+            
+            let profilPicture = self.imageReference.child(self.user.picture!)
+            profilPicture.getData(maxSize: 15 * 1024 * 1024) { data, error in
+                if let error = error {
+                    print(error)
+                } else {
+                    self.profilPicture.image = UIImage(data: data!)
+                }
+            }
+            
+            self.ref.child("quiz-user").queryOrdered(byChild: "win").queryEqual(toValue: 0).observeSingleEvent(of: .value, with: { snapshot in
+                self.loseLabel.text = String(snapshot.childrenCount) + " défaites"
+            })
+            
+            self.ref.child("quiz-user").queryOrdered(byChild: "win").queryEqual(toValue: 1).observeSingleEvent(of: .value, with: { snapshot in
+                self.winLabel.text = String(snapshot.childrenCount) + " victoires"
+            })
+            
+            self.bottomUsernameLabel.text = self.user.username
+            self.usernameLabel.text = self.user.username
+            self.levelLabel.text = "Niveau " + String(describing: self.user.level!)
+            
         }
     }
     

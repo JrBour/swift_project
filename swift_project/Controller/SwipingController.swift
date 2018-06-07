@@ -1,6 +1,28 @@
 import UIKit
+import Firebase
 
 class SwipingController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+
+    var ref: DatabaseReference!
+    var currentUser: Firebase.User?
+    let firebaseAuth = Auth.auth()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupBottomControls()
+        collectionView?.backgroundColor = UIColor(red: 4/255, green: 170/255, blue: 92/255, alpha: 1)
+        collectionView?.register(PageCell.self, forCellWithReuseIdentifier: "cellId")
+        collectionView?.isPagingEnabled = true
+        
+        firebaseAuth.addStateDidChangeListener({ (firebaseAuth, user) in
+            if user != nil && user != self.currentUser {
+                self.currentUser = user
+                let homeStoryboard = UIStoryboard(name: "Tabbar", bundle: nil)
+                let homeController = homeStoryboard.instantiateViewController(withIdentifier: "TabBarView")
+                self.present(homeController, animated: true, completion: nil)
+            }
+        })
+    }
     
     let pages = [
         Page(imageName: "bear_first", headerText: "Challengez vos amis", bodyText: "Envoyer des défis sur le foot à vos amis.Ces derniers pourront vous challenger en retour"),
@@ -103,16 +125,4 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
         }
 
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        setupBottomControls()
-        
-        collectionView?.backgroundColor = UIColor(red: 4/255, green: 170/255, blue: 92/255, alpha: 1)
-        collectionView?.register(PageCell.self, forCellWithReuseIdentifier: "cellId")
-        
-        collectionView?.isPagingEnabled = true
-    }
-    
 }

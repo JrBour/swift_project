@@ -126,22 +126,29 @@
                                     <constraint firstAttribute="height" constant="30" id="wQB-Mb-Za1"/>
                                 </constraints>
                             </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yBt-0d-S2q">
+                                <rect key="frame" x="137.5" y="144" width="100" height="100"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.1215686275" green="0.72549019609999998" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="FPB-Fd-NVz" firstAttribute="centerX" secondItem="ZTf-Nx-OLJ" secondAttribute="centerX" id="71o-U6-bZn"/>
                             <constraint firstItem="Fu3-dQ-Ilj" firstAttribute="top" secondItem="TdG-UI-xjH" secondAttribute="bottom" constant="12" id="8go-tF-cTp"/>
+                            <constraint firstItem="yBt-0d-S2q" firstAttribute="width" secondItem="ZTf-Nx-OLJ" secondAttribute="width" id="AgC-DZ-fwP"/>
                             <constraint firstItem="TdG-UI-xjH" firstAttribute="top" secondItem="44L-Wc-6B6" secondAttribute="bottom" constant="120" id="Bwm-wv-sJ7"/>
                             <constraint firstItem="TdG-UI-xjH" firstAttribute="centerX" secondItem="UxP-0R-Ca6" secondAttribute="centerX" id="E9N-p3-Dwe"/>
                             <constraint firstItem="BDd-eo-WHA" firstAttribute="centerX" secondItem="UxP-0R-Ca6" secondAttribute="centerX" id="GCJ-pS-cLj"/>
                             <constraint firstItem="ZTf-Nx-OLJ" firstAttribute="top" secondItem="UxP-0R-Ca6" secondAttribute="top" constant="80" id="Mh4-Xq-Jat"/>
+                            <constraint firstItem="yBt-0d-S2q" firstAttribute="height" secondItem="ZTf-Nx-OLJ" secondAttribute="height" id="Mj7-CN-67M"/>
                             <constraint firstItem="BDd-eo-WHA" firstAttribute="width" secondItem="T63-jz-bbK" secondAttribute="width" id="OkK-V7-Rbr"/>
+                            <constraint firstItem="yBt-0d-S2q" firstAttribute="centerY" secondItem="ZTf-Nx-OLJ" secondAttribute="centerY" id="Oud-qx-7dn"/>
                             <constraint firstItem="UxP-0R-Ca6" firstAttribute="bottom" secondItem="FPB-Fd-NVz" secondAttribute="bottom" id="SEw-BI-Khs"/>
                             <constraint firstItem="44L-Wc-6B6" firstAttribute="centerX" secondItem="UxP-0R-Ca6" secondAttribute="centerX" id="aMX-rt-baI"/>
                             <constraint firstItem="Fu3-dQ-Ilj" firstAttribute="width" secondItem="T63-jz-bbK" secondAttribute="width" multiplier="1:2" id="aSv-d5-TYQ"/>
                             <constraint firstItem="TdG-UI-xjH" firstAttribute="width" secondItem="T63-jz-bbK" secondAttribute="width" multiplier="1:1.5" id="euz-6k-K32"/>
                             <constraint firstItem="44L-Wc-6B6" firstAttribute="width" secondItem="T63-jz-bbK" secondAttribute="width" id="q1F-BV-Y1p"/>
                             <constraint firstItem="BDd-eo-WHA" firstAttribute="top" secondItem="ZTf-Nx-OLJ" secondAttribute="bottom" constant="22" id="qWY-5Y-ci4"/>
+                            <constraint firstItem="yBt-0d-S2q" firstAttribute="centerX" secondItem="ZTf-Nx-OLJ" secondAttribute="centerX" id="qaB-dG-Bk1"/>
                             <constraint firstItem="ZTf-Nx-OLJ" firstAttribute="centerX" secondItem="UxP-0R-Ca6" secondAttribute="centerX" id="rTI-oH-WQT"/>
                             <constraint firstItem="FPB-Fd-NVz" firstAttribute="leading" secondItem="T63-jz-bbK" secondAttribute="leading" id="wkm-eM-5qN"/>
                             <constraint firstItem="44L-Wc-6B6" firstAttribute="top" secondItem="BDd-eo-WHA" secondAttribute="bottom" constant="11" id="wlA-jf-HE2"/>
@@ -157,6 +164,15 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="beginMatch" destination="Fu3-dQ-Ilj" id="A9G-TT-eTI"/>
+                        <outlet property="bottomUsernameLabel" destination="a9i-KD-hbM" id="Ivs-Bx-J0Z"/>
+                        <outlet property="levelLabel" destination="44L-Wc-6B6" id="Xx9-H4-13C"/>
+                        <outlet property="loseLabel" destination="3lM-uE-V4k" id="A8s-VF-XgX"/>
+                        <outlet property="profilPicture" destination="yBt-0d-S2q" id="9wj-zo-67c"/>
+                        <outlet property="usernameLabel" destination="BDd-eo-WHA" id="blc-it-QYN"/>
+                        <outlet property="winLabel" destination="zCm-IO-7f6" id="ep7-gc-jLy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ckp-Rd-g3d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
