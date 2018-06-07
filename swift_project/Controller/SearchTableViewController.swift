@@ -79,7 +79,7 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
      * @return CGFloat
      */
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80.0;//Choose your custom row height
+        return 80.0
     }
     
     /**

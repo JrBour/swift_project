@@ -52,6 +52,11 @@ class EditProfilViewController: UIViewController, UIImagePickerControllerDelegat
         })
     }
     
+    /**
+    * Edit the profil picture for the current user
+    * @param      sender        Informations send by the button while click
+    * @return   Void
+    */
     @IBAction func editProfilPicture(_ sender: Any) {
         let myPickerController = UIImagePickerController()
         myPickerController.delegate = self

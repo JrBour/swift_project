@@ -12,6 +12,7 @@
 		3E002CC420C53D69006C26EC /* NavigationBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E002CC320C53D69006C26EC /* NavigationBarController.swift */; };
 		3E28F34920C84E510042E833 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E28F34820C84E510042E833 /* Search.storyboard */; };
 		3E28F34B20C867700042E833 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E28F34A20C867700042E833 /* SearchTableViewController.swift */; };
+		3E28F35120C892040042E833 /* Classification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EBD254820BF5BF8000DEFEA /* Classification.storyboard */; };
 		3E3BAA7B20C739E4003659BF /* ClassificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3BAA7A20C739E4003659BF /* ClassificationViewController.swift */; };
 		3E3BAA7D20C73C1E003659BF /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3BAA7C20C73C1D003659BF /* CustomCollectionViewCell.swift */; };
 		3E3BAA7F20C73F93003659BF /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3BAA7E20C73F93003659BF /* CustomTableViewCell.swift */; };
@@ -33,6 +34,13 @@
 		3EBD253B20BF4C55000DEFEA /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBD253A20BF4C55000DEFEA /* TabBarViewController.swift */; };
 		3EBD253F20BF582A000DEFEA /* Profil.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EBD253E20BF582A000DEFEA /* Profil.storyboard */; };
 		3EBD254120BF5951000DEFEA /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EBD254020BF5951000DEFEA /* Home.storyboard */; };
+		3ECB3DFA20C9183E00ECC7EE /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB3DF920C9183E00ECC7EE /* Quiz.swift */; };
+		3ECB3DFC20C92C0B00ECC7EE /* FacePlayer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ECB3DFB20C92C0B00ECC7EE /* FacePlayer.storyboard */; };
+		3ECB3DFE20C92C5300ECC7EE /* FacePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB3DFD20C92C5300ECC7EE /* FacePlayerViewController.swift */; };
+		3ECB3E0020C936E100ECC7EE /* SearchUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ECB3DFF20C936E100ECC7EE /* SearchUser.storyboard */; };
+		3ECB3E0220C9371D00ECC7EE /* SearchUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB3E0120C9371D00ECC7EE /* SearchUserViewController.swift */; };
+		3ECB3E0420C93A9600ECC7EE /* UserFind.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ECB3E0320C93A9600ECC7EE /* UserFind.storyboard */; };
+		3ECB3E0620C949C600ECC7EE /* UserFindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB3E0520C949C600ECC7EE /* UserFindViewController.swift */; };
 		3EE25A0620C68D6A0026C5C1 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE25A0520C68D6A0026C5C1 /* UIImageExtension.swift */; };
 		3EE2D09420C2B11C009A2FE7 /* segmentedExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2D09320C2B11C009A2FE7 /* segmentedExtension.swift */; };
 		3EF7400620BDED55000A9509 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EF7400520BDED55000A9509 /* Register.storyboard */; };
@@ -92,6 +100,13 @@
 		3EBD253E20BF582A000DEFEA /* Profil.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profil.storyboard; sourceTree = "<group>"; };
 		3EBD254020BF5951000DEFEA /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		3EBD254820BF5BF8000DEFEA /* Classification.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Classification.storyboard; sourceTree = "<group>"; };
+		3ECB3DF920C9183E00ECC7EE /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
+		3ECB3DFB20C92C0B00ECC7EE /* FacePlayer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FacePlayer.storyboard; sourceTree = "<group>"; };
+		3ECB3DFD20C92C5300ECC7EE /* FacePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacePlayerViewController.swift; sourceTree = "<group>"; };
+		3ECB3DFF20C936E100ECC7EE /* SearchUser.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchUser.storyboard; sourceTree = "<group>"; };
+		3ECB3E0120C9371D00ECC7EE /* SearchUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserViewController.swift; sourceTree = "<group>"; };
+		3ECB3E0320C93A9600ECC7EE /* UserFind.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserFind.storyboard; sourceTree = "<group>"; };
+		3ECB3E0520C949C600ECC7EE /* UserFindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFindViewController.swift; sourceTree = "<group>"; };
 		3EE25A0520C68D6A0026C5C1 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		3EE2D09320C2B11C009A2FE7 /* segmentedExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = segmentedExtension.swift; sourceTree = "<group>"; };
 		3EF7400520BDED55000A9509 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
@@ -131,6 +146,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E28F35020C88FDE0042E833 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				3E5D709120BDDC14006896F3 /* AppDelegate.swift */,
+				9DD3480120C92D7A00D0D46C /* LaunchScreen.storyboard */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		3E45D27120BD1DF000E7943E = {
 			isa = PBXGroup;
 			children = (
@@ -138,7 +162,7 @@
 				3E45D27B20BD1DF000E7943E /* Products */,
 				69AE6BCF6AC097D6D213CEB2 /* Pods */,
 				61D981F7E87E852AAFA3ACAD /* Frameworks */,
-				9D9FE21C20C8A3EB002E7B8F /* Recovered References */,
+				3E28F35020C88FDE0042E833 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -195,6 +219,9 @@
 				3EBD253A20BF4C55000DEFEA /* TabBarViewController.swift */,
 				9D4C4D1C20C918C200494143 /* TutorialViewController.swift */,
 				3E45D27F20BD1DF000E7943E /* ViewController.swift */,
+				3ECB3DFD20C92C5300ECC7EE /* FacePlayerViewController.swift */,
+				3ECB3E0120C9371D00ECC7EE /* SearchUserViewController.swift */,
+				3ECB3E0520C949C600ECC7EE /* UserFindViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -205,13 +232,15 @@
 				3EBD254820BF5BF8000DEFEA /* Classification.storyboard */,
 				3EBD254020BF5951000DEFEA /* Home.storyboard */,
 				3EBD253E20BF582A000DEFEA /* Profil.storyboard */,
-				3EF7400520BDED55000A9509 /* Register.storyboard */,
-				9DD3480120C92D7A00D0D46C /* LaunchScreen.storyboard */,
-				3E85FEC220BF2B0000D88CAB /* Tabbar.storyboard */,
-				3E28F34820C84E510042E833 /* Search.storyboard */,
-				3E002CBF20C51EFC006C26EC /* EditProfil.storyboard */,
 				9D39CEAA20C7C414000274AF /* Quiz.storyboard */,
+				3EF7400520BDED55000A9509 /* Register.storyboard */,
+				3E002CBF20C51EFC006C26EC /* EditProfil.storyboard */,
 				9DD347FD20C9295900D0D46C /* Login.storyboard */,
+				3E28F34820C84E510042E833 /* Search.storyboard */,
+				3E85FEC220BF2B0000D88CAB /* Tabbar.storyboard */,
+				3ECB3DFB20C92C0B00ECC7EE /* FacePlayer.storyboard */,
+				3ECB3DFF20C936E100ECC7EE /* SearchUser.storyboard */,
+				3ECB3E0320C93A9600ECC7EE /* UserFind.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -219,13 +248,14 @@
 		3E5D709420BDDC63006896F3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3E3BAA8020C74AA3003659BF /* User.swift */,
+				9D7CA2D220C82BF0007561A5 /* Answer.swift */,
+				3E8077EB20C823EA00CE8EE8 /* Challenge.swift */,
 				3E8077DE20C7E16900CE8EE8 /* Classification.swift */,
 				3E8077E720C820EB00CE8EE8 /* Friend.swift */,
-				3E8077EB20C823EA00CE8EE8 /* Challenge.swift */,
 				9D39CEA620C7C240000274AF /* Question.swift */,
 				9D39CEA820C7C260000274AF /* QuestionBank.swift */,
-				9D7CA2D220C82BF0007561A5 /* Answer.swift */,
+				3ECB3DF920C9183E00ECC7EE /* Quiz.swift */,
+				3E3BAA8020C74AA3003659BF /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -256,14 +286,6 @@
 				2527345DC87E0679D6299317 /* Pods-swift_project.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		9D9FE21C20C8A3EB002E7B8F /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				3E5D709120BDDC14006896F3 /* AppDelegate.swift */,
-			);
-			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,19 +351,22 @@
 			files = (
 				9DD347FC20C9215300D0D46C /* Classification.storyboard in Resources */,
 				3E002CC020C51EFC006C26EC /* EditProfil.storyboard in Resources */,
+				3ECB3E0420C93A9600ECC7EE /* UserFind.storyboard in Resources */,
 				3E45D28820BD1DF000E7943E /* LaunchScreen.storyboard in Resources */,
 				3E45D28520BD1DF000E7943E /* Assets.xcassets in Resources */,
 				3EF7400B20BDF812000A9509 /* GoogleService-Info.plist in Resources */,
 				3E28F34920C84E510042E833 /* Search.storyboard in Resources */,
 				9DD3480020C92CC800D0D46C /* Main.storyboard in Resources */,
+				3ECB3DFC20C92C0B00ECC7EE /* FacePlayer.storyboard in Resources */,
 				3E8077E420C81C5800CE8EE8 /* classification.json in Resources */,
 				3EBD253F20BF582A000DEFEA /* Profil.storyboard in Resources */,
-				9DD3480220C92D7A00D0D46C /* LaunchScreen.storyboard in Resources */,
 				9DD347FE20C9295900D0D46C /* Login.storyboard in Resources */,
 				3E8077E620C820C300CE8EE8 /* friend.json in Resources */,
 				9D39CEAB20C7C414000274AF /* Quiz.storyboard in Resources */,
 				3E85FEC320BF2B0000D88CAB /* Tabbar.storyboard in Resources */,
 				9D85321720C7DFD900438210 /* ProgressHUD.bundle in Resources */,
+				3ECB3E0020C936E100ECC7EE /* SearchUser.storyboard in Resources */,
+				3E28F35120C892040042E833 /* Classification.storyboard in Resources */,
 				3EF7400620BDED55000A9509 /* Register.storyboard in Resources */,
 				3EBD254120BF5951000DEFEA /* Home.storyboard in Resources */,
 				3E8077EA20C823E200CE8EE8 /* challenge.json in Resources */,
@@ -394,8 +419,10 @@
 				3EB34CCC20C078BC00448D49 /* RoundedButton.swift in Sources */,
 				3E3BAA8120C74AA3003659BF /* User.swift in Sources */,
 				9D4C4D2720C91AAB00494143 /* SwipingController+UICollectionView.swift in Sources */,
+				3ECB3E0620C949C600ECC7EE /* UserFindViewController.swift in Sources */,
 				3EE25A0620C68D6A0026C5C1 /* UIImageExtension.swift in Sources */,
 				3E3BAA7B20C739E4003659BF /* ClassificationViewController.swift in Sources */,
+				3ECB3E0220C9371D00ECC7EE /* SearchUserViewController.swift in Sources */,
 				3E8077DF20C7E16900CE8EE8 /* Classification.swift in Sources */,
 				3E3BAA7F20C73F93003659BF /* CustomTableViewCell.swift in Sources */,
 				9D4C4D1F20C919AD00494143 /* SwipingController.swift in Sources */,
@@ -404,8 +431,10 @@
 				3E002CC420C53D69006C26EC /* NavigationBarController.swift in Sources */,
 				3E8077E820C820EB00CE8EE8 /* Friend.swift in Sources */,
 				9D39CEA720C7C240000274AF /* Question.swift in Sources */,
+				3ECB3DFA20C9183E00ECC7EE /* Quiz.swift in Sources */,
 				9D85321620C7DFD900438210 /* ProgressHUD.m in Sources */,
 				3EBD253B20BF4C55000DEFEA /* TabBarViewController.swift in Sources */,
+				3ECB3DFE20C92C5300ECC7EE /* FacePlayerViewController.swift in Sources */,
 				3E85FEC120BF2A8500D88CAB /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
