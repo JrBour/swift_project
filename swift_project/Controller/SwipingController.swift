@@ -14,26 +14,12 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
         button.setTitleColor(.white, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-        //button.addTarget(self, action: #selector(handlePrev), for: .touchUpInside)
+        button.addTarget(self, action: #selector(buttonClickedRegister), for: .touchUpInside)
         button.layer.borderWidth = 1.0
         button.layer.borderColor = UIColor.white.cgColor
         return button
     }()
     
-//    @objc private func handlePrev() {
-//        let nextIndex = max(pageControl.currentPage - 1, 0)
-//        let indexPath = IndexPath(item: nextIndex, section: 0)
-//        pageControl.currentPage = nextIndex
-//        if pageControl.currentPage == 0 {
-//            self.collectionView?.backgroundColor = UIColor(red: 4/255, green: 170/255, blue: 92/255, alpha: 1)
-//        } else if pageControl.currentPage == 1 {
-//            self.collectionView?.backgroundColor = UIColor(red: 10/255, green: 138/255, blue: 188/255, alpha: 1)
-//        } else if pageControl.currentPage == 2 {
-//            self.collectionView?.backgroundColor = UIColor(red: 215/255, green: 82/255, blue: 45/255, alpha: 1)
-//        }
-//
-//        collectionView?.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-//    }
     
     private let connectButton: UIButton = {
         let button = UIButton(type: .system)
@@ -41,27 +27,38 @@ class SwipingController: UICollectionViewController, UICollectionViewDelegateFlo
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         button.setTitleColor(.white, for: .normal)
-        //button.addTarget(self, action: #selector(handleNext), for: .touchUpInside)
+        button.addTarget(self, action: #selector(buttonClickedLogin), for: .touchUpInside)
         button.layer.borderWidth = 1.0
         button.layer.borderColor = UIColor.white.cgColor
         return button
     }()
     
-//    @objc private func handleNext() {
-//        let nextIndex = min(pageControl.currentPage + 1, pages.count - 1)
-//        let indexPath = IndexPath(item: nextIndex, section: 0)
-//        pageControl.currentPage = nextIndex
-//
-//        if pageControl.currentPage == 0 {
-//            self.collectionView?.backgroundColor = UIColor(red: 4/255, green: 170/255, blue: 92/255, alpha: 1)
-//        } else if pageControl.currentPage == 1 {
-//            self.collectionView?.backgroundColor = UIColor(red: 10/255, green: 255/255, blue: 0/255, alpha: 1)
-//        } else if pageControl.currentPage == 2 {
-//            self.collectionView?.backgroundColor = UIColor(red:255/255, green: 255/255, blue: 0/255, alpha: 1)
-//        }
-//        collectionView?.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-//    }
+    @objc func buttonClickedLogin() {
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = kCATransitionPush
+        transition.subtype = kCATransitionFromRight
+        transition.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
+        self.view.window!.layer.add(transition, forKey: kCATransition)
+        
+        let homeStoryboard = UIStoryboard(name: "Login", bundle: nil)
+        let homeController = homeStoryboard.instantiateViewController(withIdentifier: "LoginView")
+        self.present(homeController, animated: true, completion: nil)
+    }
     
+    @objc func buttonClickedRegister() {
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = kCATransitionPush
+        transition.subtype = kCATransitionFromRight
+        transition.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
+        self.view.window!.layer.add(transition, forKey: kCATransition)
+        
+        let homeStoryboard = UIStoryboard(name: "Register", bundle: nil)
+        let homeController = homeStoryboard.instantiateViewController(withIdentifier: "RegisterView")
+        self.present(homeController, animated: true, completion: nil)
+    }
+        
     lazy var pageControl: UIPageControl = {
         let pc = UIPageControl()
         pc.currentPage = 0

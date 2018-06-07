@@ -4,12 +4,8 @@ class PageCell: UICollectionViewCell {
     
     var page: Page? {
         didSet {
-            //            print(page?.imageName)
-            
             guard let unwrappedPage = page else { return }
-            
             bearImageView.image = UIImage(named: unwrappedPage.imageName)
-            
             let attributedText = NSMutableAttributedString(string: unwrappedPage.headerText, attributes: [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 18)])
             
             attributedText.append(NSAttributedString(string: "\n\n\n\(unwrappedPage.bodyText)", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 13), NSAttributedStringKey.foregroundColor: UIColor.white]))
