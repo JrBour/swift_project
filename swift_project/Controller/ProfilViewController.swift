@@ -26,7 +26,6 @@ class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollec
     let secondTitleLabel = ["Ligue des champions", "Coupe du monde", "Liga", "Ballons d'or"]
     var secondNumberLabel = ["03", "01", "08", "02"]
     let secondColorCell: [UInt] = [0x545454, 0xF58278, 0x2C88EC, 0xE5B673]
-    
     let thirdTitleLabel = ["Défaites", "Victoires", "Points d'expérience", "Quiz"]
     var thirdNumberLabel = ["02", "58", "", "03"]
     let thirdColorCell: [UInt] = [0x4A7E7A, 0x47D35B, 0xFC5759, 0x3AD3D6]
@@ -43,6 +42,11 @@ class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollec
         ref = Database.database().reference()
         navbarProfil.selectedSegmentIndex = 0
         achievementCollection.isHidden = true
+        
+        ref.child("friends").queryOrdered(byChild: "friendsOne").queryEqual(toValue: firebaseAuth.currentUser?.uid).observeSingleEvent(of: .value, with: { snapshot in
+             self.friendButton.setTitle(String(snapshot.childrenCount) + " amis", for: .normal)
+        })
+        
         ref.child("quiz-user").queryOrdered(byChild: "win").queryEqual(toValue: 0).observeSingleEvent(of: .value, with: { snapshot in
             self.thirdNumberLabel[0] = String(snapshot.childrenCount)
         })

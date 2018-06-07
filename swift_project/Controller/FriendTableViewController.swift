@@ -30,6 +30,15 @@ class FriendTableViewController: UITableViewController {
             }
         }
     }
+    
+    /**
+    * Dismiss the friend page and go back to profil page
+    * @param        sender      The informations send by the button
+    * @return   Void
+    */
+    @IBAction func dismissFriendPage(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 
     /**
      * Count the number of cell to display

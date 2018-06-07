@@ -4,8 +4,6 @@ import Firebase
 class QuizViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var scoreLabel: UILabel!
-    @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var progressBarView: UIView!
     @IBOutlet weak var answerCollection: UICollectionView!
     
@@ -27,6 +25,9 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
+        
+        questionLabel.numberOfLines = 10
+        answerCollection.backgroundColor = UIColor.white
         
         ref.child("challenge").observe(.value){ (snapshot) in
             for data in snapshot.children {
@@ -59,7 +60,6 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
                     for data in snapshot.children {
                         self.allAnswer.append(Answer(data: data as AnyObject)!)
                     }
-                    self.progressLabel.text = "\(self.questionNumber) / \(self.allQuestion.count)"
                     self.currentAnswer = self.allAnswer.filter({
                         (value: Answer) in value.questionId == Int(self.keyAnswer[self.questionNumber])
                     })
@@ -80,6 +80,18 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
         return currentAnswer.count
     }
     
+    @IBAction func giveUpQuiz(_ sender: Any) {
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = kCATransitionPush
+        transition.subtype = kCATransitionFromRight
+        transition.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
+        self.view.window!.layer.add(transition, forKey: kCATransition)
+        
+        let homeStoryboard = UIStoryboard(name: "Tabbar", bundle: nil)
+        let homeController = homeStoryboard.instantiateViewController(withIdentifier: "TabBarView")
+        self.present(homeController, animated: true, completion: nil)
+    }
     /**
      * Edit the style of cells in collection view when the user change the segment select
      * @param    collectionView         The collectoin view insert in the storyboard
@@ -89,6 +101,11 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customCell", for: indexPath) as! CustomCollectionViewCell
         cell.answerButton.setTitle(currentAnswer[indexPath.row].answerName,for: .normal)
+        cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1    ).cgColor
+        cell.layer.shadowOffset = CGSize(width: 10, height: 10)
+        cell.layer.shadowRadius = 20
+        cell.layer.shadowOpacity = 1
+        cell.layer.shouldRasterize = true
         cell.layer.cornerRadius = 8
         
         return cell
@@ -113,9 +130,7 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
     * @return Void
     */
     func updateUI() {
-        scoreLabel.text = "Score: \(score)"
-        progressLabel.text = "\(questionNumber + 1) / \(allQuestion.count)"
-        progressBarView.frame.size.width = (self.view.frame.width / 10) * CGFloat(questionNumber + 1)
+        progressBarView.frame.size.width = (self.view.frame.width / CGFloat(self.allQuestion.count)) * CGFloat(questionNumber + 1)
         
     }
     

@@ -84,6 +84,9 @@
                     <navigationItem key="navigationItem" title="Amis" id="sxS-9B-XpX">
                         <barButtonItem key="leftBarButtonItem" image="ChevronLeft" id="tuh-Rq-Xoi">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="dismissFriendPage:" destination="LhB-Js-uSU" id="YD0-lD-f2B"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
