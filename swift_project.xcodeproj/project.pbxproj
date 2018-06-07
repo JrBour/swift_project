@@ -36,6 +36,7 @@
 		3EBD253B20BF4C55000DEFEA /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBD253A20BF4C55000DEFEA /* TabBarViewController.swift */; };
 		3EBD253F20BF582A000DEFEA /* Profil.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EBD253E20BF582A000DEFEA /* Profil.storyboard */; };
 		3EBD254120BF5951000DEFEA /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EBD254020BF5951000DEFEA /* Home.storyboard */; };
+		3ECB3DFA20C9183E00ECC7EE /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB3DF920C9183E00ECC7EE /* Quiz.swift */; };
 		3EE25A0620C68D6A0026C5C1 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE25A0520C68D6A0026C5C1 /* UIImageExtension.swift */; };
 		3EE2D09420C2B11C009A2FE7 /* segmentedExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2D09320C2B11C009A2FE7 /* segmentedExtension.swift */; };
 		3EF7400620BDED55000A9509 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EF7400520BDED55000A9509 /* Register.storyboard */; };
@@ -85,6 +86,7 @@
 		3EBD253E20BF582A000DEFEA /* Profil.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profil.storyboard; sourceTree = "<group>"; };
 		3EBD254020BF5951000DEFEA /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		3EBD254820BF5BF8000DEFEA /* Classification.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Classification.storyboard; sourceTree = "<group>"; };
+		3ECB3DF920C9183E00ECC7EE /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		3EE25A0520C68D6A0026C5C1 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		3EE2D09320C2B11C009A2FE7 /* segmentedExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = segmentedExtension.swift; sourceTree = "<group>"; };
 		3EF7400520BDED55000A9509 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				3E8077E720C820EB00CE8EE8 /* Friend.swift */,
 				9D39CEA620C7C240000274AF /* Question.swift */,
 				9D39CEA820C7C260000274AF /* QuestionBank.swift */,
+				3ECB3DF920C9183E00ECC7EE /* Quiz.swift */,
 				3E3BAA8020C74AA3003659BF /* User.swift */,
 			);
 			path = Model;
@@ -372,6 +375,7 @@
 				3E002CC420C53D69006C26EC /* NavigationBarController.swift in Sources */,
 				3E8077E820C820EB00CE8EE8 /* Friend.swift in Sources */,
 				9D39CEA720C7C240000274AF /* Question.swift in Sources */,
+				3ECB3DFA20C9183E00ECC7EE /* Quiz.swift in Sources */,
 				9D85321620C7DFD900438210 /* ProgressHUD.m in Sources */,
 				3EBD253B20BF4C55000DEFEA /* TabBarViewController.swift in Sources */,
 				3E85FEC120BF2A8500D88CAB /* HomeViewController.swift in Sources */,

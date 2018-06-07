@@ -9,22 +9,24 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var progressBarView: UIView!
     @IBOutlet weak var answerCollection: UICollectionView!
     
-    let firebaseAuth = Auth.auth()
-    var pickedAnswer = false
-    var questionNumber = 0
-    var score: Int = 0
-    var ref: DatabaseReference!
     var allQuestion: [QuestionBank] = []
     var allAnswer: [Answer] = []
     var currentAnswer: [Answer] = []
-    var selectAnswer: String = ""
+    let firebaseAuth = Auth.auth()
     var keyAnswer: [String] = []
+    var pointsByQuestion: Int = 0
     var question: QuestionBank!
+    var questionNumber = 0
+    var quiz: Quiz!
+    var ref: DatabaseReference!
+    var selectAnswer: String = ""
+    var score: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         ref = Database.database().reference()
+        
         
         ref.child("question").queryOrdered(byChild: "quiz_id").queryEqual(toValue: 1).observe(.value){ (snapshot) in
             for data in snapshot.children {
@@ -32,8 +34,17 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 let snap = data as! DataSnapshot
                 self.keyAnswer.append(snap.key)
             }
+            
+            print(self.pointsByQuestion)
             self.question = self.allQuestion[0]
             self.questionLabel.text = self.question.name
+            
+            self.ref.child("quiz").child("1").observeSingleEvent(of: .value, with: { (snapshot) in
+                let value = snapshot.value as? NSDictionary
+                self.quiz = Quiz(data: value!)
+                
+                self.pointsByQuestion = ((self.quiz.points)!/self.allQuestion.count)
+            })
             
             for answer in self.keyAnswer {
                 self.ref.child("answer").queryOrdered(byChild: "question_id").queryEqual(toValue: Int(answer)).observe(.value) { (snapshot) in
@@ -44,14 +55,12 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
                     self.currentAnswer = self.allAnswer.filter({
                         (value: Answer) in value.questionId == Int(self.keyAnswer[self.questionNumber])
                     })
-                    print(self.currentAnswer)
                     self.answerCollection.delegate = self
                     self.answerCollection.dataSource = self
                     self.answerCollection.reloadData()
                 }
             }
         }
-        
     }
     
     /**
@@ -73,7 +82,6 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customCell", for: indexPath) as! CustomCollectionViewCell
         cell.answerButton.setTitle(currentAnswer[indexPath.row].answerName,for: .normal)
         cell.layer.cornerRadius = 8
-        print(currentAnswer[indexPath.row].answerName)
         
         return cell
     }
@@ -87,18 +95,15 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let button = sender as UIButton // as! for Swift 1.2
         selectAnswer = button.titleLabel!.text!
         
-        if sender.tag == 1 {
-            pickedAnswer = true
-        } else if sender.tag == 2 {
-            pickedAnswer = false
-        }
-        
         checkAnswer()
         questionNumber = questionNumber + 1
         nextQuestion()
     }
     
-    
+    /**
+    * Update the storyboard
+    * @return Void
+    */
     func updateUI() {
         scoreLabel.text = "Score: \(score)"
         progressLabel.text = "\(questionNumber + 1) / \(allQuestion.count)"
@@ -106,20 +111,23 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
     }
     
-    func nextQuestion() {
+    /**
+    * Checks whether or not there are any questions left
+    * @return Void
+    */
+    func nextQuestion() -> Void {
         if questionNumber < allQuestion.count {
             self.currentAnswer = self.allAnswer.filter({
                 (value: Answer) in value.questionId == Int(self.keyAnswer[self.questionNumber])
             })
-            print(self.currentAnswer)
-            self.answerCollection.reloadData()
             
+            self.answerCollection.reloadData()
             questionLabel.text = allQuestion[questionNumber].name
             updateUI()
         } else {
             let alert = UIAlertController(title: "Quiz terminé", message: "Voulez-vous recommencer le quiz ?", preferredStyle: .alert)
             let restartAction = UIAlertAction(title: "Recommencer ?", style: .default) { (alertAction) in
-                self.restart()
+                print("nope")
             }
             alert.addAction(restartAction)
             present(alert, animated: true, completion: nil)
@@ -136,17 +144,10 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
         })
         
         if correctAnswer[0].answerName == selectAnswer {
+            self.score = self.score + self.pointsByQuestion
             print("bonne réponse")
         } else {
             print("mauvais réponse")
         }
     }
-    
-    func restart() {
-        questionNumber = 0
-        score = 0
-        nextQuestion()
-    }
-    
-    
 }
