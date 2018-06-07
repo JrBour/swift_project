@@ -37,6 +37,10 @@
 		3EBD253F20BF582A000DEFEA /* Profil.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EBD253E20BF582A000DEFEA /* Profil.storyboard */; };
 		3EBD254120BF5951000DEFEA /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EBD254020BF5951000DEFEA /* Home.storyboard */; };
 		3ECB3DFA20C9183E00ECC7EE /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB3DF920C9183E00ECC7EE /* Quiz.swift */; };
+		3ECB3DFC20C92C0B00ECC7EE /* FacePlayer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ECB3DFB20C92C0B00ECC7EE /* FacePlayer.storyboard */; };
+		3ECB3DFE20C92C5300ECC7EE /* FacePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB3DFD20C92C5300ECC7EE /* FacePlayerViewController.swift */; };
+		3ECB3E0020C936E100ECC7EE /* SearchUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ECB3DFF20C936E100ECC7EE /* SearchUser.storyboard */; };
+		3ECB3E0220C9371D00ECC7EE /* SearchUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB3E0120C9371D00ECC7EE /* SearchUserViewController.swift */; };
 		3EE25A0620C68D6A0026C5C1 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE25A0520C68D6A0026C5C1 /* UIImageExtension.swift */; };
 		3EE2D09420C2B11C009A2FE7 /* segmentedExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2D09320C2B11C009A2FE7 /* segmentedExtension.swift */; };
 		3EF7400620BDED55000A9509 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EF7400520BDED55000A9509 /* Register.storyboard */; };
@@ -87,6 +91,10 @@
 		3EBD254020BF5951000DEFEA /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		3EBD254820BF5BF8000DEFEA /* Classification.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Classification.storyboard; sourceTree = "<group>"; };
 		3ECB3DF920C9183E00ECC7EE /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
+		3ECB3DFB20C92C0B00ECC7EE /* FacePlayer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FacePlayer.storyboard; sourceTree = "<group>"; };
+		3ECB3DFD20C92C5300ECC7EE /* FacePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacePlayerViewController.swift; sourceTree = "<group>"; };
+		3ECB3DFF20C936E100ECC7EE /* SearchUser.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchUser.storyboard; sourceTree = "<group>"; };
+		3ECB3E0120C9371D00ECC7EE /* SearchUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserViewController.swift; sourceTree = "<group>"; };
 		3EE25A0520C68D6A0026C5C1 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		3EE2D09320C2B11C009A2FE7 /* segmentedExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = segmentedExtension.swift; sourceTree = "<group>"; };
 		3EF7400520BDED55000A9509 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
@@ -183,6 +191,8 @@
 				3E28F34A20C867700042E833 /* SearchTableViewController.swift */,
 				3EBD253A20BF4C55000DEFEA /* TabBarViewController.swift */,
 				3E45D27F20BD1DF000E7943E /* ViewController.swift */,
+				3ECB3DFD20C92C5300ECC7EE /* FacePlayerViewController.swift */,
+				3ECB3E0120C9371D00ECC7EE /* SearchUserViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -198,6 +208,8 @@
 				3EF7400520BDED55000A9509 /* Register.storyboard */,
 				3E28F34820C84E510042E833 /* Search.storyboard */,
 				3E85FEC220BF2B0000D88CAB /* Tabbar.storyboard */,
+				3ECB3DFB20C92C0B00ECC7EE /* FacePlayer.storyboard */,
+				3ECB3DFF20C936E100ECC7EE /* SearchUser.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -311,6 +323,7 @@
 				3E45D28520BD1DF000E7943E /* Assets.xcassets in Resources */,
 				3EF7400B20BDF812000A9509 /* GoogleService-Info.plist in Resources */,
 				3E28F34920C84E510042E833 /* Search.storyboard in Resources */,
+				3ECB3DFC20C92C0B00ECC7EE /* FacePlayer.storyboard in Resources */,
 				3E8077E420C81C5800CE8EE8 /* classification.json in Resources */,
 				3EBD253F20BF582A000DEFEA /* Profil.storyboard in Resources */,
 				3E8077E620C820C300CE8EE8 /* friend.json in Resources */,
@@ -318,6 +331,7 @@
 				3E85FEC320BF2B0000D88CAB /* Tabbar.storyboard in Resources */,
 				9D85321720C7DFD900438210 /* ProgressHUD.bundle in Resources */,
 				3E45D28320BD1DF000E7943E /* Main.storyboard in Resources */,
+				3ECB3E0020C936E100ECC7EE /* SearchUser.storyboard in Resources */,
 				3E28F35120C892040042E833 /* Classification.storyboard in Resources */,
 				3EF7400620BDED55000A9509 /* Register.storyboard in Resources */,
 				3EBD254120BF5951000DEFEA /* Home.storyboard in Resources */,
@@ -370,6 +384,7 @@
 				3E3BAA8120C74AA3003659BF /* User.swift in Sources */,
 				3EE25A0620C68D6A0026C5C1 /* UIImageExtension.swift in Sources */,
 				3E3BAA7B20C739E4003659BF /* ClassificationViewController.swift in Sources */,
+				3ECB3E0220C9371D00ECC7EE /* SearchUserViewController.swift in Sources */,
 				3E8077DF20C7E16900CE8EE8 /* Classification.swift in Sources */,
 				3E3BAA7F20C73F93003659BF /* CustomTableViewCell.swift in Sources */,
 				3E002CC420C53D69006C26EC /* NavigationBarController.swift in Sources */,
@@ -378,6 +393,7 @@
 				3ECB3DFA20C9183E00ECC7EE /* Quiz.swift in Sources */,
 				9D85321620C7DFD900438210 /* ProgressHUD.m in Sources */,
 				3EBD253B20BF4C55000DEFEA /* TabBarViewController.swift in Sources */,
+				3ECB3DFE20C92C5300ECC7EE /* FacePlayerViewController.swift in Sources */,
 				3E85FEC120BF2A8500D88CAB /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -145,9 +145,6 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         if correctAnswer[0].answerName == selectAnswer {
             self.score = self.score + self.pointsByQuestion
-            print("bonne réponse")
-        } else {
-            print("mauvais réponse")
         }
     }
 }
