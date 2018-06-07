@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  swift_project
-//
-//  Created by Eswolf on 29/05/2018.
-//  Copyright © 2018 CDJ. All rights reserved.
-//
-
 import UIKit
 import Firebase
 
@@ -22,6 +14,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         ref = Database.database().reference()
+        
+        // this is how we build out our app in code
+        window = UIWindow()
+        window?.makeKeyAndVisible()
+        
+        //        let randomViewController = UIViewController()
+        //        randomViewController.view.backgroundColor = .purple
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let swipingController = SwipingController(collectionViewLayout: layout)
+        
+        window?.rootViewController = swipingController
+        
         return true
     }
 
