@@ -63,7 +63,6 @@
 		9DD347FC20C9215300D0D46C /* Classification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EBD254820BF5BF8000DEFEA /* Classification.storyboard */; };
 		9DD347FE20C9295900D0D46C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DD347FD20C9295900D0D46C /* Login.storyboard */; };
 		9DD3480020C92CC800D0D46C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DD347FF20C92CC800D0D46C /* Main.storyboard */; };
-		9DD3480220C92D7A00D0D46C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DD3480120C92D7A00D0D46C /* LaunchScreen.storyboard */; };
 		E3105FDD1E3CD0164D02EB5A /* libPods-swift_project.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E03C75EBC1262261EB23C6C1 /* libPods-swift_project.a */; };
 /* End PBXBuildFile section */
 
@@ -230,16 +229,16 @@
 			isa = PBXGroup;
 			children = (
 				3EBD254820BF5BF8000DEFEA /* Classification.storyboard */,
+				3E002CBF20C51EFC006C26EC /* EditProfil.storyboard */,
+				3ECB3DFB20C92C0B00ECC7EE /* FacePlayer.storyboard */,
 				3EBD254020BF5951000DEFEA /* Home.storyboard */,
+				9DD347FD20C9295900D0D46C /* Login.storyboard */,
 				3EBD253E20BF582A000DEFEA /* Profil.storyboard */,
 				9D39CEAA20C7C414000274AF /* Quiz.storyboard */,
 				3EF7400520BDED55000A9509 /* Register.storyboard */,
-				3E002CBF20C51EFC006C26EC /* EditProfil.storyboard */,
-				9DD347FD20C9295900D0D46C /* Login.storyboard */,
 				3E28F34820C84E510042E833 /* Search.storyboard */,
-				3E85FEC220BF2B0000D88CAB /* Tabbar.storyboard */,
-				3ECB3DFB20C92C0B00ECC7EE /* FacePlayer.storyboard */,
 				3ECB3DFF20C936E100ECC7EE /* SearchUser.storyboard */,
+				3E85FEC220BF2B0000D88CAB /* Tabbar.storyboard */,
 				3ECB3E0320C93A9600ECC7EE /* UserFind.storyboard */,
 			);
 			path = View;

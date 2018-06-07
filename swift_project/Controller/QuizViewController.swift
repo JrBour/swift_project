@@ -14,6 +14,8 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var currentAnswer: [Answer] = []
     let firebaseAuth = Auth.auth()
     var keyAnswer: [String] = []
+    var lastKeyChallenge: String = ""
+    var idReceipter: String = ""
     var pointsByQuestion: Int = 0
     var question: QuestionBank!
     var questionNumber = 0
@@ -25,6 +27,14 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
+        
+        ref.child("challenge").observe(.value){ (snapshot) in
+            for data in snapshot.children {
+                let snap = data as! DataSnapshot
+                self.lastKeyChallenge = snap.key
+            }
+            print(self.lastKeyChallenge)
+        }
         
         ref.child("question").queryOrdered(byChild: "quiz_id").queryEqual(toValue: 1).observe(.value){ (snapshot) in
             for data in snapshot.children {
@@ -123,9 +133,22 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
             questionLabel.text = allQuestion[questionNumber].name
             updateUI()
         } else {
-            let alert = UIAlertController(title: "Quiz terminé", message: "Voulez-vous recommencer le quiz ?", preferredStyle: .alert)
-            let restartAction = UIAlertAction(title: "Recommencer ?", style: .default) { (alertAction) in
-                print("nope")
+            let id = Int(self.lastKeyChallenge)! + 1
+            self.ref.child("challenge").child(String(id)).setValue([
+                "sender" : self.firebaseAuth.currentUser!.uid,
+                "receipter" : self.idReceipter,
+                "senderPoints" : self.score,
+                "receipterPoints" : "",
+                "quizId" : 1,
+                "win" : "",
+                "complete" : false
+                ])
+            
+            let alert = UIAlertController(title: "Quiz terminé", message: "Votre score est de \(score), l'invitation au défis a bien été envoyé a votre adversaire", preferredStyle: .alert)
+            let restartAction = UIAlertAction(title: "Ok", style: .default) { (alertAction) in
+                let homeStoryboard = UIStoryboard(name: "Tabbar", bundle: nil)
+                let homeController = homeStoryboard.instantiateViewController(withIdentifier: "TabBarView")
+                self.present(homeController, animated: true, completion: nil)
             }
             alert.addAction(restartAction)
             present(alert, animated: true, completion: nil)

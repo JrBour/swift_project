@@ -6,6 +6,8 @@ class UserFindViewController: UIViewController {
 
     var ref: DatabaseReference!
     var allUsers: [User] = []
+    var allKey: [String] = []
+    var currentIdReceipter: String!
     var user: User!
     var imageReference: StorageReference {
         return Storage.storage().reference()
@@ -26,10 +28,13 @@ class UserFindViewController: UIViewController {
         ref.child("users").observe(.value) { (snapshot) in
             for data in snapshot.children {
                 self.allUsers.append(User(snapshot: data as AnyObject)!)
+                let snap = data as! DataSnapshot
+                self.allKey.append(snap.key)
             }
             
             let randomUser = arc4random_uniform(UInt32(self.allUsers.count))
             self.user = self.allUsers[Int(randomUser)]
+            self.currentIdReceipter = self.allKey[Int(randomUser)]
             
             let profilPicture = self.imageReference.child(self.user.picture!)
             profilPicture.getData(maxSize: 15 * 1024 * 1024) { data, error in
@@ -60,13 +65,16 @@ class UserFindViewController: UIViewController {
         let transition = CATransition()
         transition.duration = 0.5
         transition.type = kCATransitionPush
-        transition.subtype = kCATransitionFromLeft
+        transition.subtype = kCATransitionFromRight
         transition.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
         self.view.window!.layer.add(transition, forKey: kCATransition)
         
-        let homeStoryboard = UIStoryboard(name: "Quiz", bundle: nil)
-        let homeController = homeStoryboard.instantiateViewController(withIdentifier: "QuizView")
-        self.present(homeController, animated: true, completion: nil)
+        let quizStoryboard = UIStoryboard(name: "Quiz", bundle: nil)
+        let homeController = quizStoryboard.instantiateViewController(withIdentifier: "QuizView")
+        
+        let myVC = quizStoryboard.instantiateViewController(withIdentifier: "QuizView") as! QuizViewController
+        myVC.idReceipter = self.currentIdReceipter
+        self.present(myVC, animated: true, completion: nil)
     }
     
     @IBAction func goBackToFacePlayer(_ sender: Any) {
