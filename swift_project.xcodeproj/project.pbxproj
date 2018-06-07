@@ -41,6 +41,8 @@
 		3ECB3DFE20C92C5300ECC7EE /* FacePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB3DFD20C92C5300ECC7EE /* FacePlayerViewController.swift */; };
 		3ECB3E0020C936E100ECC7EE /* SearchUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ECB3DFF20C936E100ECC7EE /* SearchUser.storyboard */; };
 		3ECB3E0220C9371D00ECC7EE /* SearchUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB3E0120C9371D00ECC7EE /* SearchUserViewController.swift */; };
+		3ECB3E0420C93A9600ECC7EE /* UserFind.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ECB3E0320C93A9600ECC7EE /* UserFind.storyboard */; };
+		3ECB3E0620C949C600ECC7EE /* UserFindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB3E0520C949C600ECC7EE /* UserFindViewController.swift */; };
 		3EE25A0620C68D6A0026C5C1 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE25A0520C68D6A0026C5C1 /* UIImageExtension.swift */; };
 		3EE2D09420C2B11C009A2FE7 /* segmentedExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2D09320C2B11C009A2FE7 /* segmentedExtension.swift */; };
 		3EF7400620BDED55000A9509 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EF7400520BDED55000A9509 /* Register.storyboard */; };
@@ -95,6 +97,8 @@
 		3ECB3DFD20C92C5300ECC7EE /* FacePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacePlayerViewController.swift; sourceTree = "<group>"; };
 		3ECB3DFF20C936E100ECC7EE /* SearchUser.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchUser.storyboard; sourceTree = "<group>"; };
 		3ECB3E0120C9371D00ECC7EE /* SearchUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserViewController.swift; sourceTree = "<group>"; };
+		3ECB3E0320C93A9600ECC7EE /* UserFind.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserFind.storyboard; sourceTree = "<group>"; };
+		3ECB3E0520C949C600ECC7EE /* UserFindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFindViewController.swift; sourceTree = "<group>"; };
 		3EE25A0520C68D6A0026C5C1 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		3EE2D09320C2B11C009A2FE7 /* segmentedExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = segmentedExtension.swift; sourceTree = "<group>"; };
 		3EF7400520BDED55000A9509 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
@@ -193,6 +197,7 @@
 				3E45D27F20BD1DF000E7943E /* ViewController.swift */,
 				3ECB3DFD20C92C5300ECC7EE /* FacePlayerViewController.swift */,
 				3ECB3E0120C9371D00ECC7EE /* SearchUserViewController.swift */,
+				3ECB3E0520C949C600ECC7EE /* UserFindViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 				3E85FEC220BF2B0000D88CAB /* Tabbar.storyboard */,
 				3ECB3DFB20C92C0B00ECC7EE /* FacePlayer.storyboard */,
 				3ECB3DFF20C936E100ECC7EE /* SearchUser.storyboard */,
+				3ECB3E0320C93A9600ECC7EE /* UserFind.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -319,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E002CC020C51EFC006C26EC /* EditProfil.storyboard in Resources */,
+				3ECB3E0420C93A9600ECC7EE /* UserFind.storyboard in Resources */,
 				3E45D28820BD1DF000E7943E /* LaunchScreen.storyboard in Resources */,
 				3E45D28520BD1DF000E7943E /* Assets.xcassets in Resources */,
 				3EF7400B20BDF812000A9509 /* GoogleService-Info.plist in Resources */,
@@ -382,6 +389,7 @@
 				3E002CC220C523E5006C26EC /* EditProfilViewController.swift in Sources */,
 				3EB34CCC20C078BC00448D49 /* RoundedButton.swift in Sources */,
 				3E3BAA8120C74AA3003659BF /* User.swift in Sources */,
+				3ECB3E0620C949C600ECC7EE /* UserFindViewController.swift in Sources */,
 				3EE25A0620C68D6A0026C5C1 /* UIImageExtension.swift in Sources */,
 				3E3BAA7B20C739E4003659BF /* ClassificationViewController.swift in Sources */,
 				3ECB3E0220C9371D00ECC7EE /* SearchUserViewController.swift in Sources */,

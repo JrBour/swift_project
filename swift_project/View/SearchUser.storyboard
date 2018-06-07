@@ -77,8 +77,11 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="8bm-8B-wAJ" kind="show" id="wa1-cc-Zhc"/>
+                                </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UhI-9s-IwZ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ThreeDots" translatesAutoresizingMaskIntoConstraints="NO" id="UhI-9s-IwZ">
                                 <rect key="frame" x="162" y="169" width="50" height="50"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recherche d'un joueur" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HsY-z1-wya">
@@ -105,6 +108,9 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="goBackToFacePlayer:" destination="tfX-YB-wwK" eventType="touchUpInside" id="0FP-zA-T5T"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1215686275" green="0.72549019609999998" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -137,6 +143,14 @@
             </objects>
             <point key="canvasLocation" x="512.79999999999995" y="-486.20689655172418"/>
         </scene>
+        <!--NavBarUserFindView-->
+        <scene sceneID="LZj-sU-Dcd">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UserFind" referencedIdentifier="NavBarUserFindView" id="8bm-8B-wAJ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X93-la-PLM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1273" y="-612"/>
+        </scene>
         <!--Navigation Bar Controller-->
         <scene sceneID="7UP-bK-lji">
             <objects>
@@ -156,4 +170,7 @@
             <point key="canvasLocation" x="-279" y="-486"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ThreeDots" width="75" height="13"/>
+    </resources>
 </document>

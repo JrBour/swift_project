@@ -29,7 +29,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Histoire de Messi"/>
                                 <connections>
-                                    <segue destination="6Zl-Bs-qt2" kind="show" id="hUp-fv-xpD"/>
+                                    <segue destination="dAe-IU-suc" kind="show" id="ZBa-ud-bYN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -46,13 +46,15 @@
             </objects>
             <point key="canvasLocation" x="801" y="822"/>
         </scene>
-        <!--NavBarFace-->
-        <scene sceneID="VUy-Ku-6Fs">
+        <!--NavBarFacePlayerView-->
+        <scene sceneID="Sjc-HY-jfb">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="QuizView" storyboardName="FacePlayer" referencedIdentifier="NavBarFace" id="6Zl-Bs-qt2" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7NR-0m-QFP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="FacePlayer" referencedIdentifier="NavBarFacePlayerView" id="dAe-IU-suc" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="JZ6-rY-c66"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yH9-g0-Ach" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1493" y="779"/>
+            <point key="canvasLocation" x="1451" y="616"/>
         </scene>
     </scenes>
 </document>

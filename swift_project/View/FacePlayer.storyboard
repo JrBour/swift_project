@@ -20,7 +20,7 @@
         <!--Quiz-->
         <scene sceneID="1tC-SS-MAu">
             <objects>
-                <viewController id="aA2-5i-tUZ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FacePlayerView" id="aA2-5i-tUZ" customClass="FacePlayerViewController" customModule="swift_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tc7-HA-TNO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,11 +38,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="BLf-Jm-dD5" kind="show" id="epl-6m-Jmo"/>
+                                    <action selector="segueToSearchUser:" destination="aA2-5i-tUZ" eventType="touchUpInside" id="c8h-Io-EfY"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iS9-83-HMo">
-                                <rect key="frame" x="162" y="169" width="50" height="50"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SearchStoryboard" translatesAutoresizingMaskIntoConstraints="NO" id="iS9-83-HMo">
+                                <rect key="frame" x="170.5" y="177.5" width="33" height="33"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Affronter un joueur" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sZ-3M-Ubg">
                                 <rect key="frame" x="0.0" y="265" width="375" height="21"/>
@@ -108,7 +108,7 @@
                         <color key="backgroundColor" red="0.1215686275" green="0.72549019609999998" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="iS9-83-HMo" firstAttribute="centerX" secondItem="cWT-Wx-ope" secondAttribute="centerX" id="0p3-Yj-G1q"/>
-                            <constraint firstItem="iS9-83-HMo" firstAttribute="height" secondItem="1Na-1G-g1J" secondAttribute="height" multiplier="1:2" id="1TN-cC-XZO"/>
+                            <constraint firstItem="iS9-83-HMo" firstAttribute="height" secondItem="1Na-1G-g1J" secondAttribute="height" multiplier="1:3" id="1TN-cC-XZO"/>
                             <constraint firstItem="9sZ-3M-Ubg" firstAttribute="centerX" secondItem="cWT-Wx-ope" secondAttribute="centerX" id="5Fw-uY-GhF"/>
                             <constraint firstItem="iS9-83-HMo" firstAttribute="centerX" secondItem="zGu-3d-uZd" secondAttribute="centerX" id="5bF-JR-IQP"/>
                             <constraint firstItem="oJf-nc-bfv" firstAttribute="leading" secondItem="tc7-HA-TNO" secondAttribute="leading" id="9y3-La-Ee6"/>
@@ -118,7 +118,7 @@
                             <constraint firstItem="zGu-3d-uZd" firstAttribute="leading" secondItem="9sZ-3M-Ubg" secondAttribute="leading" id="HsM-Ha-fte"/>
                             <constraint firstItem="cWT-Wx-ope" firstAttribute="trailing" secondItem="oJf-nc-bfv" secondAttribute="trailing" id="Rsd-mw-Cxd"/>
                             <constraint firstItem="9sZ-3M-Ubg" firstAttribute="width" secondItem="tc7-HA-TNO" secondAttribute="width" id="bek-4i-7hf"/>
-                            <constraint firstItem="iS9-83-HMo" firstAttribute="width" secondItem="1Na-1G-g1J" secondAttribute="width" multiplier="1:2" id="kRa-XQ-Non"/>
+                            <constraint firstItem="iS9-83-HMo" firstAttribute="width" secondItem="1Na-1G-g1J" secondAttribute="width" multiplier="1:3" id="kRa-XQ-Non"/>
                             <constraint firstItem="1Na-1G-g1J" firstAttribute="centerX" secondItem="cWT-Wx-ope" secondAttribute="centerX" id="ohr-KW-Gck"/>
                             <constraint firstItem="oJf-nc-bfv" firstAttribute="bottom" secondItem="cWT-Wx-ope" secondAttribute="bottom" id="pk6-hL-ulk"/>
                             <constraint firstItem="Hjq-6P-sSy" firstAttribute="centerX" secondItem="cWT-Wx-ope" secondAttribute="centerX" id="qZ6-EN-n2m"/>
@@ -128,37 +128,40 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cWT-Wx-ope"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Quiz" id="o2R-0c-qUH"/>
+                    <navigationItem key="navigationItem" title="Quiz" id="o2R-0c-qUH">
+                        <barButtonItem key="leftBarButtonItem" image="ChevronLeft" id="eGR-fC-JH9">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="dismissFacePlayer:" destination="aA2-5i-tUZ" id="TvX-iP-JYf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3gc-WB-kTW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="392.80000000000001" y="96.7016491754123"/>
-        </scene>
-        <!--NavBarSearchView-->
-        <scene sceneID="KzZ-46-u70">
-            <objects>
-                <viewControllerPlaceholder storyboardName="SearchUser" referencedIdentifier="NavBarSearchView" id="BLf-Jm-dD5" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vhf-ZS-TJm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1082" y="96"/>
+            <point key="canvasLocation" x="732" y="96.7016491754123"/>
         </scene>
         <!--Navigation Bar Controller-->
-        <scene sceneID="zrx-5n-mOz">
+        <scene sceneID="gd5-Rj-jmR">
             <objects>
-                <navigationController storyboardIdentifier="NavBarFace" automaticallyAdjustsScrollViewInsets="NO" id="QKY-MG-7QH" customClass="NavigationBarController" customModule="swift_project" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavBarFacePlayerView" automaticallyAdjustsScrollViewInsets="NO" id="Gzz-Qg-oRU" customClass="NavigationBarController" customModule="swift_project" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="C31-FW-hJp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MC6-y4-EdL">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="aA2-5i-tUZ" kind="relationship" relationship="rootViewController" id="Hkb-p3-jeq"/>
+                        <segue destination="aA2-5i-tUZ" kind="relationship" relationship="rootViewController" id="ddN-Xq-Fzq"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yZF-94-7Lu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ttz-d0-rrh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-402" y="97"/>
+            <point key="canvasLocation" x="-58" y="97"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ChevronLeft" width="12" height="18"/>
+        <image name="SearchStoryboard" width="46" height="46"/>
+    </resources>
 </document>
