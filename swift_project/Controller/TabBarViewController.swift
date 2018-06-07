@@ -47,7 +47,7 @@ class TabBarViewController: UITabBarController {
     **/
     func setUpTabBar() -> Void {
         let firstStoryboard:UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
-        let firstViewController:UIViewController = firstStoryboard.instantiateViewController(withIdentifier:"HomeView")
+        let firstViewController:UIViewController = firstStoryboard.instantiateViewController(withIdentifier:"NavBarHomeView")
         
         let secondStoryboard:UIStoryboard = UIStoryboard(name: "Classification", bundle: nil)
         let secondViewController:UIViewController = secondStoryboard.instantiateViewController(withIdentifier :"ClassificationView")

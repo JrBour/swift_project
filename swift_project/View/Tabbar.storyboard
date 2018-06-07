@@ -44,10 +44,10 @@
             </objects>
             <point key="canvasLocation" x="686" y="-26"/>
         </scene>
-        <!--HomeView-->
+        <!--NavBarHomeView-->
         <scene sceneID="iPK-Eu-1dZ">
             <objects>
-                <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="HomeView" id="Ws3-TA-Pgb" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="NavBarHomeView" id="Ws3-TA-Pgb" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Quiz" image="Quiz" landscapeImage="Quiz" largeContentSizeImage="Quiz" selectedImage="QuizActive" id="CfZ-9b-2NC">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="QuizActive"/>
@@ -84,12 +84,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Classification" width="27" height="23"/>
-        <image name="ClassificationActive" width="27" height="23"/>
-        <image name="Profil" width="26" height="27"/>
-        <image name="ProfilActive" width="26" height="27"/>
-        <image name="Quiz" width="28" height="28"/>
-        <image name="QuizActive" width="28" height="28"/>
-        <image name="Search" width="23" height="24"/>
+        <image name="Classification" width="19" height="16"/>
+        <image name="ClassificationActive" width="19" height="16"/>
+        <image name="Profil" width="22" height="23"/>
+        <image name="ProfilActive" width="22" height="23"/>
+        <image name="Quiz" width="22" height="22"/>
+        <image name="QuizActive" width="22" height="22"/>
+        <image name="Search" width="18" height="18"/>
     </resources>
 </document>
