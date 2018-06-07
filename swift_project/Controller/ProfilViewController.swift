@@ -14,7 +14,7 @@ class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var navigationBar: UINavigationItem!
     @IBOutlet weak var profilPicture: UIImageView!
     
-    @IBOutlet weak var editProfil: UIButton!
+    @IBOutlet weak var friendButton: UIButton!
     @IBOutlet weak var navbarProfil: UISegmentedControl!
     @IBOutlet weak var titleUsernameLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
@@ -76,6 +76,25 @@ class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     /**
+    * Go to friend page
+    * @param    sender      The informations send by the button
+    * @return Void
+    */
+    @IBAction func goToFriendPage(_ sender: Any) {
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = kCATransitionPush
+        transition.subtype = kCATransitionFromRight
+        transition.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
+        self.view.window!.layer.add(transition, forKey: kCATransition)
+        
+        let friendStoryboard = UIStoryboard(name: "Friend", bundle: nil)
+        let friendController = friendStoryboard.instantiateViewController(withIdentifier: "NavBarFriendView")
+        self.present(friendController, animated: true, completion: nil)
+    }
+    
+    /**
+    * CollectionView function which return an integer
     * @param    collectionView              The collection view display in the storyboard
     * @param    numberOfItemsInSection      The number of items in the collection view
     * @return Int   The number of cells to display
@@ -173,8 +192,8 @@ class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollec
     * @return void
     */
     func setUpView() {
-        self.editProfil.layer.cornerRadius = 10
-        self.editProfil.clipsToBounds = true
+        self.friendButton.layer.cornerRadius = 10
+        self.friendButton.clipsToBounds = true
         self.navigationBar.title = "Profil"
     }
 }

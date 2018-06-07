@@ -12,6 +12,10 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
     
+    @IBOutlet weak var pictureFriendImage: UIImageView!
+    @IBOutlet weak var userFriendLabel: UILabel!
+    @IBOutlet weak var userFriendResult: UILabel!
+    
     @IBAction func addFriend(_ sender: UIButton) {
         let ref = Database.database().reference()
         

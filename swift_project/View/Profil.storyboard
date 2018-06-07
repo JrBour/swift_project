@@ -147,6 +147,9 @@
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="goToFriendPage:" destination="dRA-f5-v2d" eventType="touchUpInside" id="3hW-sX-cIa"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NnH-MP-q2x">
                                 <rect key="frame" x="148" y="85" width="80" height="81"/>
@@ -190,12 +193,14 @@
                         <viewLayoutGuide key="safeArea" id="CEN-Qu-58h"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profil" id="eiL-ux-Deq">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="BfH-ut-Tz3">
+                        <barButtonItem key="leftBarButtonItem" image="Pencil" id="BfH-ut-Tz3">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="6QG-7q-min" kind="show" id="H4X-uv-oOE"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="ClassificationActive" id="aPn-Bg-LDE">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="SignOut" id="aPn-Bg-LDE">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="logout:" destination="dRA-f5-v2d" id="BOH-yH-emE"/>
                             </connections>
@@ -204,8 +209,8 @@
                     <connections>
                         <outlet property="achievementCollection" destination="5ON-L2-JTm" id="7mu-4n-wMC"/>
                         <outlet property="countryLabel" destination="mBv-Ik-u36" id="YcX-FZ-CFd"/>
-                        <outlet property="editProfil" destination="TKf-Fw-gW4" id="9QX-QC-tQa"/>
                         <outlet property="firstnameLabel" destination="zDf-Rp-aWZ" id="Wh3-1f-Qem"/>
+                        <outlet property="friendButton" destination="TKf-Fw-gW4" id="2mg-cu-Xm4"/>
                         <outlet property="levelLabel" destination="aTR-hB-LZE" id="3Wf-y9-XM2"/>
                         <outlet property="nameLabel" destination="gCL-30-pGS" id="kRH-7r-HsU"/>
                         <outlet property="navbarProfil" destination="Y2T-Hg-zGH" id="gjr-o2-dBm"/>
@@ -248,8 +253,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ClassificationActive" width="19" height="16"/>
+        <image name="Pencil" width="22" height="22"/>
         <image name="Profil" width="22" height="23"/>
         <image name="ProfilActive" width="22" height="23"/>
+        <image name="SignOut" width="18" height="18"/>
     </resources>
 </document>
