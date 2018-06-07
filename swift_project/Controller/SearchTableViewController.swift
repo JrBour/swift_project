@@ -1,65 +1,34 @@
 import UIKit
 import Firebase
+import FirebaseStorage
 
 class SearchTableViewController: UITableViewController, UISearchBarDelegate {
     
-    var name: [String] = []
-    var firstname: [String] = []
-    var win: [Int] = []
-    var lose: [Int] = []
-    
+    var allUsers: [User] = []
+    var allUsersId: [String] = []
+    var win = [2, 5, 9, 0, 3, 5, 9]
+    var lose = [10, 4, 8, 4, 2, 9, 1]
+    var ref = Database.database().reference()
+    var imageReference: StorageReference {
+        return Storage.storage().reference()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        setDataClassifications()
+        
         let searchController = UISearchController(searchResultsController: nil) // Search Controller
         navigationItem.hidesSearchBarWhenScrolling = false
         navigationItem.searchController = searchController
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Rechercher..."
         
-        if let url = URL(string: "http://www.apple.com/euro/ios/ios8/a/generic/images/og.png") {
-            downloadImage(url: url)
-        }
-        
-        if let textField = searchController.searchBar.value(forKey: "searchField") as? UITextField {
-            if let backgroundview = textField.subviews.first {
-                backgroundview.backgroundColor = UIColor.white
-                backgroundview.layer.cornerRadius = 10;
-                backgroundview.clipsToBounds = true;
-                
+        ref.child("users").observe(.value) { (snapshot) in
+            for data in snapshot.children {
+                self.allUsers.append(User(snapshot: data as AnyObject)!)
+                let snap = data as! DataSnapshot
+                self.allUsersId.append(snap.key)
             }
-        }
-    }
-    
-    /**
-     * Set the data of classifications by retrieve informations in json files
-     * @return Void
-     */
-    func setDataClassifications() -> Void {
-        let friends = DataMapper.instance.friends
-        for data in friends {
-            self.name.append(data.name!)
-            self.firstname.append(data.firstname!)
-            self.lose.append(data.lose!)
-            self.win.append(data.win!)
-        }
-    }
-
-    /**
-    * Get the picture by url
-    * @param URL        The url of picture
-    * @param closure
-    * @return Void
-    */
-    func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> Data) {
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            completion(data, response, error)
-            }.resume()
-    }
-    
-    func downloadImage(url: URL) {
-        getDataFromUrl(url: url) { data, response, error in
-            return data!
+            self.tableView.reloadData()
         }
     }
     
@@ -69,9 +38,8 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
      * @return int
      */
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return(name.count)
+        return(allUsers.count)
     }
-    
     /**
      * Set the row height for each cell
      * @param tableView      The UITableView class
@@ -90,7 +58,18 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
      */
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableViewCell
-        cell.userLabel.text = name[indexPath.row] + " " + firstname[indexPath.row]
+        cell.userLabel.text = allUsers[indexPath.row].firstname! + " " + allUsers[indexPath.row].name!
+        cell.addFriendButton.accessibilityIdentifier = self.allUsersId[indexPath.row]
+        
+        let profilPicture = self.imageReference.child(self.allUsers[indexPath.row].picture!)
+        profilPicture.getData(maxSize: 15 * 1024 * 1024) { data, error in
+            if let error = error {
+                print(error)
+            } else {
+                cell.userPicture.image = UIImage(data: data!)
+                cell.userPicture.maskCircle(anyImage : cell.userPicture.image!)
+            }
+        }
         cell.resultLabel.text = String(win[indexPath.row]) + " victoires/" + String(lose[indexPath.row]) + " défaites"
         
         return(cell)

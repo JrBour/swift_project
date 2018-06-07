@@ -136,7 +136,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKf-Fw-gW4" customClass="RoundButton" customModule="swift_project" customModuleProvider="target">
                                 <rect key="frame" x="107.5" y="260" width="160" height="30"/>
                                 <color key="backgroundColor" red="0.92549019607843142" green="0.50196078431372548" blue="0.396078431372549" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Modifier le profil">
+                                <state key="normal" title="Amis">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -147,23 +147,10 @@
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="6QG-7q-min" kind="show" identifier="" id="2fL-2g-kRW"/>
-                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NnH-MP-q2x">
                                 <rect key="frame" x="148" y="85" width="80" height="81"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKY-hr-WTr">
-                                <rect key="frame" x="325" y="85" width="28" height="26"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="26" id="puS-4A-eeE"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="SignOut"/>
-                                <connections>
-                                    <action selector="logout:" destination="dRA-f5-v2d" eventType="touchUpInside" id="OUY-4H-InE"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -183,7 +170,6 @@
                             <constraint firstAttribute="bottom" secondItem="mBv-Ik-u36" secondAttribute="bottom" constant="105" id="GM2-yw-MhT"/>
                             <constraint firstItem="mBv-Ik-u36" firstAttribute="leading" secondItem="diG-g4-hq8" secondAttribute="leading" id="HYG-ad-vvk"/>
                             <constraint firstItem="mBv-Ik-u36" firstAttribute="top" secondItem="gCL-30-pGS" secondAttribute="bottom" constant="26" id="HcX-AH-FAX"/>
-                            <constraint firstItem="TKY-hr-WTr" firstAttribute="top" secondItem="NnH-MP-q2x" secondAttribute="top" id="JE7-qP-m5C"/>
                             <constraint firstItem="mBv-Ik-u36" firstAttribute="trailing" secondItem="zDf-Rp-aWZ" secondAttribute="trailing" id="MN9-LB-IqF"/>
                             <constraint firstItem="aTR-hB-LZE" firstAttribute="top" secondItem="dCo-jK-kHX" secondAttribute="bottom" constant="18" id="Nx5-6n-Zxb"/>
                             <constraint firstAttribute="bottom" secondItem="5ON-L2-JTm" secondAttribute="bottom" constant="42" id="Qd5-5A-MxK"/>
@@ -195,9 +181,7 @@
                             <constraint firstItem="Y2T-Hg-zGH" firstAttribute="centerX" secondItem="CEN-Qu-58h" secondAttribute="centerX" id="iB0-Yo-nV4"/>
                             <constraint firstItem="5ON-L2-JTm" firstAttribute="width" secondItem="Xjp-c0-eh8" secondAttribute="width" multiplier="1:1.1" id="knd-uf-Tjn"/>
                             <constraint firstItem="CEN-Qu-58h" firstAttribute="trailing" secondItem="mBv-Ik-u36" secondAttribute="trailing" id="laW-qi-i70"/>
-                            <constraint firstItem="TKY-hr-WTr" firstAttribute="leading" secondItem="NnH-MP-q2x" secondAttribute="trailing" constant="97" id="lnh-mF-npB"/>
                             <constraint firstItem="5ON-L2-JTm" firstAttribute="top" secondItem="Y2T-Hg-zGH" secondAttribute="bottom" constant="23" id="mhZ-lz-kLU"/>
-                            <constraint firstItem="CEN-Qu-58h" firstAttribute="trailing" secondItem="TKY-hr-WTr" secondAttribute="trailing" constant="22" id="nID-qY-hc5"/>
                             <constraint firstItem="dCo-jK-kHX" firstAttribute="centerX" secondItem="CEN-Qu-58h" secondAttribute="centerX" id="sI8-Ro-EPT"/>
                             <constraint firstItem="TKf-Fw-gW4" firstAttribute="centerX" secondItem="CEN-Qu-58h" secondAttribute="centerX" id="tOE-lM-yvi"/>
                             <constraint firstItem="diG-g4-hq8" firstAttribute="top" secondItem="mBv-Ik-u36" secondAttribute="bottom" constant="17" id="wT9-lO-dwb"/>
@@ -205,7 +189,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CEN-Qu-58h"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Profil" id="eiL-ux-Deq"/>
+                    <navigationItem key="navigationItem" title="Profil" id="eiL-ux-Deq">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="BfH-ut-Tz3">
+                            <connections>
+                                <segue destination="6QG-7q-min" kind="show" id="H4X-uv-oOE"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="ClassificationActive" id="aPn-Bg-LDE">
+                            <connections>
+                                <action selector="logout:" destination="dRA-f5-v2d" id="BOH-yH-emE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="achievementCollection" destination="5ON-L2-JTm" id="7mu-4n-wMC"/>
                         <outlet property="countryLabel" destination="mBv-Ik-u36" id="YcX-FZ-CFd"/>
@@ -253,8 +248,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ClassificationActive" width="19" height="16"/>
         <image name="Profil" width="22" height="23"/>
         <image name="ProfilActive" width="22" height="23"/>
-        <image name="SignOut" width="170" height="167"/>
     </resources>
 </document>

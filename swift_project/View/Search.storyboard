@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,7 +19,6 @@
         <!--Navigation Bar Controller-->
         <scene sceneID="IEO-pg-WvF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EwF-nT-kEX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="NavBarSearchView" automaticallyAdjustsScrollViewInsets="NO" id="ZQt-tk-RF0" customClass="NavigationBarController" customModule="swift_project" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9hx-bY-6Up">
@@ -30,6 +30,7 @@
                         <segue destination="Wd6-lA-pAL" kind="relationship" relationship="rootViewController" id="FYk-fv-kTd"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EwF-nT-kEX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1095" y="-316"/>
         </scene>
@@ -50,16 +51,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="svr-wi-6PO">
-                                            <rect key="frame" x="94" y="1.5" width="187.5" height="40"/>
+                                            <rect key="frame" x="94" y="2" width="188" height="40"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prénom/nom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQG-Ul-z7x">
-                                                    <rect key="frame" x="0.0" y="0.0" width="187.5" height="23.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="188" height="23"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lose" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omT-5l-9Yb">
-                                                    <rect key="frame" x="0.0" y="23.5" width="187.5" height="16.5"/>
+                                                    <rect key="frame" x="0.0" y="23" width="188" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="16.5" id="dMe-p0-Rfw"/>
                                                     </constraints>
@@ -72,16 +73,43 @@
                                                 <constraint firstAttribute="height" constant="40" id="vUI-f9-09c"/>
                                             </constraints>
                                         </stackView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NGJ-cE-caX">
+                                            <rect key="frame" x="10" y="0.0" width="42" height="42"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="42" id="Gol-gW-AEn"/>
+                                                <constraint firstAttribute="height" constant="42" id="vhh-C7-AMn"/>
+                                            </constraints>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7NA-dg-P8B">
+                                            <rect key="frame" x="321" y="-3" width="30" height="48"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="t8G-aJ-lDa"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                            <state key="normal" title="+">
+                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="addFriend:" destination="mxu-8E-qdc" eventType="touchUpInside" id="yhJ-Pn-ZZu"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="7NA-dg-P8B" firstAttribute="leading" secondItem="svr-wi-6PO" secondAttribute="trailing" constant="39" id="1eb-c5-A7M"/>
+                                        <constraint firstItem="7NA-dg-P8B" firstAttribute="centerY" secondItem="bNk-u0-a9C" secondAttribute="centerY" id="3Hc-W9-Orl"/>
+                                        <constraint firstItem="7NA-dg-P8B" firstAttribute="top" secondItem="bNk-u0-a9C" secondAttribute="topMargin" constant="-14" id="Dhy-OO-8Dm"/>
                                         <constraint firstItem="svr-wi-6PO" firstAttribute="width" secondItem="bNk-u0-a9C" secondAttribute="width" multiplier="1:2" id="K6F-Fr-ac2"/>
+                                        <constraint firstItem="svr-wi-6PO" firstAttribute="leading" secondItem="NGJ-cE-caX" secondAttribute="trailing" constant="42" id="OEG-ia-3Y7"/>
                                         <constraint firstItem="svr-wi-6PO" firstAttribute="centerY" secondItem="bNk-u0-a9C" secondAttribute="centerY" id="Pu1-Pd-F6j"/>
                                         <constraint firstItem="svr-wi-6PO" firstAttribute="centerX" secondItem="bNk-u0-a9C" secondAttribute="centerX" id="a01-le-g1T"/>
+                                        <constraint firstItem="NGJ-cE-caX" firstAttribute="centerY" secondItem="bNk-u0-a9C" secondAttribute="centerY" id="euq-1l-lNa"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="addFriendButton" destination="7NA-dg-P8B" id="iNe-Rf-Zcp"/>
                                     <outlet property="resultLabel" destination="omT-5l-9Yb" id="Xf0-07-5ae"/>
                                     <outlet property="userLabel" destination="QQG-Ul-z7x" id="hpg-RL-9YB"/>
+                                    <outlet property="userPicture" destination="NGJ-cE-caX" id="t7B-Zj-wFw"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
