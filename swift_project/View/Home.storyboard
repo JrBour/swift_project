@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,44 +14,74 @@
         <!--Quiz-->
         <scene sceneID="hA9-t0-CNy">
             <objects>
-                <viewController storyboardIdentifier="HomeView2" id="fVx-4M-BbC" customClass="HomeViewController2" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeView2" id="fVx-4M-BbC" customClass="HomeViewController" customModule="swift_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h3e-sv-BSz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jb3-Jh-dO0">
-                                <rect key="frame" x="29" y="102" width="79" height="21"/>
+                                <rect key="frame" x="29" y="102" width="170" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Niveau 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Npo-6u-deQ">
-                                <rect key="frame" x="29" y="140" width="68" height="21"/>
+                                <rect key="frame" x="29" y="140" width="346" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="80xp/200xp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNR-hr-V56">
-                                <rect key="frame" x="29" y="178" width="94" height="21"/>
+                                <rect key="frame" x="29" y="178" width="346" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cqq-5y-TdJ">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cqq-5y-TdJ">
                                 <rect key="frame" x="29" y="215" width="316" height="2"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.015686274510000001" green="0.66666666669999997" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </progressView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="44b-9o-kOo">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quiz_image" translatesAutoresizingMaskIntoConstraints="NO" id="44b-9o-kOo">
                                 <rect key="frame" x="0.0" y="424" width="375" height="243"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="243" id="J4P-18-G5x"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Lo-5H-0Qc" customClass="RoundButton" customModule="swift_project" customModuleProvider="target">
-                                <rect key="frame" x="107" y="554" width="160" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mco-DJ-9jD" customClass="RoundButton" customModule="swift_project" customModuleProvider="target">
+                                <rect key="frame" x="199" y="98" width="160" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.58039215690000001" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="notifications">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="yFH-Bm-UD2" kind="show" id="4zo-oE-eQL"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Thème: Le phénomène Messi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gp-cV-URO">
+                                <rect key="frame" x="82" y="232" width="225" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.015686274510000001" green="0.66666666669999997" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1if-MV-arX">
+                                <rect key="frame" x="74" y="269" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Lo-5H-0Qc" customClass="RoundButton" customModule="swift_project" customModuleProvider="target">
+                                <rect key="frame" x="93.5" y="530.5" width="187.5" height="30"/>
                                 <color key="backgroundColor" red="0.94117647059999998" green="0.58039215690000001" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Démarrer le match">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -67,43 +98,40 @@
                                     <segue destination="hSo-5f-t72" kind="show" id="1oL-qS-xWJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mco-DJ-9jD" customClass="RoundButton" customModule="swift_project" customModuleProvider="target">
-                                <rect key="frame" x="199" y="98" width="160" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.94117647059999998" green="0.58039215690000001" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="notifications">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Thème: Le phénomène Messi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gp-cV-URO">
-                                <rect key="frame" x="82" y="232" width="225" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.015686274510000001" green="0.66666666669999997" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1if-MV-arX">
-                                <rect key="frame" x="74" y="269" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="44b-9o-kOo" firstAttribute="centerX" secondItem="cqq-5y-TdJ" secondAttribute="centerX" id="3s3-tf-n7A"/>
+                            <constraint firstItem="44b-9o-kOo" firstAttribute="leading" secondItem="h3e-sv-BSz" secondAttribute="leading" id="Tr0-va-QeJ"/>
+                            <constraint firstItem="8Lo-5H-0Qc" firstAttribute="centerY" secondItem="44b-9o-kOo" secondAttribute="centerY" id="V3x-zT-d4Y"/>
+                            <constraint firstItem="44b-9o-kOo" firstAttribute="bottom" secondItem="Tfo-ex-VXP" secondAttribute="bottom" id="VQ3-aF-xYo"/>
+                            <constraint firstAttribute="trailing" secondItem="44b-9o-kOo" secondAttribute="trailing" id="hqK-RA-eE1"/>
+                            <constraint firstItem="8Lo-5H-0Qc" firstAttribute="width" secondItem="44b-9o-kOo" secondAttribute="width" multiplier="1:2" id="mas-4U-p1y"/>
+                            <constraint firstItem="44b-9o-kOo" firstAttribute="top" secondItem="1if-MV-arX" secondAttribute="bottom" constant="27" id="mdl-xr-HJ6"/>
+                            <constraint firstItem="8Lo-5H-0Qc" firstAttribute="centerX" secondItem="44b-9o-kOo" secondAttribute="centerX" id="mfO-P2-lU1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Tfo-ex-VXP"/>
                     </view>
                     <navigationItem key="navigationItem" title="Quiz" id="NIr-Qq-d44"/>
+                    <connections>
+                        <outlet property="experienceBar" destination="h3e-sv-BSz" id="jiK-i5-pFG"/>
+                        <outlet property="experienceLabel" destination="PNR-hr-V56" id="EhW-s1-0vW"/>
+                        <outlet property="imageQuiz" destination="44b-9o-kOo" id="PEt-On-CLv"/>
+                        <outlet property="levelLabel" destination="Npo-6u-deQ" id="eWZ-Pi-eKj"/>
+                        <outlet property="usernameLabel" destination="Jb3-Jh-dO0" id="ICn-4i-Lmy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pRD-gf-NqL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1767" y="62"/>
+            <point key="canvasLocation" x="1765.5999999999999" y="61.619190404797607"/>
+        </scene>
+        <!--NavBarHistoryView-->
+        <scene sceneID="qFW-pN-pUW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="History" referencedIdentifier="NavBarHistoryView" id="yFH-Bm-UD2" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K0K-jv-gYk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2356" y="-240"/>
         </scene>
         <!--NavBarFacePlayerView-->
         <scene sceneID="9jS-EE-M8a">
@@ -136,5 +164,6 @@
     <resources>
         <image name="Profil" width="22" height="23"/>
         <image name="ProfilActive" width="22" height="23"/>
+        <image name="quiz_image" width="187" height="119"/>
     </resources>
 </document>

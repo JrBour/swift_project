@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Notifications-->
+        <scene sceneID="47M-ux-aUk">
+            <objects>
+                <tableViewController id="cvL-Yw-NDK" customClass="HistoryTableViewController" customModule="swift_project" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7Qr-di-1o1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCell" id="ITK-AP-Qxi" customClass="CustomTableViewCell" customModule="swift_project" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ITK-AP-Qxi" id="GNl-nX-UZb">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6dX-lA-pB3">
+                                            <rect key="frame" x="52" y="0.0" width="250" height="44"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Défis lancés" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgB-Q1-GZr">
+                                                    <rect key="frame" x="0.0" y="0.0" width="250" height="22"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Défis lancés" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNX-2D-nau">
+                                                    <rect key="frame" x="0.0" y="22" width="250" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="rgB-Q1-GZr" firstAttribute="height" secondItem="6dX-lA-pB3" secondAttribute="height" multiplier="1:2" id="HR6-6X-FsW"/>
+                                                <constraint firstItem="UNX-2D-nau" firstAttribute="height" secondItem="6dX-lA-pB3" secondAttribute="height" multiplier="1:2" id="gPN-Bq-VCb"/>
+                                                <constraint firstAttribute="width" constant="250" id="nCp-Zh-dr9"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="6dX-lA-pB3" firstAttribute="height" secondItem="GNl-nX-UZb" secondAttribute="height" id="213-5H-smI"/>
+                                        <constraint firstItem="6dX-lA-pB3" firstAttribute="centerY" secondItem="GNl-nX-UZb" secondAttribute="centerY" id="9oO-w4-L4D"/>
+                                        <constraint firstItem="6dX-lA-pB3" firstAttribute="leading" secondItem="GNl-nX-UZb" secondAttribute="leadingMargin" constant="36" id="w2T-ui-cRV"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="challengeSend" destination="rgB-Q1-GZr" id="TCm-ob-yfR"/>
+                                    <outlet property="usernameChallengeSend" destination="UNX-2D-nau" id="OfJ-oJ-kSu"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cvL-Yw-NDK" id="SoY-fF-o5e"/>
+                            <outlet property="delegate" destination="cvL-Yw-NDK" id="orN-C1-3D6"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Notifications" id="0vn-hT-HXq">
+                        <barButtonItem key="leftBarButtonItem" image="ChevronLeft" id="NaI-rb-Kgj">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="dimissPage:" destination="cvL-Yw-NDK" id="ejl-BI-JhY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KSj-BT-WcI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="560.79999999999995" y="-248.72563718140933"/>
+        </scene>
+        <!--Navigation Bar Controller-->
+        <scene sceneID="Tie-DH-s05">
+            <objects>
+                <navigationController storyboardIdentifier="NavBarHistoryView" automaticallyAdjustsScrollViewInsets="NO" id="Ml1-fP-Byh" customClass="NavigationBarController" customModule="swift_project" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="B03-RY-Kvr">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cvL-Yw-NDK" kind="relationship" relationship="rootViewController" id="uOa-do-ZrQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CFH-p3-HGb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-418" y="-249"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ChevronLeft" width="12" height="18"/>
+    </resources>
+</document>

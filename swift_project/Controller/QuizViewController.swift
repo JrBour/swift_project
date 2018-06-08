@@ -14,6 +14,7 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var keyAnswer: [String] = []
     var lastKeyChallenge: String = ""
     var idReceipter: String = ""
+    var isReceipter: Bool = false
     var pointsByQuestion: Int = 0
     var question: QuestionBank!
     var questionNumber = 0
@@ -92,6 +93,7 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let homeController = homeStoryboard.instantiateViewController(withIdentifier: "TabBarView")
         self.present(homeController, animated: true, completion: nil)
     }
+    
     /**
      * Edit the style of cells in collection view when the user change the segment select
      * @param    collectionView         The collectoin view insert in the storyboard
@@ -158,8 +160,12 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 "win" : "",
                 "complete" : false
                 ])
-            
-            let alert = UIAlertController(title: "Quiz terminé", message: "Votre score est de \(score), l'invitation au défis a bien été envoyé a votre adversaire", preferredStyle: .alert)
+            var alert = UIAlertController(title: "Quiz terminé", message: "Receipterggtgtgt ?", preferredStyle: .alert)
+            if isReceipter {
+                 alert = UIAlertController(title: "Quiz terminé", message: "Receipter ?", preferredStyle: .alert)
+            } else {
+                alert = UIAlertController(title: "Quiz terminé", message: "Votre score est de \(score), l'invitation au défis a bien été envoyé a votre adversaire", preferredStyle: .alert)
+            }
             let restartAction = UIAlertAction(title: "Ok", style: .default) { (alertAction) in
                 let homeStoryboard = UIStoryboard(name: "Tabbar", bundle: nil)
                 let homeController = homeStoryboard.instantiateViewController(withIdentifier: "TabBarView")

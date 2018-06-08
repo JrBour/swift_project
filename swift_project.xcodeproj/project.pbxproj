@@ -42,6 +42,8 @@
 		3ECB3E0620C949C600ECC7EE /* UserFindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB3E0520C949C600ECC7EE /* UserFindViewController.swift */; };
 		3ECB3E0920C9CFC500ECC7EE /* Friend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ECB3E0820C9CFC500ECC7EE /* Friend.storyboard */; };
 		3ECB3E0B20C9CFF300ECC7EE /* FriendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB3E0A20C9CFF300ECC7EE /* FriendTableViewController.swift */; };
+		3ECB3E0D20C9FBB100ECC7EE /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB3E0C20C9FBB100ECC7EE /* HistoryTableViewController.swift */; };
+		3ECB3E0F20C9FBD000ECC7EE /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ECB3E0E20C9FBD000ECC7EE /* History.storyboard */; };
 		3EE25A0620C68D6A0026C5C1 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE25A0520C68D6A0026C5C1 /* UIImageExtension.swift */; };
 		3EE2D09420C2B11C009A2FE7 /* segmentedExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2D09320C2B11C009A2FE7 /* segmentedExtension.swift */; };
 		3EF7400620BDED55000A9509 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EF7400520BDED55000A9509 /* Register.storyboard */; };
@@ -108,6 +110,8 @@
 		3ECB3E0520C949C600ECC7EE /* UserFindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFindViewController.swift; sourceTree = "<group>"; };
 		3ECB3E0820C9CFC500ECC7EE /* Friend.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Friend.storyboard; sourceTree = "<group>"; };
 		3ECB3E0A20C9CFF300ECC7EE /* FriendTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewController.swift; sourceTree = "<group>"; };
+		3ECB3E0C20C9FBB100ECC7EE /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		3ECB3E0E20C9FBD000ECC7EE /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
 		3EE25A0520C68D6A0026C5C1 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		3EE2D09320C2B11C009A2FE7 /* segmentedExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = segmentedExtension.swift; sourceTree = "<group>"; };
 		3EF7400520BDED55000A9509 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
@@ -207,6 +211,8 @@
 				3E3BAA7E20C73F93003659BF /* CustomTableViewCell.swift */,
 				3E002CC120C523E5006C26EC /* EditProfilViewController.swift */,
 				3ECB3DFD20C92C5300ECC7EE /* FacePlayerViewController.swift */,
+				3ECB3E0A20C9CFF300ECC7EE /* FriendTableViewController.swift */,
+				3ECB3E0C20C9FBB100ECC7EE /* HistoryTableViewController.swift */,
 				3E85FEC020BF2A8500D88CAB /* HomeViewController.swift */,
 				3E002CC320C53D69006C26EC /* NavigationBarController.swift */,
 				9D4C4D2220C91A2F00494143 /* Page.swift */,
@@ -223,7 +229,6 @@
 				9D4C4D1C20C918C200494143 /* TutorialViewController.swift */,
 				3ECB3E0520C949C600ECC7EE /* UserFindViewController.swift */,
 				3E45D27F20BD1DF000E7943E /* ViewController.swift */,
-				3ECB3E0A20C9CFF300ECC7EE /* FriendTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -244,6 +249,7 @@
 				3E85FEC220BF2B0000D88CAB /* Tabbar.storyboard */,
 				3ECB3E0320C93A9600ECC7EE /* UserFind.storyboard */,
 				3ECB3E0820C9CFC500ECC7EE /* Friend.storyboard */,
+				3ECB3E0E20C9FBD000ECC7EE /* History.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -354,6 +360,7 @@
 				9DD347FC20C9215300D0D46C /* Classification.storyboard in Resources */,
 				3E002CC020C51EFC006C26EC /* EditProfil.storyboard in Resources */,
 				3ECB3E0420C93A9600ECC7EE /* UserFind.storyboard in Resources */,
+				3ECB3E0F20C9FBD000ECC7EE /* History.storyboard in Resources */,
 				3ECB3E0920C9CFC500ECC7EE /* Friend.storyboard in Resources */,
 				3E45D28820BD1DF000E7943E /* LaunchScreen.storyboard in Resources */,
 				3E45D28520BD1DF000E7943E /* Assets.xcassets in Resources */,
@@ -422,6 +429,7 @@
 				3E3BAA8120C74AA3003659BF /* User.swift in Sources */,
 				3ECB3E0B20C9CFF300ECC7EE /* FriendTableViewController.swift in Sources */,
 				9D4C4D2720C91AAB00494143 /* SwipingController+UICollectionView.swift in Sources */,
+				3ECB3E0D20C9FBB100ECC7EE /* HistoryTableViewController.swift in Sources */,
 				3ECB3E0620C949C600ECC7EE /* UserFindViewController.swift in Sources */,
 				3EE25A0620C68D6A0026C5C1 /* UIImageExtension.swift in Sources */,
 				3E3BAA7B20C739E4003659BF /* ClassificationViewController.swift in Sources */,

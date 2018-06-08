@@ -16,6 +16,9 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var userFriendLabel: UILabel!
     @IBOutlet weak var userFriendResult: UILabel!
     
+    @IBOutlet weak var usernameChallengeSend: UILabel!
+    @IBOutlet weak var challengeSend: UILabel!
+    
     @IBAction func addFriend(_ sender: UIButton) {
         let ref = Database.database().reference()
         

@@ -46,7 +46,6 @@ class FriendTableViewController: UITableViewController {
      * @return int
      */
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(allUsers.count)
         return(allUsers.count)
     }
     /**
