@@ -74,8 +74,7 @@ class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollec
             self.countryLabel.text = "Pays : " + (user?.country)!
             self.levelLabel.text = "Niveau " + String((user?.level)!)
             
-            self.titleUsernameLabel.text = (user?.username)!
-            
+            self.titleUsernameLabel.text = (user?.username)!  
         })
     }
     
@@ -183,7 +182,7 @@ class ProfilViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBAction func logout(_ sender: Any) {
         do {
             try firebaseAuth.signOut()
-            let loginStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let loginStoryboard = UIStoryboard(name: "Login", bundle: nil)
             let loginController = loginStoryboard.instantiateViewController(withIdentifier: "LoginView")
             self.present(loginController, animated: true, completion: nil)
         } catch {

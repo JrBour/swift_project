@@ -7,6 +7,7 @@ class HistoryTableViewController: UITableViewController {
     var currentUser: Firebase.User?
     let firebaseAuth = Auth.auth()
     var allChallenges: [Challenge] = []
+    var allIdChallenges: [String] = []
     var allUsers: [User] = []
     
     override func viewDidLoad() {
@@ -15,12 +16,18 @@ class HistoryTableViewController: UITableViewController {
         ref.child("challenge").queryOrdered(byChild: "receipter").queryEqual(toValue: firebaseAuth.currentUser!.uid).observeSingleEvent(of: .value, with: { snapshot in
             for data in snapshot.children {
                 self.allChallenges.append(Challenge(data: data as AnyObject)!)
+                let snap = data as! DataSnapshot
+                self.allIdChallenges.append(snap.key)
             }
+            var i = 0
             self.allChallenges = self.allChallenges.filter({
                 (value: Challenge) in
                 if value.complete == true {
+                    self.allIdChallenges.remove(at: i)
+                    i = i + 1
                     return false
                 }
+                i = i + 1
                 return true
             })
             for receipter in self.allChallenges {
@@ -34,7 +41,7 @@ class HistoryTableViewController: UITableViewController {
         })
     }
     
-    @objc func goToQuiz() {
+    @objc func goToQuiz(_ sender: UITableViewCell) {
         let transition = CATransition()
         transition.duration = 0.5
         transition.type = kCATransitionPush
@@ -47,6 +54,7 @@ class HistoryTableViewController: UITableViewController {
         
         let myVC = quizStoryboard.instantiateViewController(withIdentifier: "QuizView") as! QuizViewController
         myVC.isReceipter = true
+        myVC.idChallenge = "2"
         self.present(myVC, animated: true, completion: nil)
     }
     
@@ -82,6 +90,7 @@ class HistoryTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(goToQuiz))
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomTableViewCell
+        cell.accessibilityIdentifier = allIdChallenges[indexPath.row]
         cell.usernameChallengeSend.text = "Défis lancés"
         cell.challengeSend.text = allUsers[indexPath.row].username! + " vous lance un défi !"
         cell.addGestureRecognizer(tapGesture)

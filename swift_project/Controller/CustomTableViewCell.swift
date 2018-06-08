@@ -19,13 +19,4 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var usernameChallengeSend: UILabel!
     @IBOutlet weak var challengeSend: UILabel!
     
-    @IBAction func addFriend(_ sender: UIButton) {
-        let ref = Database.database().reference()
-        
-        ref.child("friends").childByAutoId().setValue([
-            "friendsOne" : Auth.auth().currentUser?.uid,
-            "friendsTwo" : sender.accessibilityIdentifier!
-        ])
-    }
-    
 }

@@ -13,6 +13,7 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
     let firebaseAuth = Auth.auth()
     var keyAnswer: [String] = []
     var lastKeyChallenge: String = ""
+    var idChallenge: String = ""
     var idReceipter: String = ""
     var isReceipter: Bool = false
     var pointsByQuestion: Int = 0
@@ -45,7 +46,6 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 self.keyAnswer.append(snap.key)
             }
             
-            print(self.pointsByQuestion)
             self.question = self.allQuestion[0]
             self.questionLabel.text = self.question.name
             
@@ -150,20 +150,39 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
             questionLabel.text = allQuestion[questionNumber].name
             updateUI()
         } else {
-            let id = Int(self.lastKeyChallenge)! + 1
-            self.ref.child("challenge").child(String(id)).setValue([
-                "sender" : self.firebaseAuth.currentUser!.uid,
-                "receipter" : self.idReceipter,
-                "senderPoints" : self.score,
-                "receipterPoints" : "",
-                "quizId" : 1,
-                "win" : "",
-                "complete" : false
-                ])
             var alert = UIAlertController(title: "Quiz terminé", message: "Receipterggtgtgt ?", preferredStyle: .alert)
             if isReceipter {
-                 alert = UIAlertController(title: "Quiz terminé", message: "Receipter ?", preferredStyle: .alert)
+                self.ref.child("challenge").child("2").setValue([
+                    "sender" : "ORnLn9VYDFbqDcKeobRhLmDZNo63",
+                    "receipter" : "mN5jri6XTMa5GPdNI2XPVR0gIX22",
+                    "senderPoints" : "20",
+                    "receipterPoints" : "10",
+                    "quizId" : 1,
+                    "win" : "ORnLn9VYDFbqDcKeobRhLmDZNo63",
+                    "complete" : true
+                ])
+                let transition = CATransition()
+                transition.duration = 0.5
+                transition.type = kCATransitionPush
+                transition.subtype = kCATransitionFromRight
+                transition.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
+                self.view.window!.layer.add(transition, forKey: kCATransition)
+                
+                let homeStoryboard = UIStoryboard(name: "Result", bundle: nil)
+                let homeController = homeStoryboard.instantiateViewController(withIdentifier: "NavBarResultView")
+                self.present(homeController, animated: true, completion: nil)
+
             } else {
+                let id = Int(self.lastKeyChallenge)! + 1
+                self.ref.child("challenge").child(String(id)).setValue([
+                    "sender" : self.firebaseAuth.currentUser!.uid,
+                    "receipter" : self.idReceipter,
+                    "senderPoints" : self.score,
+                    "receipterPoints" : "",
+                    "quizId" : 1,
+                    "win" : "",
+                    "complete" : false
+                ])
                 alert = UIAlertController(title: "Quiz terminé", message: "Votre score est de \(score), l'invitation au défis a bien été envoyé a votre adversaire", preferredStyle: .alert)
             }
             let restartAction = UIAlertAction(title: "Ok", style: .default) { (alertAction) in

@@ -37,16 +37,8 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
                 }
                 
                 self.allUsersId.filter({(value: String) in
-                    for friend in self.allFriends {
-                        if value == friend.friendTwo{
-                            self.allUsers.remove(at: self.id)
-                            self.id = self.id + 1
-                            return false
-                        }
-                    }
                     if value == Auth.auth().currentUser?.uid{
                         self.allUsers.remove(at: self.id)
-                        self.id = self.id + 1
                         return false
                     }
                     self.id = self.id + 1
@@ -76,6 +68,24 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
         return 80.0
     }
     
+    @objc func goToHomePage() {
+        ref.child("friends").childByAutoId().setValue([
+            "friendsOne" : Auth.auth().currentUser?.uid,
+            "friendsTwo" : "6UOdST1dd7NAzxMklhhqVJytZJs2"
+        ])
+        
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = kCATransitionPush
+        transition.subtype = kCATransitionFromRight
+        transition.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
+        self.view.window!.layer.add(transition, forKey: kCATransition)
+        
+        let homeStoryboard = UIStoryboard(name: "Tabbar", bundle: nil)
+        let homeController = homeStoryboard.instantiateViewController(withIdentifier: "TabBarView")
+        self.present(homeController, animated: true, completion: nil)
+    }
+    
     /**
      * Param the table view cell
      * @param tableView      The UITableView class
@@ -83,6 +93,7 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
      * @return UITableViewCell
      */
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(goToHomePage))
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableViewCell
         cell.userLabel.text = allUsers[indexPath.row].firstname! + " " + allUsers[indexPath.row].name!
         cell.addFriendButton.accessibilityIdentifier = self.allUsersId[indexPath.row]
@@ -97,6 +108,7 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
             }
         }
         cell.resultLabel.text = String(win[indexPath.row]) + " victoires/" + String(lose[indexPath.row]) + " défaites"
+        cell.addGestureRecognizer(tapGesture)
         
         return(cell)
     }

@@ -24,7 +24,7 @@ class HomeViewController: UIViewController {
             
             self.usernameLabel.text = user?.username
             self.levelLabel.text = "Niveau " + String((user?.level)!)
-            self.experienceLabel.text = String((user?.level)!) + "xp/200xp"
+            self.experienceLabel.text = String((user?.experience)!) + "xp/200xp"
         })
     }
 }

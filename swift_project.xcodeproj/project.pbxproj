@@ -10,6 +10,8 @@
 		3E002CC020C51EFC006C26EC /* EditProfil.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E002CBF20C51EFC006C26EC /* EditProfil.storyboard */; };
 		3E002CC220C523E5006C26EC /* EditProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E002CC120C523E5006C26EC /* EditProfilViewController.swift */; };
 		3E002CC420C53D69006C26EC /* NavigationBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E002CC320C53D69006C26EC /* NavigationBarController.swift */; };
+		3E25ADDA20CA0B4000F26366 /* Result.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E25ADD920CA0B4000F26366 /* Result.storyboard */; };
+		3E25ADDC20CA0B9400F26366 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E25ADDB20CA0B9400F26366 /* ResultViewController.swift */; };
 		3E28F34920C84E510042E833 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E28F34820C84E510042E833 /* Search.storyboard */; };
 		3E28F34B20C867700042E833 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E28F34A20C867700042E833 /* SearchTableViewController.swift */; };
 		3E28F35120C892040042E833 /* Classification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EBD254820BF5BF8000DEFEA /* Classification.storyboard */; };
@@ -75,6 +77,8 @@
 		3E002CBF20C51EFC006C26EC /* EditProfil.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfil.storyboard; sourceTree = "<group>"; };
 		3E002CC120C523E5006C26EC /* EditProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilViewController.swift; sourceTree = "<group>"; };
 		3E002CC320C53D69006C26EC /* NavigationBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarController.swift; sourceTree = "<group>"; };
+		3E25ADD920CA0B4000F26366 /* Result.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Result.storyboard; sourceTree = "<group>"; };
+		3E25ADDB20CA0B9400F26366 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		3E28F34820C84E510042E833 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		3E28F34A20C867700042E833 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		3E3BAA7A20C739E4003659BF /* ClassificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificationViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +224,7 @@
 				3EBB846320C08210007B4C37 /* ProfilViewController.swift */,
 				9D39CEAC20C7C46B000274AF /* QuizViewController.swift */,
 				3EF7400720BDEDA5000A9509 /* RegisterViewController.swift */,
+				3E25ADDB20CA0B9400F26366 /* ResultViewController.swift */,
 				3E28F34A20C867700042E833 /* SearchTableViewController.swift */,
 				3ECB3E0120C9371D00ECC7EE /* SearchUserViewController.swift */,
 				9D4C4D1E20C919AD00494143 /* SwipingController.swift */,
@@ -239,17 +244,18 @@
 				3EBD254820BF5BF8000DEFEA /* Classification.storyboard */,
 				3E002CBF20C51EFC006C26EC /* EditProfil.storyboard */,
 				3ECB3DFB20C92C0B00ECC7EE /* FacePlayer.storyboard */,
+				3ECB3E0820C9CFC500ECC7EE /* Friend.storyboard */,
+				3ECB3E0E20C9FBD000ECC7EE /* History.storyboard */,
 				3EBD254020BF5951000DEFEA /* Home.storyboard */,
 				9DD347FD20C9295900D0D46C /* Login.storyboard */,
 				3EBD253E20BF582A000DEFEA /* Profil.storyboard */,
 				9D39CEAA20C7C414000274AF /* Quiz.storyboard */,
 				3EF7400520BDED55000A9509 /* Register.storyboard */,
+				3E25ADD920CA0B4000F26366 /* Result.storyboard */,
 				3E28F34820C84E510042E833 /* Search.storyboard */,
 				3ECB3DFF20C936E100ECC7EE /* SearchUser.storyboard */,
 				3E85FEC220BF2B0000D88CAB /* Tabbar.storyboard */,
 				3ECB3E0320C93A9600ECC7EE /* UserFind.storyboard */,
-				3ECB3E0820C9CFC500ECC7EE /* Friend.storyboard */,
-				3ECB3E0E20C9FBD000ECC7EE /* History.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -357,6 +363,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E25ADDA20CA0B4000F26366 /* Result.storyboard in Resources */,
 				9DD347FC20C9215300D0D46C /* Classification.storyboard in Resources */,
 				3E002CC020C51EFC006C26EC /* EditProfil.storyboard in Resources */,
 				3ECB3E0420C93A9600ECC7EE /* UserFind.storyboard in Resources */,
@@ -411,6 +418,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E8077EC20C823EA00CE8EE8 /* Challenge.swift in Sources */,
+				3E25ADDC20CA0B9400F26366 /* ResultViewController.swift in Sources */,
 				3EE2D09420C2B11C009A2FE7 /* segmentedExtension.swift in Sources */,
 				3EF7400820BDEDA5000A9509 /* RegisterViewController.swift in Sources */,
 				3E8077E220C81AA500CE8EE8 /* DataMapper.swift in Sources */,
